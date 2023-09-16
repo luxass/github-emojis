@@ -43,6 +43,8 @@ console.log(parse("Hello :smile:")); // Hello 😄
 import emojis from "github-emojis/emojis";
 ```
 
+## All emojis
+
 <!-- table start -->
   | Name | Emoji | Name | Emoji |
   |------|-------|------|-------|
