@@ -961,7 +961,7 @@ import {
 | zero | <img width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0030-20e3.png?v8">| zimbabwe | <img width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ff-1f1fc.png?v8"> |
 | zipper_mouth_face | <img width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f910.png?v8">| zombie | <img width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9df.png?v8"> |
 | zombie_man | <img width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9df-2642.png?v8">| zombie_woman | <img width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9df-2640.png?v8"> |
-| zzz | <img width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a4.png?v8">|  | <img width="20" src=""> |
+| zzz | <img width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a4.png?v8">|  |  |
 <!-- table end -->
 
 

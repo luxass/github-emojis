@@ -37,8 +37,8 @@ async function run() {
     const firstEmoji = emojis[i];
     const secondEmoji = emojis[i + 1];
 
-    newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | <img width="20" src="${firstEmoji ? firstEmoji[1] : ""}">`;
-    newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | <img width="20" src="${secondEmoji ? secondEmoji[1] : ""}"> |\n`;
+    newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | ${firstEmoji ? `<img width="20" src="${firstEmoji[1]}">` : ""}`;
+    newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | ${secondEmoji ? `<img width="20" src="${secondEmoji[1]}">` : ""} |\n`;
   }
 
   newTable += "<!-- table end -->";
