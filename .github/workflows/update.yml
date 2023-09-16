@@ -2,6 +2,11 @@ name: Update emojis
 
 on:
   workflow_dispatch:
+    inputs:
+      dry-run:
+        description: "Run the script without committing changes"
+        required: false
+        default: "false"
   schedule:
     # run first day of every month at 1:12
     - cron: "1 12 1 * *"
@@ -20,7 +25,19 @@ jobs:
       - name: Run update:list script
         run: bun run update:list
 
-      - name: Commit and push changes
+      - name: Check for changes
+        id: check
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "Changes detected"
+            echo "CHANGES=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No changes detected"
+            echo "CHANGES=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push changes 
+        if: ${{ github.event.inputs.dry-run != 'true' && steps.check.outputs.CHANGES == 'true' }}
         run: |
           git config --local user.email "lucasnrgaard@gmail.com"
           git config --local user.name "luxass"
