@@ -5,16 +5,18 @@ const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 `;
 
 async function run() {
-  const emojisObj = await fetch("https://api.github.com/emojis", {
+  const emojisObj: Record<string, string> = await fetch("https://api.github.com/emojis", {
     headers: {
       "Accept": "application/vnd.github.v3+json",
       "X-GitHub-Api-Version": "2022-11-28",
     },
   }).then((res) => res.json());
 
+  const emojiEntries = Object.entries(emojisObj);
+
   await Bun.write("./emojis.json", `${JSON.stringify(emojisObj, null, 2)}\n`);
 
-  await Bun.write("./src/types.ts", `${BANNER}\n\export type Emoji =\n  | ${Object.keys(emojisObj).map((name) => `"${name}"`).join("\n  | ")};\n`);
+  await Bun.write("./src/types.ts", `${BANNER}\n\export type Emoji =\n  | ${Object.keys(emojisObj).map((name) => `"${name}"`).join("\n  | ")}\n  | (string & {});\n`);
 
   // insert a new updated table into readme
   const readmeFile = Bun.file("./README.md");
@@ -31,7 +33,7 @@ async function run() {
   |------|-------|------|-------|
   `;
 
-  const emojis = Object.entries(emojisObj);
+  const emojis = emojiEntries;
 
   for (let i = 0; i < emojis.length; i += 2) {
     const firstEmoji = emojis[i];

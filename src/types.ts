@@ -1878,4 +1878,5 @@ export type Emoji =
   | "zombie"
   | "zombie_man"
   | "zombie_woman"
-  | "zzz";
+  | "zzz"
+  | (string & {});
