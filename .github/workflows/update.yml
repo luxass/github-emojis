@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       dry-run:
-        description: "Run the script without committing changes"
+        description: Run the script without committing changes
         required: false
         default: "false"
   schedule:
@@ -36,7 +36,7 @@ jobs:
             echo "CHANGES=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit and push changes 
+      - name: Commit and push changes
         if: ${{ github.event.inputs.dry-run != 'true' && steps.check.outputs.CHANGES == 'true' }}
         run: |
           git config --local user.email "lucasnrgaard@gmail.com"
