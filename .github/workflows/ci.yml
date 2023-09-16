@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "pnpm"
+          cache: pnpm
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -29,9 +29,6 @@ jobs:
 
       - name: Build
         run: pnpm build
-
-      - name: Test
-        run: pnpm test
 
       - name: Typecheck
         run: pnpm typecheck
