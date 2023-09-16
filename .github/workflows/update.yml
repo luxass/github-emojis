@@ -1,0 +1,34 @@
+name: Update emojis
+
+on:
+  workflow_dispatch:
+  schedule:
+    # run first day of every month at 1:12
+    - cron: "1 12 1 * *"
+
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Run update:list script
+        run: bun run update:list
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "lucasnrgaard@gmail.com"
+          git config --local user.name "luxass"
+
+          git add README.md
+          git add ./src/types.ts
+          git add emojis.json
+
+          git commit -m "chore(emojis): update emojis"
+          git push
