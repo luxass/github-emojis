@@ -1,8 +1,6 @@
 # github-emojis
 
 All GitHub's emojis in one place.
-
-
 <br/>
 <br/>
 
