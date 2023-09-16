@@ -1,4 +1,4 @@
-import { describe, expect, expectTypeOf, test } from "vitest";
+import { expect, expectTypeOf, test } from "vitest";
 import { EMOJI_KEYS, type Emoji, emojis, exists, get, getRaw, parse } from "../src";
 
 test("should return true for existing emoji", () => {
