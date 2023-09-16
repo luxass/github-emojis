@@ -8,5 +8,9 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
     inlineDependencies: true,
+    json: {
+      compact: true,
+      namedExports: false,
+    },
   },
 });
