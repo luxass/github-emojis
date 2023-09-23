@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       dry-run:
-        description: Run the script without committing changes
+        description: Run the workflow without creating a pull request
         required: false
         default: "false"
   schedule:
@@ -18,6 +18,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ROBOBUB_TOKEN }}
+
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
@@ -25,26 +28,19 @@ jobs:
       - name: Run update:list script
         run: bun run update:list
 
-      - name: Check for changes
-        id: check
-        run: |
-          if [[ -n $(git status --porcelain) ]]; then
-            echo "Changes detected"
-            echo "CHANGES=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "No changes detected"
-            echo "CHANGES=false" >> "$GITHUB_OUTPUT"
-          fi
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        if: github.event.inputs.dry-run == 'false'
+        with:
+          commit-message: "chore: updated emojis"
+          title: "chore: updated github emojis"
+          body: |
+            This is an automated PR to update the GitHub Emoji List.
+  
+            If you have any questions or suggestions, please open an issue or PR.
+          branch: update-emojis
+          author: robobub <bot@luxass.dev>
+          base: main
+          assignees: luxass
+          token: ${{ secrets.ROBOBUB_TOKEN }}
 
-      - name: Commit and push changes
-        if: ${{ github.event.inputs.dry-run != 'true' && steps.check.outputs.CHANGES == 'true' }}
-        run: |
-          git config --local user.email "lucasnrgaard@gmail.com"
-          git config --local user.name "luxass"
-
-          git add README.md
-          git add ./src/types.ts
-          git add emojis.json
-
-          git commit -m "chore(emojis): update emojis"
-          git push
