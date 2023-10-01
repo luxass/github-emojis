@@ -28,10 +28,10 @@ async function run() {
 
   const table = readme.slice(tableStart, tableEnd + "<!-- table end -->".length);
 
-  let newTable = `<!-- table start -->
+  let newTable = `${`<!-- table start -->
   | Name | Emoji | Name | Emoji |
   |------|-------|------|-------|
-  `;
+  `.split("\n").map((line) => line.trim()).join("\n")}`;
 
   const emojis = emojiEntries;
 
@@ -39,8 +39,8 @@ async function run() {
     const firstEmoji = emojis[i];
     const secondEmoji = emojis[i + 1];
 
-    newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | ${firstEmoji ? `<img width="20" src="${firstEmoji[1]}" />` : ""}`;
-    newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | ${secondEmoji ? `<img width="20" src="${secondEmoji[1]}" />` : ""} |\n`;
+    newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | ${firstEmoji ? `<img width="20" height="20" src="${firstEmoji[1]}" />` : ""}`;
+    newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | ${secondEmoji ? `<img width="20" height="20" src="${secondEmoji[1]}" />` : ""} |\n`;
   }
 
   newTable += "<!-- table end -->";
