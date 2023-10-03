@@ -2,6 +2,7 @@
   "name": "www",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@8.7.5",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -15,8 +16,11 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@unocss/nuxt": "^0.56.4",
+    "@nuxt/image": "rc",
+    "@nuxt/ui": "^2.9.0",
+    "@vueuse/nuxt": "^10.4.1",
     "nuxt": "^3.7.4",
+    "nuxt-icon": "^0.5.0",
     "typescript": "^5.2.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"

@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply text-neutral-300 bg-neutral-900 py-8 min-h-screen max-w-4xl lg:!mx-auto !mx-4 font-sans flex flex-col justify-between min-h-100dvh;
+  @apply text-neutral-300 bg-neutral-900 py-8 max-w-4xl lg:!mx-auto !mx-4 font-sans flex flex-col justify-between min-h-[100dvh];
 }
 
 .shiki {
@@ -17,7 +17,7 @@ body {
 }
 
 p {
-  @apply line-height-relaxed;
+  @apply leading-relaxed;
 }
 
 h1,

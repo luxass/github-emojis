@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@unocss/nuxt", "@nuxt/devtools"],
+  modules: [
+    "@nuxt/devtools",
+    "@nuxt/ui",
+    "@vueuse/nuxt",
+    "@nuxt/image",
+    "nuxt-icon",
+  ],
   devtools: { enabled: true },
   plugins: [
     {
@@ -8,7 +14,6 @@ export default defineNuxtConfig({
       mode: "client",
     },
   ],
-  css: ["@unocss/reset/tailwind.css"],
   sourcemap: false,
   app: {
     head: {
@@ -27,20 +32,21 @@ export default defineNuxtConfig({
     payloadExtraction: true,
     typedPages: true,
   },
+  image: {
+    domains: [
+      "github.githubassets.com",
+    ],
+  },
   nitro: {
     routeRules: {
-      "/api/schema": {
+      "/api/emojis": {
         cache: {
           maxAge: 3600,
         },
       },
-      "/api/projectrc/**": {
-        swr: true,
+      "/api/emojis/**": {
         cache: {
           maxAge: 3600,
-          varies: [
-            "Accept",
-          ],
         },
       },
     },
