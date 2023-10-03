@@ -45,6 +45,12 @@ import emojis from "github-emojis/emojis";
 
 ## All emojis
 
+> [!NOTE]  
+> You can view all on [github-emojis.luxass.dev](https://github-emojis.luxass.dev) or directly below.
+
+<details>
+<summary>View all emojis right here</summary>
+
 <!-- table start -->
 | Name | Emoji | Name | Emoji |
 |------|-------|------|-------|
@@ -988,6 +994,7 @@ import emojis from "github-emojis/emojis";
 | zombie_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9df-2642.png?v8" loading="lazy" />| zombie_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9df-2640.png?v8" loading="lazy" /> |
 | zzz | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a4.png?v8" loading="lazy" />|  |  |
 <!-- table end -->
+</details>
 
 
 ## 💻 Development

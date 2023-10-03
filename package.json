@@ -24,6 +24,9 @@
     "emoji",
     "emojis"
   ],
+  "workspaces": [
+    "www"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
