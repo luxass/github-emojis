@@ -24,6 +24,9 @@
     "emoji",
     "emojis"
   ],
+  "workspaces": [
+    "www"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -47,7 +50,11 @@
     "test": "vitest --run",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "www:build": "nuxt build www",
+    "www:dev": "nuxt dev www",
+    "www:generate": "nuxt generate www",
+    "www:preview": "nuxt preview www"
   },
   "devDependencies": {
     "@luxass/eslint-config": "^3.3.2",

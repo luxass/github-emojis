@@ -1,0 +1,33 @@
+{
+  "name": "www",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@8.7.5",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.0.2",
+    "@vueuse/components": "^10.4.1",
+    "fuse.js": "^6.6.2",
+    "github-emojis": "workspace:*"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/image": "rc",
+    "@nuxt/ui": "^2.9.0",
+    "@nuxtjs/color-mode": "^3.3.0",
+    "@unocss/nuxt": "^0.56.4",
+    "@vueuse/nuxt": "^10.4.1",
+    "floating-vue": "^2.0.0-beta.24",
+    "nuxt": "^3.7.4",
+    "nuxt-icon": "^0.5.0",
+    "typescript": "^5.2.2",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  }
+}
