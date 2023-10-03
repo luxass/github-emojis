@@ -2,10 +2,10 @@
 export default defineNuxtConfig({
   modules: [
     "@nuxt/devtools",
-    "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxt/image",
     "nuxt-icon",
+    "@unocss/nuxt",
   ],
   devtools: { enabled: true },
   plugins: [
@@ -13,14 +13,18 @@ export default defineNuxtConfig({
       src: "~/plugins/vercel-analytics.ts",
       mode: "client",
     },
+    "~/plugins/floating-vue.ts",
   ],
   sourcemap: false,
   app: {
     head: {
+      viewport: "width=device-width,initial-scale=1",
+      link: [
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      ],
       htmlAttrs: {
         lang: "en",
       },
-      title: "ProjectRC",
     },
     pageTransition: false,
     layoutTransition: false,
@@ -32,6 +36,9 @@ export default defineNuxtConfig({
     payloadExtraction: true,
     typedPages: true,
   },
+  css: [
+    "@unocss/reset/tailwind.css",
+  ],
   image: {
     domains: [
       "github.githubassets.com",
