@@ -35,6 +35,8 @@ const filteredEmojis = computed(() => {
   };
   return fuse.value.search(searchString.value).map(i => i.item);
 }); ;
+
+const { isSupported } = useClipboard();
 </script>
 
 <template>
