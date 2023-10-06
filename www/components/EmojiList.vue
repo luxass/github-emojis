@@ -2,7 +2,9 @@
 import { EMOJI_KEYS, get, getRaw } from "github-emojis";
 import Fuse from "fuse.js";
 
-const searchString = ref("");
+const router = useRouter();
+
+const searchString = ref(router.currentRoute.value.query.q as string || "");
 
 const emojis = computed(() => {
   const emojis = [];
@@ -35,8 +37,6 @@ const filteredEmojis = computed(() => {
   };
   return fuse.value.search(searchString.value).map(i => i.item);
 });
-
-const { isSupported } = useClipboard();
 </script>
 
 <template>
@@ -47,5 +47,4 @@ const { isSupported } = useClipboard();
         :emoji-url="item.emojiUrl" />
     </div>
   </div>
-  <p>Is Clipboard Supported: {{ isSupported }}</p>
 </template>
