@@ -12,10 +12,6 @@ const emojis = computed(() => {
     const url = getRaw(key);
     const emoji = get(key);
 
-    if (!url || !emoji) {
-      continue;
-    }
-
     emojis.push({
       emojiKey: key,
       emoji,
@@ -42,7 +38,7 @@ const filteredEmojis = computed(() => {
 <template>
   <Search v-model="searchString" icon="octicon:search" placeholder="Type to search..." mb8 />
   <div flex="~ 1 col" gap2 pb6>
-    <div grid grid-cols-3 gap3 px4>
+    <div grid grid-cols-minmax-200px gap3 px4>
       <EmojiCard v-for="item of filteredEmojis" :key="item.emojiKey" :emoji="item.emoji" :emoji-key="item.emojiKey"
         :emoji-url="item.emojiUrl" />
     </div>

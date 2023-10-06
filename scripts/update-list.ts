@@ -1,4 +1,8 @@
 import process from "node:process";
+import {
+  getEmojiFromUnicodeUrl,
+  isUnicodeEmoji,
+} from "../www/utils/emoji";
 
 const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 // RUN \`npm run update:list\` TO UPDATE.
@@ -39,8 +43,8 @@ async function run() {
     const firstEmoji = emojis[i];
     const secondEmoji = emojis[i + 1];
 
-    newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | ${firstEmoji ? !isUnicodeEmoji(firstEmoji) ? `<img width="20" height="20" src="${firstEmoji[1]}" loading="lazy" />` : getEmojiFromUnicodeUrl(firstEmoji[1]) : ""}`;
-    newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | ${secondEmoji ? !isUnicodeEmoji(secondEmoji) ? `<img width="20" height="20" src="${secondEmoji[1]}" loading="lazy" />` : getEmojiFromUnicodeUrl(secondEmoji[1]) : ""} |\n`;
+    newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | ${firstEmoji ? !isUnicodeEmoji(firstEmoji[1]) ? `<img width="20" height="20" src="${firstEmoji[1]}" loading="lazy" />` : getEmojiFromUnicodeUrl(firstEmoji[1]) : ""} `;
+    newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | ${secondEmoji ? !isUnicodeEmoji(secondEmoji[1]) ? `<img width="20" height="20" src="${secondEmoji[1]}" loading="lazy" />` : getEmojiFromUnicodeUrl(secondEmoji[1]) : ""} |\n`;
   }
 
   newTable += "<!-- table end -->";
@@ -52,33 +56,3 @@ run().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
-function isUnicodeEmoji(firstEmoji: [string, string]) {
-  const urlMatch = firstEmoji[1].match(/\/unicode\/[0-9a-fA-F]{4}(?:-[0-9a-fA-F]{4})?/);
-
-  if (!urlMatch) {
-    // some emojis are not unicode, and therefor don't have a codepoint
-    return false;
-  }
-
-  return true;
-}
-
-function getEmojiFromUnicodeUrl(url: string) {
-  const urlMatch = url.match(/(?<=unicode\/).*(?=\.png)/);
-
-  if (!urlMatch) {
-    // some emojis are not unicode, and therefor don't have a codepoint
-    return undefined;
-  }
-
-  const splittedCodepoints = urlMatch[0].split("-");
-
-  if (splittedCodepoints.length > 1) {
-    splittedCodepoints.splice(1, 0, "200D");
-  }
-
-  const codepoints = splittedCodepoints.map((codepoint) => Number.parseInt(codepoint, 16));
-
-  return String.fromCodePoint(...codepoints);
-}
