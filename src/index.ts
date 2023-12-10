@@ -24,7 +24,22 @@ export function get(emoji: Emoji): string | undefined {
     return undefined;
   }
 
-  const splittedCodepoints = urlMatch[0].split("-");
+  if (!urlMatch[0].includes("-")) {
+    return String.fromCodePoint(Number.parseInt(urlMatch[0], 16));
+  }
+
+  let splittedCodepoints = urlMatch[0].split("-");
+
+  if (splittedCodepoints.length > 1) {
+    // some emojis should have the 200D inserted at different locations.. and some emojis doesn't have it at all.
+    splittedCodepoints = splittedCodepoints.flatMap((codepoint, index) => {
+      if (index === 0) {
+        return [codepoint];
+      }
+
+      return ["200D", codepoint];
+    });
+  }
 
   const codepoints = splittedCodepoints.map((codepoint) => Number.parseInt(codepoint, 16));
 

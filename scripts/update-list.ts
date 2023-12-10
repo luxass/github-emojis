@@ -1,4 +1,8 @@
 import process from "node:process";
+import {
+  getEmojiFromUnicodeUrl,
+  isUnicodeEmoji,
+} from "../www/utils/emoji";
 
 const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 // RUN \`npm run update:list\` TO UPDATE.
@@ -39,8 +43,8 @@ async function run() {
     const firstEmoji = emojis[i];
     const secondEmoji = emojis[i + 1];
 
-    newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | ${firstEmoji ? `<img width="20" height="20" src="${firstEmoji[1]}" loading="lazy" />` : ""}`;
-    newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | ${secondEmoji ? `<img width="20" height="20" src="${secondEmoji[1]}" loading="lazy" />` : ""} |\n`;
+    newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | ${firstEmoji ? !isUnicodeEmoji(firstEmoji[1]) ? `<img width="20" height="20" src="${firstEmoji[1]}" loading="lazy" />` : getEmojiFromUnicodeUrl(firstEmoji[1]) : ""} `;
+    newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | ${secondEmoji ? !isUnicodeEmoji(secondEmoji[1]) ? `<img width="20" height="20" src="${secondEmoji[1]}" loading="lazy" />` : getEmojiFromUnicodeUrl(secondEmoji[1]) : ""} |\n`;
   }
 
   newTable += "<!-- table end -->";

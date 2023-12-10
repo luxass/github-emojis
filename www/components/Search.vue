@@ -7,8 +7,6 @@ const props = withDefaults(
     icon?: string
     placeholder?: string
     disabled?: boolean
-    autofocus?: boolean
-    readonly?: boolean
     type?: string
   }>(),
   {
@@ -18,6 +16,16 @@ const props = withDefaults(
 );
 const emit = defineEmits<{ (...args: any): void }>();
 const input = useVModel(props, "modelValue", emit, { passive: true });
+
+const router = useRouter();
+
+watch(input, (value) => {
+  if (value) {
+    router.push({ query: { q: value } });
+  } else {
+    router.push({ query: {} });
+  }
+});
 </script>
 
 <template>
