@@ -13,13 +13,7 @@ npm install github-emojis
 ## 📚 Usage
 
 ```ts
-import {
-  emojis,
-  exists,
-  get,
-  getRaw,
-  parse
-} from "github-emojis";
+import { emojis, exists, get, getUrl, parse } from "github-emojis";
 
 // Get all emojis
 console.log(emojis);
@@ -31,7 +25,7 @@ console.log(exists("100")); // true
 console.log(get("100")); // 💯
 
 // Get an emoji url by name
-console.log(getRaw("100")); // https://github.githubassets.com/images/icons/emoji/unicode/1f4af.png?v8
+console.log(getUrl("100")); // https://github.githubassets.com/images/icons/emoji/unicode/1f4af.png?v8
 
 // Parse a string with emojis
 console.log(parse("Hello :smile:")); // Hello 😄
@@ -54,948 +48,947 @@ import emojis from "github-emojis/emojis";
 <!-- table start -->
 | Name | Emoji | Name | Emoji |
 |------|-------|------|-------|
-| 100 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4af.png?v8" loading="lazy" />| 1234 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f522.png?v8" loading="lazy" /> |
-| +1 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8" loading="lazy" />| -1 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44e.png?v8" loading="lazy" /> |
-| 1st_place_medal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f947.png?v8" loading="lazy" />| 2nd_place_medal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f948.png?v8" loading="lazy" /> |
-| 3rd_place_medal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f949.png?v8" loading="lazy" />| 8ball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b1.png?v8" loading="lazy" /> |
-| a | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f170.png?v8" loading="lazy" />| ab | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f18e.png?v8" loading="lazy" /> |
-| abacus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ee.png?v8" loading="lazy" />| abc | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f524.png?v8" loading="lazy" /> |
-| abcd | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f521.png?v8" loading="lazy" />| accept | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f251.png?v8" loading="lazy" /> |
-| accessibility | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/accessibility.png?v8" loading="lazy" />| accordion | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa97.png?v8" loading="lazy" /> |
-| adhesive_bandage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa79.png?v8" loading="lazy" />| adult | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1.png?v8" loading="lazy" /> |
-| aerial_tramway | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a1.png?v8" loading="lazy" />| afghanistan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1eb.png?v8" loading="lazy" /> |
-| airplane | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2708.png?v8" loading="lazy" />| aland_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1fd.png?v8" loading="lazy" /> |
-| alarm_clock | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png?v8" loading="lazy" />| albania | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1f1.png?v8" loading="lazy" /> |
-| alembic | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2697.png?v8" loading="lazy" />| algeria | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1ff.png?v8" loading="lazy" /> |
-| alien | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f47d.png?v8" loading="lazy" />| ambulance | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f691.png?v8" loading="lazy" /> |
-| american_samoa | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1f8.png?v8" loading="lazy" />| amphora | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3fa.png?v8" loading="lazy" /> |
-| anatomical_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fac0.png?v8" loading="lazy" />| anchor | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2693.png?v8" loading="lazy" /> |
-| andorra | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1e9.png?v8" loading="lazy" />| angel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f47c.png?v8" loading="lazy" /> |
-| anger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a2.png?v8" loading="lazy" />| angola | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1f4.png?v8" loading="lazy" /> |
-| angry | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f620.png?v8" loading="lazy" />| anguilla | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1ee.png?v8" loading="lazy" /> |
-| anguished | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f627.png?v8" loading="lazy" />| ant | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f41c.png?v8" loading="lazy" /> |
-| antarctica | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1f6.png?v8" loading="lazy" />| antigua_barbuda | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1ec.png?v8" loading="lazy" /> |
-| apple | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34e.png?v8" loading="lazy" />| aquarius | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2652.png?v8" loading="lazy" /> |
-| argentina | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1f7.png?v8" loading="lazy" />| aries | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2648.png?v8" loading="lazy" /> |
-| armenia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1f2.png?v8" loading="lazy" />| arrow_backward | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/25c0.png?v8" loading="lazy" /> |
-| arrow_double_down | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23ec.png?v8" loading="lazy" />| arrow_double_up | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23eb.png?v8" loading="lazy" /> |
-| arrow_down | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2b07.png?v8" loading="lazy" />| arrow_down_small | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f53d.png?v8" loading="lazy" /> |
-| arrow_forward | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/25b6.png?v8" loading="lazy" />| arrow_heading_down | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2935.png?v8" loading="lazy" /> |
-| arrow_heading_up | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2934.png?v8" loading="lazy" />| arrow_left | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2b05.png?v8" loading="lazy" /> |
-| arrow_lower_left | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2199.png?v8" loading="lazy" />| arrow_lower_right | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2198.png?v8" loading="lazy" /> |
-| arrow_right | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/27a1.png?v8" loading="lazy" />| arrow_right_hook | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/21aa.png?v8" loading="lazy" /> |
-| arrow_up | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2b06.png?v8" loading="lazy" />| arrow_up_down | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2195.png?v8" loading="lazy" /> |
-| arrow_up_small | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f53c.png?v8" loading="lazy" />| arrow_upper_left | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2196.png?v8" loading="lazy" /> |
-| arrow_upper_right | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2197.png?v8" loading="lazy" />| arrows_clockwise | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f503.png?v8" loading="lazy" /> |
-| arrows_counterclockwise | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f504.png?v8" loading="lazy" />| art | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a8.png?v8" loading="lazy" /> |
-| articulated_lorry | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69b.png?v8" loading="lazy" />| artificial_satellite | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6f0.png?v8" loading="lazy" /> |
-| artist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f3a8.png?v8" loading="lazy" />| aruba | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1fc.png?v8" loading="lazy" /> |
-| ascension_island | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1e8.png?v8" loading="lazy" />| asterisk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/002a-20e3.png?v8" loading="lazy" /> |
-| astonished | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f632.png?v8" loading="lazy" />| astronaut | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f680.png?v8" loading="lazy" /> |
-| athletic_shoe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f45f.png?v8" loading="lazy" />| atm | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e7.png?v8" loading="lazy" /> |
-| atom | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/atom.png?v8" loading="lazy" />| atom_symbol | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/269b.png?v8" loading="lazy" /> |
-| australia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1fa.png?v8" loading="lazy" />| austria | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1f9.png?v8" loading="lazy" /> |
-| auto_rickshaw | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6fa.png?v8" loading="lazy" />| avocado | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f951.png?v8" loading="lazy" /> |
-| axe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa93.png?v8" loading="lazy" />| azerbaijan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1ff.png?v8" loading="lazy" /> |
-| b | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f171.png?v8" loading="lazy" />| baby | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f476.png?v8" loading="lazy" /> |
-| baby_bottle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f37c.png?v8" loading="lazy" />| baby_chick | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f424.png?v8" loading="lazy" /> |
-| baby_symbol | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6bc.png?v8" loading="lazy" />| back | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f519.png?v8" loading="lazy" /> |
-| bacon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f953.png?v8" loading="lazy" />| badger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a1.png?v8" loading="lazy" /> |
-| badminton | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f8.png?v8" loading="lazy" />| bagel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f96f.png?v8" loading="lazy" /> |
-| baggage_claim | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6c4.png?v8" loading="lazy" />| baguette_bread | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f956.png?v8" loading="lazy" /> |
-| bahamas | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1f8.png?v8" loading="lazy" />| bahrain | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1ed.png?v8" loading="lazy" /> |
-| balance_scale | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2696.png?v8" loading="lazy" />| bald_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f9b2.png?v8" loading="lazy" /> |
-| bald_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f9b2.png?v8" loading="lazy" />| ballet_shoes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa70.png?v8" loading="lazy" /> |
-| balloon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f388.png?v8" loading="lazy" />| ballot_box | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5f3.png?v8" loading="lazy" /> |
-| ballot_box_with_check | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2611.png?v8" loading="lazy" />| bamboo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f38d.png?v8" loading="lazy" /> |
-| banana | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34c.png?v8" loading="lazy" />| bangbang | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png?v8" loading="lazy" /> |
-| bangladesh | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1e9.png?v8" loading="lazy" />| banjo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa95.png?v8" loading="lazy" /> |
-| bank | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e6.png?v8" loading="lazy" />| bar_chart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ca.png?v8" loading="lazy" /> |
-| barbados | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1e7.png?v8" loading="lazy" />| barber | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f488.png?v8" loading="lazy" /> |
-| baseball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26be.png?v8" loading="lazy" />| basecamp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/basecamp.png?v8" loading="lazy" /> |
-| basecampy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/basecampy.png?v8" loading="lazy" />| basket | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9fa.png?v8" loading="lazy" /> |
-| basketball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c0.png?v8" loading="lazy" />| basketball_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f9-2642.png?v8" loading="lazy" /> |
-| basketball_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f9-2640.png?v8" loading="lazy" />| bat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f987.png?v8" loading="lazy" /> |
-| bath | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6c0.png?v8" loading="lazy" />| bathtub | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6c1.png?v8" loading="lazy" /> |
-| battery | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50b.png?v8" loading="lazy" />| beach_umbrella | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d6.png?v8" loading="lazy" /> |
-| bear | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f43b.png?v8" loading="lazy" />| bearded_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d4.png?v8" loading="lazy" /> |
-| beaver | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ab.png?v8" loading="lazy" />| bed | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6cf.png?v8" loading="lazy" /> |
-| bee | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f41d.png?v8" loading="lazy" />| beer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f37a.png?v8" loading="lazy" /> |
-| beers | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f37b.png?v8" loading="lazy" />| beetle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fab2.png?v8" loading="lazy" /> |
-| beginner | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f530.png?v8" loading="lazy" />| belarus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1fe.png?v8" loading="lazy" /> |
-| belgium | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1ea.png?v8" loading="lazy" />| belize | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1ff.png?v8" loading="lazy" /> |
-| bell | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f514.png?v8" loading="lazy" />| bell_pepper | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fad1.png?v8" loading="lazy" /> |
-| bellhop_bell | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ce.png?v8" loading="lazy" />| benin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1ef.png?v8" loading="lazy" /> |
-| bento | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f371.png?v8" loading="lazy" />| bermuda | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1f2.png?v8" loading="lazy" /> |
-| beverage_box | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c3.png?v8" loading="lazy" />| bhutan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1f9.png?v8" loading="lazy" /> |
-| bicyclist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b4.png?v8" loading="lazy" />| bike | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b2.png?v8" loading="lazy" /> |
-| biking_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b4-2642.png?v8" loading="lazy" />| biking_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b4-2640.png?v8" loading="lazy" /> |
-| bikini | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f459.png?v8" loading="lazy" />| billed_cap | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e2.png?v8" loading="lazy" /> |
-| biohazard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2623.png?v8" loading="lazy" />| bird | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f426.png?v8" loading="lazy" /> |
-| birthday | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f382.png?v8" loading="lazy" />| bison | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ac.png?v8" loading="lazy" /> |
-| black_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f408-2b1b.png?v8" loading="lazy" />| black_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26ab.png?v8" loading="lazy" /> |
-| black_flag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f4.png?v8" loading="lazy" />| black_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5a4.png?v8" loading="lazy" /> |
-| black_joker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f0cf.png?v8" loading="lazy" />| black_large_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2b1b.png?v8" loading="lazy" /> |
-| black_medium_small_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/25fe.png?v8" loading="lazy" />| black_medium_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/25fc.png?v8" loading="lazy" /> |
-| black_nib | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2712.png?v8" loading="lazy" />| black_small_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/25aa.png?v8" loading="lazy" /> |
-| black_square_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f532.png?v8" loading="lazy" />| blond_haired_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f471-2642.png?v8" loading="lazy" /> |
-| blond_haired_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f471.png?v8" loading="lazy" />| blond_haired_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f471-2640.png?v8" loading="lazy" /> |
-| blonde_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f471-2640.png?v8" loading="lazy" />| blossom | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f33c.png?v8" loading="lazy" /> |
-| blowfish | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f421.png?v8" loading="lazy" />| blue_book | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d8.png?v8" loading="lazy" /> |
-| blue_car | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f699.png?v8" loading="lazy" />| blue_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f499.png?v8" loading="lazy" /> |
-| blue_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e6.png?v8" loading="lazy" />| blueberries | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fad0.png?v8" loading="lazy" /> |
-| blush | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" loading="lazy" />| boar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f417.png?v8" loading="lazy" /> |
-| boat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f5.png?v8" loading="lazy" />| bolivia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1f4.png?v8" loading="lazy" /> |
-| bomb | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a3.png?v8" loading="lazy" />| bone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b4.png?v8" loading="lazy" /> |
-| book | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png?v8" loading="lazy" />| bookmark | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f516.png?v8" loading="lazy" /> |
-| bookmark_tabs | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d1.png?v8" loading="lazy" />| books | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png?v8" loading="lazy" /> |
-| boom | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" loading="lazy" />| boomerang | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa83.png?v8" loading="lazy" /> |
-| boot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f462.png?v8" loading="lazy" />| bosnia_herzegovina | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1e6.png?v8" loading="lazy" /> |
-| botswana | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1fc.png?v8" loading="lazy" />| bouncing_ball_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f9-2642.png?v8" loading="lazy" /> |
-| bouncing_ball_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f9.png?v8" loading="lazy" />| bouncing_ball_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f9-2640.png?v8" loading="lazy" /> |
-| bouquet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f490.png?v8" loading="lazy" />| bouvet_island | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1fb.png?v8" loading="lazy" /> |
-| bow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f647.png?v8" loading="lazy" />| bow_and_arrow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f9.png?v8" loading="lazy" /> |
-| bowing_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f647-2642.png?v8" loading="lazy" />| bowing_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f647-2640.png?v8" loading="lazy" /> |
-| bowl_with_spoon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f963.png?v8" loading="lazy" />| bowling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b3.png?v8" loading="lazy" /> |
-| bowtie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/bowtie.png?v8" loading="lazy" />| boxing_glove | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f94a.png?v8" loading="lazy" /> |
-| boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f466.png?v8" loading="lazy" />| brain | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e0.png?v8" loading="lazy" /> |
-| brazil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1f7.png?v8" loading="lazy" />| bread | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35e.png?v8" loading="lazy" /> |
-| breast_feeding | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f931.png?v8" loading="lazy" />| bricks | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f1.png?v8" loading="lazy" /> |
-| bride_with_veil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f470-2640.png?v8" loading="lazy" />| bridge_at_night | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f309.png?v8" loading="lazy" /> |
-| briefcase | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bc.png?v8" loading="lazy" />| british_indian_ocean_territory | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1f4.png?v8" loading="lazy" /> |
-| british_virgin_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fb-1f1ec.png?v8" loading="lazy" />| broccoli | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f966.png?v8" loading="lazy" /> |
-| broken_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f494.png?v8" loading="lazy" />| broom | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f9.png?v8" loading="lazy" /> |
-| brown_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e4.png?v8" loading="lazy" />| brown_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f90e.png?v8" loading="lazy" /> |
-| brown_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7eb.png?v8" loading="lazy" />| brunei | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1f3.png?v8" loading="lazy" /> |
-| bubble_tea | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9cb.png?v8" loading="lazy" />| bucket | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa3.png?v8" loading="lazy" /> |
-| bug | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png?v8" loading="lazy" />| building_construction | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d7.png?v8" loading="lazy" /> |
-| bulb | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png?v8" loading="lazy" />| bulgaria | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1ec.png?v8" loading="lazy" /> |
-| bullettrain_front | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f685.png?v8" loading="lazy" />| bullettrain_side | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f684.png?v8" loading="lazy" /> |
-| burkina_faso | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1eb.png?v8" loading="lazy" />| burrito | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f32f.png?v8" loading="lazy" /> |
-| burundi | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1ee.png?v8" loading="lazy" />| bus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f68c.png?v8" loading="lazy" /> |
-| business_suit_levitating | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f574.png?v8" loading="lazy" />| busstop | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f68f.png?v8" loading="lazy" /> |
-| bust_in_silhouette | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f464.png?v8" loading="lazy" />| busts_in_silhouette | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f465.png?v8" loading="lazy" /> |
-| butter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c8.png?v8" loading="lazy" />| butterfly | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f98b.png?v8" loading="lazy" /> |
-| cactus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f335.png?v8" loading="lazy" />| cake | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f370.png?v8" loading="lazy" /> |
-| calendar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8" loading="lazy" />| call_me_hand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f919.png?v8" loading="lazy" /> |
-| calling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f2.png?v8" loading="lazy" />| cambodia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1ed.png?v8" loading="lazy" /> |
-| camel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f42b.png?v8" loading="lazy" />| camera | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f7.png?v8" loading="lazy" /> |
-| camera_flash | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f8.png?v8" loading="lazy" />| cameroon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1f2.png?v8" loading="lazy" /> |
-| camping | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d5.png?v8" loading="lazy" />| canada | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1e6.png?v8" loading="lazy" /> |
-| canary_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1e8.png?v8" loading="lazy" />| cancer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/264b.png?v8" loading="lazy" /> |
-| candle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f56f.png?v8" loading="lazy" />| candy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f36c.png?v8" loading="lazy" /> |
-| canned_food | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f96b.png?v8" loading="lazy" />| canoe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6f6.png?v8" loading="lazy" /> |
-| cape_verde | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1fb.png?v8" loading="lazy" />| capital_abcd | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f520.png?v8" loading="lazy" /> |
-| capricorn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2651.png?v8" loading="lazy" />| car | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f697.png?v8" loading="lazy" /> |
-| card_file_box | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c3.png?v8" loading="lazy" />| card_index | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c7.png?v8" loading="lazy" /> |
-| card_index_dividers | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c2.png?v8" loading="lazy" />| caribbean_netherlands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1f6.png?v8" loading="lazy" /> |
-| carousel_horse | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a0.png?v8" loading="lazy" />| carpentry_saw | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa9a.png?v8" loading="lazy" /> |
-| carrot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f955.png?v8" loading="lazy" />| cartwheeling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f938.png?v8" loading="lazy" /> |
-| cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8" loading="lazy" />| cat2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f408.png?v8" loading="lazy" /> |
-| cayman_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1fe.png?v8" loading="lazy" />| cd | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bf.png?v8" loading="lazy" /> |
-| central_african_republic | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1eb.png?v8" loading="lazy" />| ceuta_melilla | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1e6.png?v8" loading="lazy" /> |
-| chad | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1e9.png?v8" loading="lazy" />| chains | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26d3.png?v8" loading="lazy" /> |
-| chair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa91.png?v8" loading="lazy" />| champagne | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f37e.png?v8" loading="lazy" /> |
-| chart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b9.png?v8" loading="lazy" />| chart_with_downwards_trend | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c9.png?v8" loading="lazy" /> |
-| chart_with_upwards_trend | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c8.png?v8" loading="lazy" />| checkered_flag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c1.png?v8" loading="lazy" /> |
-| cheese | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c0.png?v8" loading="lazy" />| cherries | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f352.png?v8" loading="lazy" /> |
-| cherry_blossom | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f338.png?v8" loading="lazy" />| chess_pawn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/265f.png?v8" loading="lazy" /> |
-| chestnut | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f330.png?v8" loading="lazy" />| chicken | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f414.png?v8" loading="lazy" /> |
-| child | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d2.png?v8" loading="lazy" />| children_crossing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b8.png?v8" loading="lazy" /> |
-| chile | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1f1.png?v8" loading="lazy" />| chipmunk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f43f.png?v8" loading="lazy" /> |
-| chocolate_bar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f36b.png?v8" loading="lazy" />| chopsticks | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f962.png?v8" loading="lazy" /> |
-| christmas_island | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1fd.png?v8" loading="lazy" />| christmas_tree | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f384.png?v8" loading="lazy" /> |
-| church | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26ea.png?v8" loading="lazy" />| cinema | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a6.png?v8" loading="lazy" /> |
-| circus_tent | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3aa.png?v8" loading="lazy" />| city_sunrise | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f307.png?v8" loading="lazy" /> |
-| city_sunset | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f306.png?v8" loading="lazy" />| cityscape | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d9.png?v8" loading="lazy" /> |
-| cl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f191.png?v8" loading="lazy" />| clamp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5dc.png?v8" loading="lazy" /> |
-| clap | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44f.png?v8" loading="lazy" />| clapper | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ac.png?v8" loading="lazy" /> |
-| classical_building | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3db.png?v8" loading="lazy" />| climbing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d7.png?v8" loading="lazy" /> |
-| climbing_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d7-2642.png?v8" loading="lazy" />| climbing_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d7-2640.png?v8" loading="lazy" /> |
-| clinking_glasses | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f942.png?v8" loading="lazy" />| clipboard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png?v8" loading="lazy" /> |
-| clipperton_island | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1f5.png?v8" loading="lazy" />| clock1 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f550.png?v8" loading="lazy" /> |
-| clock10 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f559.png?v8" loading="lazy" />| clock1030 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f565.png?v8" loading="lazy" /> |
-| clock11 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f55a.png?v8" loading="lazy" />| clock1130 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f566.png?v8" loading="lazy" /> |
-| clock12 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f55b.png?v8" loading="lazy" />| clock1230 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f567.png?v8" loading="lazy" /> |
-| clock130 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f55c.png?v8" loading="lazy" />| clock2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f551.png?v8" loading="lazy" /> |
-| clock230 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f55d.png?v8" loading="lazy" />| clock3 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f552.png?v8" loading="lazy" /> |
-| clock330 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f55e.png?v8" loading="lazy" />| clock4 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f553.png?v8" loading="lazy" /> |
-| clock430 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f55f.png?v8" loading="lazy" />| clock5 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f554.png?v8" loading="lazy" /> |
-| clock530 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f560.png?v8" loading="lazy" />| clock6 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f555.png?v8" loading="lazy" /> |
-| clock630 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f561.png?v8" loading="lazy" />| clock7 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f556.png?v8" loading="lazy" /> |
-| clock730 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f562.png?v8" loading="lazy" />| clock8 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f557.png?v8" loading="lazy" /> |
-| clock830 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f563.png?v8" loading="lazy" />| clock9 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f558.png?v8" loading="lazy" /> |
-| clock930 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f564.png?v8" loading="lazy" />| closed_book | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d5.png?v8" loading="lazy" /> |
-| closed_lock_with_key | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f510.png?v8" loading="lazy" />| closed_umbrella | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f302.png?v8" loading="lazy" /> |
-| cloud | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2601.png?v8" loading="lazy" />| cloud_with_lightning | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f329.png?v8" loading="lazy" /> |
-| cloud_with_lightning_and_rain | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26c8.png?v8" loading="lazy" />| cloud_with_rain | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f327.png?v8" loading="lazy" /> |
-| cloud_with_snow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f328.png?v8" loading="lazy" />| clown_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f921.png?v8" loading="lazy" /> |
-| clubs | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2663.png?v8" loading="lazy" />| cn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1f3.png?v8" loading="lazy" /> |
-| coat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e5.png?v8" loading="lazy" />| cockroach | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fab3.png?v8" loading="lazy" /> |
-| cocktail | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f378.png?v8" loading="lazy" />| coconut | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f965.png?v8" loading="lazy" /> |
-| cocos_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1e8.png?v8" loading="lazy" />| coffee | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2615.png?v8" loading="lazy" /> |
-| coffin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26b0.png?v8" loading="lazy" />| coin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa99.png?v8" loading="lazy" /> |
-| cold_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f976.png?v8" loading="lazy" />| cold_sweat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f630.png?v8" loading="lazy" /> |
-| collision | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a5.png?v8" loading="lazy" />| colombia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1f4.png?v8" loading="lazy" /> |
-| comet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2604.png?v8" loading="lazy" />| comoros | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1f2.png?v8" loading="lazy" /> |
-| compass | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ed.png?v8" loading="lazy" />| computer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png?v8" loading="lazy" /> |
-| computer_mouse | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5b1.png?v8" loading="lazy" />| confetti_ball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f38a.png?v8" loading="lazy" /> |
-| confounded | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f616.png?v8" loading="lazy" />| confused | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f615.png?v8" loading="lazy" /> |
-| congo_brazzaville | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1ec.png?v8" loading="lazy" />| congo_kinshasa | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1e9.png?v8" loading="lazy" /> |
-| congratulations | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/3297.png?v8" loading="lazy" />| construction | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a7.png?v8" loading="lazy" /> |
-| construction_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f477.png?v8" loading="lazy" />| construction_worker_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f477-2642.png?v8" loading="lazy" /> |
-| construction_worker_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f477-2640.png?v8" loading="lazy" />| control_knobs | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f39b.png?v8" loading="lazy" /> |
-| convenience_store | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ea.png?v8" loading="lazy" />| cook | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f373.png?v8" loading="lazy" /> |
-| cook_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1f0.png?v8" loading="lazy" />| cookie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f36a.png?v8" loading="lazy" /> |
-| cool | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f192.png?v8" loading="lazy" />| cop | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46e.png?v8" loading="lazy" /> |
-| copyright | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/00a9.png?v8" loading="lazy" />| corn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f33d.png?v8" loading="lazy" /> |
-| costa_rica | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1f7.png?v8" loading="lazy" />| cote_divoire | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1ee.png?v8" loading="lazy" /> |
-| couch_and_lamp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6cb.png?v8" loading="lazy" />| couple | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46b.png?v8" loading="lazy" /> |
-| couple_with_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f491.png?v8" loading="lazy" />| couple_with_heart_man_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-2764-1f468.png?v8" loading="lazy" /> |
-| couple_with_heart_woman_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-2764-1f468.png?v8" loading="lazy" />| couple_with_heart_woman_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-2764-1f469.png?v8" loading="lazy" /> |
-| couplekiss | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f48f.png?v8" loading="lazy" />| couplekiss_man_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-2764-1f48b-1f468.png?v8" loading="lazy" /> |
-| couplekiss_man_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-2764-1f48b-1f468.png?v8" loading="lazy" />| couplekiss_woman_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-2764-1f48b-1f469.png?v8" loading="lazy" /> |
-| cow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f42e.png?v8" loading="lazy" />| cow2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f404.png?v8" loading="lazy" /> |
-| cowboy_hat_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f920.png?v8" loading="lazy" />| crab | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f980.png?v8" loading="lazy" /> |
-| crayon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f58d.png?v8" loading="lazy" />| credit_card | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b3.png?v8" loading="lazy" /> |
-| crescent_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f319.png?v8" loading="lazy" />| cricket | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f997.png?v8" loading="lazy" /> |
-| cricket_game | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3cf.png?v8" loading="lazy" />| croatia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ed-1f1f7.png?v8" loading="lazy" /> |
-| crocodile | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f40a.png?v8" loading="lazy" />| croissant | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f950.png?v8" loading="lazy" /> |
-| crossed_fingers | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f91e.png?v8" loading="lazy" />| crossed_flags | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f38c.png?v8" loading="lazy" /> |
-| crossed_swords | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2694.png?v8" loading="lazy" />| crown | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f451.png?v8" loading="lazy" /> |
-| cry | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8" loading="lazy" />| crying_cat_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f63f.png?v8" loading="lazy" /> |
-| crystal_ball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f52e.png?v8" loading="lazy" />| cuba | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1fa.png?v8" loading="lazy" /> |
-| cucumber | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f952.png?v8" loading="lazy" />| cup_with_straw | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f964.png?v8" loading="lazy" /> |
-| cupcake | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c1.png?v8" loading="lazy" />| cupid | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f498.png?v8" loading="lazy" /> |
-| curacao | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1fc.png?v8" loading="lazy" />| curling_stone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f94c.png?v8" loading="lazy" /> |
-| curly_haired_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f9b1.png?v8" loading="lazy" />| curly_haired_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f9b1.png?v8" loading="lazy" /> |
-| curly_loop | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/27b0.png?v8" loading="lazy" />| currency_exchange | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b1.png?v8" loading="lazy" /> |
-| curry | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35b.png?v8" loading="lazy" />| cursing_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f92c.png?v8" loading="lazy" /> |
-| custard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f36e.png?v8" loading="lazy" />| customs | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6c3.png?v8" loading="lazy" /> |
-| cut_of_meat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f969.png?v8" loading="lazy" />| cyclone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f300.png?v8" loading="lazy" /> |
-| cyprus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1fe.png?v8" loading="lazy" />| czech_republic | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1ff.png?v8" loading="lazy" /> |
-| dagger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5e1.png?v8" loading="lazy" />| dancer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f483.png?v8" loading="lazy" /> |
-| dancers | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46f.png?v8" loading="lazy" />| dancing_men | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46f-2642.png?v8" loading="lazy" /> |
-| dancing_women | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46f-2640.png?v8" loading="lazy" />| dango | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f361.png?v8" loading="lazy" /> |
-| dark_sunglasses | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f576.png?v8" loading="lazy" />| dart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png?v8" loading="lazy" /> |
-| dash | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a8.png?v8" loading="lazy" />| date | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c5.png?v8" loading="lazy" /> |
-| de | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1ea.png?v8" loading="lazy" />| deaf_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9cf-2642.png?v8" loading="lazy" /> |
-| deaf_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9cf.png?v8" loading="lazy" />| deaf_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9cf-2640.png?v8" loading="lazy" /> |
-| deciduous_tree | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f333.png?v8" loading="lazy" />| deer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f98c.png?v8" loading="lazy" /> |
-| denmark | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1f0.png?v8" loading="lazy" />| department_store | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ec.png?v8" loading="lazy" /> |
-| dependabot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/dependabot.png?v8" loading="lazy" />| derelict_house | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3da.png?v8" loading="lazy" /> |
-| desert | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3dc.png?v8" loading="lazy" />| desert_island | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3dd.png?v8" loading="lazy" /> |
-| desktop_computer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5a5.png?v8" loading="lazy" />| detective | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f575.png?v8" loading="lazy" /> |
-| diamond_shape_with_a_dot_inside | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a0.png?v8" loading="lazy" />| diamonds | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2666.png?v8" loading="lazy" /> |
-| diego_garcia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1ec.png?v8" loading="lazy" />| disappointed | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8" loading="lazy" /> |
-| disappointed_relieved | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f625.png?v8" loading="lazy" />| disguised_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f978.png?v8" loading="lazy" /> |
-| diving_mask | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93f.png?v8" loading="lazy" />| diya_lamp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa94.png?v8" loading="lazy" /> |
-| dizzy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ab.png?v8" loading="lazy" />| dizzy_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f635.png?v8" loading="lazy" /> |
-| djibouti | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1ef.png?v8" loading="lazy" />| dna | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ec.png?v8" loading="lazy" /> |
-| do_not_litter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6af.png?v8" loading="lazy" />| dodo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a4.png?v8" loading="lazy" /> |
-| dog | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f436.png?v8" loading="lazy" />| dog2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f415.png?v8" loading="lazy" /> |
-| dollar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b5.png?v8" loading="lazy" />| dolls | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f38e.png?v8" loading="lazy" /> |
-| dolphin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f42c.png?v8" loading="lazy" />| dominica | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1f2.png?v8" loading="lazy" /> |
-| dominican_republic | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1f4.png?v8" loading="lazy" />| door | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6aa.png?v8" loading="lazy" /> |
-| doughnut | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f369.png?v8" loading="lazy" />| dove | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f54a.png?v8" loading="lazy" /> |
-| dragon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f409.png?v8" loading="lazy" />| dragon_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f432.png?v8" loading="lazy" /> |
-| dress | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f457.png?v8" loading="lazy" />| dromedary_camel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f42a.png?v8" loading="lazy" /> |
-| drooling_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f924.png?v8" loading="lazy" />| drop_of_blood | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa78.png?v8" loading="lazy" /> |
-| droplet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a7.png?v8" loading="lazy" />| drum | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f941.png?v8" loading="lazy" /> |
-| duck | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f986.png?v8" loading="lazy" />| dumpling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95f.png?v8" loading="lazy" /> |
-| dvd | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c0.png?v8" loading="lazy" />| e-mail | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e7.png?v8" loading="lazy" /> |
-| eagle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f985.png?v8" loading="lazy" />| ear | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f442.png?v8" loading="lazy" /> |
-| ear_of_rice | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f33e.png?v8" loading="lazy" />| ear_with_hearing_aid | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9bb.png?v8" loading="lazy" /> |
-| earth_africa | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f30d.png?v8" loading="lazy" />| earth_americas | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f30e.png?v8" loading="lazy" /> |
-| earth_asia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f30f.png?v8" loading="lazy" />| ecuador | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1e8.png?v8" loading="lazy" /> |
-| egg | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png?v8" loading="lazy" />| eggplant | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f346.png?v8" loading="lazy" /> |
-| egypt | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1ec.png?v8" loading="lazy" />| eight | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0038-20e3.png?v8" loading="lazy" /> |
-| eight_pointed_black_star | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2734.png?v8" loading="lazy" />| eight_spoked_asterisk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2733.png?v8" loading="lazy" /> |
-| eject_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23cf.png?v8" loading="lazy" />| el_salvador | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1fb.png?v8" loading="lazy" /> |
-| electric_plug | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50c.png?v8" loading="lazy" />| electron | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/electron.png?v8" loading="lazy" /> |
-| elephant | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f418.png?v8" loading="lazy" />| elevator | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6d7.png?v8" loading="lazy" /> |
-| elf | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9dd.png?v8" loading="lazy" />| elf_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9dd-2642.png?v8" loading="lazy" /> |
-| elf_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9dd-2640.png?v8" loading="lazy" />| email | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e7.png?v8" loading="lazy" /> |
-| end | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f51a.png?v8" loading="lazy" />| england | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.png?v8" loading="lazy" /> |
-| envelope | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2709.png?v8" loading="lazy" />| envelope_with_arrow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e9.png?v8" loading="lazy" /> |
-| equatorial_guinea | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1f6.png?v8" loading="lazy" />| eritrea | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1f7.png?v8" loading="lazy" /> |
-| es | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1f8.png?v8" loading="lazy" />| estonia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1ea.png?v8" loading="lazy" /> |
-| ethiopia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1f9.png?v8" loading="lazy" />| eu | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1fa.png?v8" loading="lazy" /> |
-| euro | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b6.png?v8" loading="lazy" />| european_castle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f0.png?v8" loading="lazy" /> |
-| european_post_office | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e4.png?v8" loading="lazy" />| european_union | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1fa.png?v8" loading="lazy" /> |
-| evergreen_tree | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f332.png?v8" loading="lazy" />| exclamation | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2757.png?v8" loading="lazy" /> |
-| exploding_head | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f92f.png?v8" loading="lazy" />| expressionless | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f611.png?v8" loading="lazy" /> |
-| eye | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f441.png?v8" loading="lazy" />| eye_speech_bubble | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f441-1f5e8.png?v8" loading="lazy" /> |
-| eyeglasses | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f453.png?v8" loading="lazy" />| eyes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png?v8" loading="lazy" /> |
-| face_exhaling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f62e-1f4a8.png?v8" loading="lazy" />| face_in_clouds | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f636-1f32b.png?v8" loading="lazy" /> |
-| face_with_head_bandage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f915.png?v8" loading="lazy" />| face_with_spiral_eyes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f635-1f4ab.png?v8" loading="lazy" /> |
-| face_with_thermometer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f912.png?v8" loading="lazy" />| facepalm | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f926.png?v8" loading="lazy" /> |
-| facepunch | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44a.png?v8" loading="lazy" />| factory | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ed.png?v8" loading="lazy" /> |
-| factory_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f3ed.png?v8" loading="lazy" />| fairy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9da.png?v8" loading="lazy" /> |
-| fairy_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9da-2642.png?v8" loading="lazy" />| fairy_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9da-2640.png?v8" loading="lazy" /> |
-| falafel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c6.png?v8" loading="lazy" />| falkland_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1eb-1f1f0.png?v8" loading="lazy" /> |
-| fallen_leaf | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f342.png?v8" loading="lazy" />| family | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46a.png?v8" loading="lazy" /> |
-| family_man_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f466.png?v8" loading="lazy" />| family_man_boy_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f466-1f466.png?v8" loading="lazy" /> |
-| family_man_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f467.png?v8" loading="lazy" />| family_man_girl_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f467-1f466.png?v8" loading="lazy" /> |
-| family_man_girl_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f467-1f467.png?v8" loading="lazy" />| family_man_man_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f468-1f466.png?v8" loading="lazy" /> |
-| family_man_man_boy_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f468-1f466-1f466.png?v8" loading="lazy" />| family_man_man_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f468-1f467.png?v8" loading="lazy" /> |
-| family_man_man_girl_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f468-1f467-1f466.png?v8" loading="lazy" />| family_man_man_girl_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f468-1f467-1f467.png?v8" loading="lazy" /> |
-| family_man_woman_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f469-1f466.png?v8" loading="lazy" />| family_man_woman_boy_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f469-1f466-1f466.png?v8" loading="lazy" /> |
-| family_man_woman_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f469-1f467.png?v8" loading="lazy" />| family_man_woman_girl_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f469-1f467-1f466.png?v8" loading="lazy" /> |
-| family_man_woman_girl_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f469-1f467-1f467.png?v8" loading="lazy" />| family_woman_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f466.png?v8" loading="lazy" /> |
-| family_woman_boy_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f466-1f466.png?v8" loading="lazy" />| family_woman_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f467.png?v8" loading="lazy" /> |
-| family_woman_girl_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f467-1f466.png?v8" loading="lazy" />| family_woman_girl_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f467-1f467.png?v8" loading="lazy" /> |
-| family_woman_woman_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f469-1f466.png?v8" loading="lazy" />| family_woman_woman_boy_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f469-1f466-1f466.png?v8" loading="lazy" /> |
-| family_woman_woman_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f469-1f467.png?v8" loading="lazy" />| family_woman_woman_girl_boy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f469-1f467-1f466.png?v8" loading="lazy" /> |
-| family_woman_woman_girl_girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f469-1f467-1f467.png?v8" loading="lazy" />| farmer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f33e.png?v8" loading="lazy" /> |
-| faroe_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1eb-1f1f4.png?v8" loading="lazy" />| fast_forward | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23e9.png?v8" loading="lazy" /> |
-| fax | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e0.png?v8" loading="lazy" />| fearful | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f628.png?v8" loading="lazy" /> |
-| feather | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fab6.png?v8" loading="lazy" />| feelsgood | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/feelsgood.png?v8" loading="lazy" /> |
-| feet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f43e.png?v8" loading="lazy" />| female_detective | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f575-2640.png?v8" loading="lazy" /> |
-| female_sign | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2640.png?v8" loading="lazy" />| ferris_wheel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a1.png?v8" loading="lazy" /> |
-| ferry | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f4.png?v8" loading="lazy" />| field_hockey | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d1.png?v8" loading="lazy" /> |
-| fiji | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1eb-1f1ef.png?v8" loading="lazy" />| file_cabinet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c4.png?v8" loading="lazy" /> |
-| file_folder | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c1.png?v8" loading="lazy" />| film_projector | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4fd.png?v8" loading="lazy" /> |
-| film_strip | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f39e.png?v8" loading="lazy" />| finland | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1eb-1f1ee.png?v8" loading="lazy" /> |
-| finnadie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/finnadie.png?v8" loading="lazy" />| fire | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8" loading="lazy" /> |
-| fire_engine | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f692.png?v8" loading="lazy" />| fire_extinguisher | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ef.png?v8" loading="lazy" /> |
-| firecracker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e8.png?v8" loading="lazy" />| firefighter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f692.png?v8" loading="lazy" /> |
-| fireworks | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f386.png?v8" loading="lazy" />| first_quarter_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f313.png?v8" loading="lazy" /> |
-| first_quarter_moon_with_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f31b.png?v8" loading="lazy" />| fish | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f41f.png?v8" loading="lazy" /> |
-| fish_cake | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f365.png?v8" loading="lazy" />| fishing_pole_and_fish | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a3.png?v8" loading="lazy" /> |
-| fishsticks | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/fishsticks.png?v8" loading="lazy" />| fist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/270a.png?v8" loading="lazy" /> |
-| fist_left | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f91b.png?v8" loading="lazy" />| fist_oncoming | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44a.png?v8" loading="lazy" /> |
-| fist_raised | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/270a.png?v8" loading="lazy" />| fist_right | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f91c.png?v8" loading="lazy" /> |
-| five | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0035-20e3.png?v8" loading="lazy" />| flags | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f38f.png?v8" loading="lazy" /> |
-| flamingo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a9.png?v8" loading="lazy" />| flashlight | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f526.png?v8" loading="lazy" /> |
-| flat_shoe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f97f.png?v8" loading="lazy" />| flatbread | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fad3.png?v8" loading="lazy" /> |
-| fleur_de_lis | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/269c.png?v8" loading="lazy" />| flight_arrival | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ec.png?v8" loading="lazy" /> |
-| flight_departure | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6eb.png?v8" loading="lazy" />| flipper | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f42c.png?v8" loading="lazy" /> |
-| floppy_disk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4be.png?v8" loading="lazy" />| flower_playing_cards | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b4.png?v8" loading="lazy" /> |
-| flushed | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f633.png?v8" loading="lazy" />| fly | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fab0.png?v8" loading="lazy" /> |
-| flying_disc | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f94f.png?v8" loading="lazy" />| flying_saucer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6f8.png?v8" loading="lazy" /> |
-| fog | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f32b.png?v8" loading="lazy" />| foggy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f301.png?v8" loading="lazy" /> |
-| fondue | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fad5.png?v8" loading="lazy" />| foot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b6.png?v8" loading="lazy" /> |
-| football | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c8.png?v8" loading="lazy" />| footprints | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f463.png?v8" loading="lazy" /> |
-| fork_and_knife | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f374.png?v8" loading="lazy" />| fortune_cookie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f960.png?v8" loading="lazy" /> |
-| fountain | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f2.png?v8" loading="lazy" />| fountain_pen | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f58b.png?v8" loading="lazy" /> |
-| four | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0034-20e3.png?v8" loading="lazy" />| four_leaf_clover | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f340.png?v8" loading="lazy" /> |
-| fox_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f98a.png?v8" loading="lazy" />| fr | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1eb-1f1f7.png?v8" loading="lazy" /> |
-| framed_picture | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5bc.png?v8" loading="lazy" />| free | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f193.png?v8" loading="lazy" /> |
-| french_guiana | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1eb.png?v8" loading="lazy" />| french_polynesia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1eb.png?v8" loading="lazy" /> |
-| french_southern_territories | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1eb.png?v8" loading="lazy" />| fried_egg | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f373.png?v8" loading="lazy" /> |
-| fried_shrimp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f364.png?v8" loading="lazy" />| fries | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35f.png?v8" loading="lazy" /> |
-| frog | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f438.png?v8" loading="lazy" />| frowning | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f626.png?v8" loading="lazy" /> |
-| frowning_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2639.png?v8" loading="lazy" />| frowning_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64d-2642.png?v8" loading="lazy" /> |
-| frowning_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64d.png?v8" loading="lazy" />| frowning_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64d-2640.png?v8" loading="lazy" /> |
-| fu | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f595.png?v8" loading="lazy" />| fuelpump | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26fd.png?v8" loading="lazy" /> |
-| full_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f315.png?v8" loading="lazy" />| full_moon_with_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f31d.png?v8" loading="lazy" /> |
-| funeral_urn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26b1.png?v8" loading="lazy" />| gabon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1e6.png?v8" loading="lazy" /> |
-| gambia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1f2.png?v8" loading="lazy" />| game_die | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b2.png?v8" loading="lazy" /> |
-| garlic | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c4.png?v8" loading="lazy" />| gb | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1e7.png?v8" loading="lazy" /> |
-| gear | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2699.png?v8" loading="lazy" />| gem | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f48e.png?v8" loading="lazy" /> |
-| gemini | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/264a.png?v8" loading="lazy" />| genie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9de.png?v8" loading="lazy" /> |
-| genie_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9de-2642.png?v8" loading="lazy" />| genie_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9de-2640.png?v8" loading="lazy" /> |
-| georgia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1ea.png?v8" loading="lazy" />| ghana | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1ed.png?v8" loading="lazy" /> |
-| ghost | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f47b.png?v8" loading="lazy" />| gibraltar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1ee.png?v8" loading="lazy" /> |
-| gift | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f381.png?v8" loading="lazy" />| gift_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f49d.png?v8" loading="lazy" /> |
-| giraffe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f992.png?v8" loading="lazy" />| girl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f467.png?v8" loading="lazy" /> |
-| globe_with_meridians | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f310.png?v8" loading="lazy" />| gloves | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e4.png?v8" loading="lazy" /> |
-| goal_net | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f945.png?v8" loading="lazy" />| goat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f410.png?v8" loading="lazy" /> |
-| goberserk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/goberserk.png?v8" loading="lazy" />| godmode | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/godmode.png?v8" loading="lazy" /> |
-| goggles | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f97d.png?v8" loading="lazy" />| golf | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f3.png?v8" loading="lazy" /> |
-| golfing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3cc.png?v8" loading="lazy" />| golfing_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3cc-2642.png?v8" loading="lazy" /> |
-| golfing_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3cc-2640.png?v8" loading="lazy" />| gorilla | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f98d.png?v8" loading="lazy" /> |
-| grapes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f347.png?v8" loading="lazy" />| greece | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1f7.png?v8" loading="lazy" /> |
-| green_apple | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34f.png?v8" loading="lazy" />| green_book | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d7.png?v8" loading="lazy" /> |
-| green_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e2.png?v8" loading="lazy" />| green_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f49a.png?v8" loading="lazy" /> |
-| green_salad | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f957.png?v8" loading="lazy" />| green_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png?v8" loading="lazy" /> |
-| greenland | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1f1.png?v8" loading="lazy" />| grenada | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1e9.png?v8" loading="lazy" /> |
-| grey_exclamation | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2755.png?v8" loading="lazy" />| grey_question | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2754.png?v8" loading="lazy" /> |
-| grimacing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f62c.png?v8" loading="lazy" />| grin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f601.png?v8" loading="lazy" /> |
-| grinning | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8" loading="lazy" />| guadeloupe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1f5.png?v8" loading="lazy" /> |
-| guam | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1fa.png?v8" loading="lazy" />| guard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f482.png?v8" loading="lazy" /> |
-| guardsman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f482-2642.png?v8" loading="lazy" />| guardswoman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f482-2640.png?v8" loading="lazy" /> |
-| guatemala | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1f9.png?v8" loading="lazy" />| guernsey | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1ec.png?v8" loading="lazy" /> |
-| guide_dog | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ae.png?v8" loading="lazy" />| guinea | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1f3.png?v8" loading="lazy" /> |
-| guinea_bissau | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1fc.png?v8" loading="lazy" />| guitar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b8.png?v8" loading="lazy" /> |
-| gun | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f52b.png?v8" loading="lazy" />| guyana | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1fe.png?v8" loading="lazy" /> |
-| haircut | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f487.png?v8" loading="lazy" />| haircut_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f487-2642.png?v8" loading="lazy" /> |
-| haircut_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f487-2640.png?v8" loading="lazy" />| haiti | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ed-1f1f9.png?v8" loading="lazy" /> |
-| hamburger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f354.png?v8" loading="lazy" />| hammer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f528.png?v8" loading="lazy" /> |
-| hammer_and_pick | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2692.png?v8" loading="lazy" />| hammer_and_wrench | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e0.png?v8" loading="lazy" /> |
-| hamster | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f439.png?v8" loading="lazy" />| hand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/270b.png?v8" loading="lazy" /> |
-| hand_over_mouth | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f92d.png?v8" loading="lazy" />| handbag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f45c.png?v8" loading="lazy" /> |
-| handball_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93e.png?v8" loading="lazy" />| handshake | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f91d.png?v8" loading="lazy" /> |
-| hankey | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a9.png?v8" loading="lazy" />| hash | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0023-20e3.png?v8" loading="lazy" /> |
-| hatched_chick | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f425.png?v8" loading="lazy" />| hatching_chick | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f423.png?v8" loading="lazy" /> |
-| headphones | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a7.png?v8" loading="lazy" />| headstone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa6.png?v8" loading="lazy" /> |
-| health_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-2695.png?v8" loading="lazy" />| hear_no_evil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f649.png?v8" loading="lazy" /> |
-| heard_mcdonald_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ed-1f1f2.png?v8" loading="lazy" />| heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png?v8" loading="lazy" /> |
-| heart_decoration | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f49f.png?v8" loading="lazy" />| heart_eyes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60d.png?v8" loading="lazy" /> |
-| heart_eyes_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f63b.png?v8" loading="lazy" />| heart_on_fire | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764-1f525.png?v8" loading="lazy" /> |
-| heartbeat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f493.png?v8" loading="lazy" />| heartpulse | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f497.png?v8" loading="lazy" /> |
-| hearts | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2665.png?v8" loading="lazy" />| heavy_check_mark | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png?v8" loading="lazy" /> |
-| heavy_division_sign | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2797.png?v8" loading="lazy" />| heavy_dollar_sign | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b2.png?v8" loading="lazy" /> |
-| heavy_exclamation_mark | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2757.png?v8" loading="lazy" />| heavy_heart_exclamation | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2763.png?v8" loading="lazy" /> |
-| heavy_minus_sign | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2796.png?v8" loading="lazy" />| heavy_multiplication_x | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2716.png?v8" loading="lazy" /> |
-| heavy_plus_sign | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2795.png?v8" loading="lazy" />| hedgehog | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f994.png?v8" loading="lazy" /> |
-| helicopter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f681.png?v8" loading="lazy" />| herb | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f33f.png?v8" loading="lazy" /> |
-| hibiscus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f33a.png?v8" loading="lazy" />| high_brightness | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f506.png?v8" loading="lazy" /> |
-| high_heel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f460.png?v8" loading="lazy" />| hiking_boot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f97e.png?v8" loading="lazy" /> |
-| hindu_temple | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6d5.png?v8" loading="lazy" />| hippopotamus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f99b.png?v8" loading="lazy" /> |
-| hocho | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f52a.png?v8" loading="lazy" />| hole | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f573.png?v8" loading="lazy" /> |
-| honduras | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ed-1f1f3.png?v8" loading="lazy" />| honey_pot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f36f.png?v8" loading="lazy" /> |
-| honeybee | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f41d.png?v8" loading="lazy" />| hong_kong | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ed-1f1f0.png?v8" loading="lazy" /> |
-| hook | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa9d.png?v8" loading="lazy" />| horse | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f434.png?v8" loading="lazy" /> |
-| horse_racing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c7.png?v8" loading="lazy" />| hospital | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e5.png?v8" loading="lazy" /> |
-| hot_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f975.png?v8" loading="lazy" />| hot_pepper | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f336.png?v8" loading="lazy" /> |
-| hotdog | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f32d.png?v8" loading="lazy" />| hotel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e8.png?v8" loading="lazy" /> |
-| hotsprings | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2668.png?v8" loading="lazy" />| hourglass | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/231b.png?v8" loading="lazy" /> |
-| hourglass_flowing_sand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23f3.png?v8" loading="lazy" />| house | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png?v8" loading="lazy" /> |
-| house_with_garden | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e1.png?v8" loading="lazy" />| houses | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d8.png?v8" loading="lazy" /> |
-| hugs | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f917.png?v8" loading="lazy" />| hungary | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ed-1f1fa.png?v8" loading="lazy" /> |
-| hurtrealbad | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/hurtrealbad.png?v8" loading="lazy" />| hushed | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f62f.png?v8" loading="lazy" /> |
-| hut | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6d6.png?v8" loading="lazy" />| ice_cream | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f368.png?v8" loading="lazy" /> |
-| ice_cube | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ca.png?v8" loading="lazy" />| ice_hockey | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d2.png?v8" loading="lazy" /> |
-| ice_skate | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f8.png?v8" loading="lazy" />| icecream | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f366.png?v8" loading="lazy" /> |
-| iceland | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1f8.png?v8" loading="lazy" />| id | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f194.png?v8" loading="lazy" /> |
-| ideograph_advantage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f250.png?v8" loading="lazy" />| imp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f47f.png?v8" loading="lazy" /> |
-| inbox_tray | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e5.png?v8" loading="lazy" />| incoming_envelope | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e8.png?v8" loading="lazy" /> |
-| india | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1f3.png?v8" loading="lazy" />| indonesia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1e9.png?v8" loading="lazy" /> |
-| infinity | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/267e.png?v8" loading="lazy" />| information_desk_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f481.png?v8" loading="lazy" /> |
-| information_source | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2139.png?v8" loading="lazy" />| innocent | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f607.png?v8" loading="lazy" /> |
-| interrobang | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2049.png?v8" loading="lazy" />| iphone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f1.png?v8" loading="lazy" /> |
-| iran | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1f7.png?v8" loading="lazy" />| iraq | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1f6.png?v8" loading="lazy" /> |
-| ireland | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1ea.png?v8" loading="lazy" />| isle_of_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1f2.png?v8" loading="lazy" /> |
-| israel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1f1.png?v8" loading="lazy" />| it | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ee-1f1f9.png?v8" loading="lazy" /> |
-| izakaya_lantern | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ee.png?v8" loading="lazy" />| jack_o_lantern | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f383.png?v8" loading="lazy" /> |
-| jamaica | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ef-1f1f2.png?v8" loading="lazy" />| japan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5fe.png?v8" loading="lazy" /> |
-| japanese_castle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ef.png?v8" loading="lazy" />| japanese_goblin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f47a.png?v8" loading="lazy" /> |
-| japanese_ogre | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f479.png?v8" loading="lazy" />| jeans | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f456.png?v8" loading="lazy" /> |
-| jersey | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ef-1f1ea.png?v8" loading="lazy" />| jigsaw | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e9.png?v8" loading="lazy" /> |
-| jordan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ef-1f1f4.png?v8" loading="lazy" />| joy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" loading="lazy" /> |
-| joy_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f639.png?v8" loading="lazy" />| joystick | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f579.png?v8" loading="lazy" /> |
-| jp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ef-1f1f5.png?v8" loading="lazy" />| judge | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-2696.png?v8" loading="lazy" /> |
-| juggling_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f939.png?v8" loading="lazy" />| kaaba | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f54b.png?v8" loading="lazy" /> |
-| kangaroo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f998.png?v8" loading="lazy" />| kazakhstan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1ff.png?v8" loading="lazy" /> |
-| kenya | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1ea.png?v8" loading="lazy" />| key | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f511.png?v8" loading="lazy" /> |
-| keyboard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2328.png?v8" loading="lazy" />| keycap_ten | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f51f.png?v8" loading="lazy" /> |
-| kick_scooter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6f4.png?v8" loading="lazy" />| kimono | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f458.png?v8" loading="lazy" /> |
-| kiribati | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1ee.png?v8" loading="lazy" />| kiss | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f48b.png?v8" loading="lazy" /> |
-| kissing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f617.png?v8" loading="lazy" />| kissing_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f63d.png?v8" loading="lazy" /> |
-| kissing_closed_eyes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61a.png?v8" loading="lazy" />| kissing_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f618.png?v8" loading="lazy" /> |
-| kissing_smiling_eyes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f619.png?v8" loading="lazy" />| kite | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa81.png?v8" loading="lazy" /> |
-| kiwi_fruit | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95d.png?v8" loading="lazy" />| kneeling_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ce-2642.png?v8" loading="lazy" /> |
-| kneeling_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ce.png?v8" loading="lazy" />| kneeling_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ce-2640.png?v8" loading="lazy" /> |
-| knife | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f52a.png?v8" loading="lazy" />| knot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa2.png?v8" loading="lazy" /> |
-| koala | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f428.png?v8" loading="lazy" />| koko | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f201.png?v8" loading="lazy" /> |
-| kosovo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fd-1f1f0.png?v8" loading="lazy" />| kr | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1f7.png?v8" loading="lazy" /> |
-| kuwait | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1fc.png?v8" loading="lazy" />| kyrgyzstan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1ec.png?v8" loading="lazy" /> |
-| lab_coat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f97c.png?v8" loading="lazy" />| label | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f7.png?v8" loading="lazy" /> |
-| lacrosse | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f94d.png?v8" loading="lazy" />| ladder | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa9c.png?v8" loading="lazy" /> |
-| lady_beetle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f41e.png?v8" loading="lazy" />| lantern | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ee.png?v8" loading="lazy" /> |
-| laos | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1e6.png?v8" loading="lazy" />| large_blue_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f535.png?v8" loading="lazy" /> |
-| large_blue_diamond | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f537.png?v8" loading="lazy" />| large_orange_diamond | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f536.png?v8" loading="lazy" /> |
-| last_quarter_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f317.png?v8" loading="lazy" />| last_quarter_moon_with_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f31c.png?v8" loading="lazy" /> |
-| latin_cross | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/271d.png?v8" loading="lazy" />| latvia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1fb.png?v8" loading="lazy" /> |
-| laughing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" loading="lazy" />| leafy_green | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f96c.png?v8" loading="lazy" /> |
-| leaves | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f343.png?v8" loading="lazy" />| lebanon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1e7.png?v8" loading="lazy" /> |
-| ledger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d2.png?v8" loading="lazy" />| left_luggage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6c5.png?v8" loading="lazy" /> |
-| left_right_arrow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2194.png?v8" loading="lazy" />| left_speech_bubble | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5e8.png?v8" loading="lazy" /> |
-| leftwards_arrow_with_hook | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/21a9.png?v8" loading="lazy" />| leg | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b5.png?v8" loading="lazy" /> |
-| lemon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34b.png?v8" loading="lazy" />| leo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/264c.png?v8" loading="lazy" /> |
-| leopard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f406.png?v8" loading="lazy" />| lesotho | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1f8.png?v8" loading="lazy" /> |
-| level_slider | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f39a.png?v8" loading="lazy" />| liberia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1f7.png?v8" loading="lazy" /> |
-| libra | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/264e.png?v8" loading="lazy" />| libya | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1fe.png?v8" loading="lazy" /> |
-| liechtenstein | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1ee.png?v8" loading="lazy" />| light_rail | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f688.png?v8" loading="lazy" /> |
-| link | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f517.png?v8" loading="lazy" />| lion | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f981.png?v8" loading="lazy" /> |
-| lips | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f444.png?v8" loading="lazy" />| lipstick | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f484.png?v8" loading="lazy" /> |
-| lithuania | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1f9.png?v8" loading="lazy" />| lizard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f98e.png?v8" loading="lazy" /> |
-| llama | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f999.png?v8" loading="lazy" />| lobster | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f99e.png?v8" loading="lazy" /> |
-| lock | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f512.png?v8" loading="lazy" />| lock_with_ink_pen | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50f.png?v8" loading="lazy" /> |
-| lollipop | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f36d.png?v8" loading="lazy" />| long_drum | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa98.png?v8" loading="lazy" /> |
-| loop | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/27bf.png?v8" loading="lazy" />| lotion_bottle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f4.png?v8" loading="lazy" /> |
-| lotus_position | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d8.png?v8" loading="lazy" />| lotus_position_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d8-2642.png?v8" loading="lazy" /> |
-| lotus_position_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d8-2640.png?v8" loading="lazy" />| loud_sound | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50a.png?v8" loading="lazy" /> |
-| loudspeaker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png?v8" loading="lazy" />| love_hotel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e9.png?v8" loading="lazy" /> |
-| love_letter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f48c.png?v8" loading="lazy" />| love_you_gesture | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f91f.png?v8" loading="lazy" /> |
-| low_brightness | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f505.png?v8" loading="lazy" />| luggage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f3.png?v8" loading="lazy" /> |
-| lungs | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fac1.png?v8" loading="lazy" />| luxembourg | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1fa.png?v8" loading="lazy" /> |
-| lying_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f925.png?v8" loading="lazy" />| m | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/24c2.png?v8" loading="lazy" /> |
-| macau | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f4.png?v8" loading="lazy" />| macedonia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f0.png?v8" loading="lazy" /> |
-| madagascar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1ec.png?v8" loading="lazy" />| mag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png?v8" loading="lazy" /> |
-| mag_right | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50e.png?v8" loading="lazy" />| mage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d9.png?v8" loading="lazy" /> |
-| mage_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d9-2642.png?v8" loading="lazy" />| mage_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d9-2640.png?v8" loading="lazy" /> |
-| magic_wand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa84.png?v8" loading="lazy" />| magnet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f2.png?v8" loading="lazy" /> |
-| mahjong | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f004.png?v8" loading="lazy" />| mailbox | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png?v8" loading="lazy" /> |
-| mailbox_closed | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ea.png?v8" loading="lazy" />| mailbox_with_mail | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ec.png?v8" loading="lazy" /> |
-| mailbox_with_no_mail | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ed.png?v8" loading="lazy" />| malawi | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1fc.png?v8" loading="lazy" /> |
-| malaysia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1fe.png?v8" loading="lazy" />| maldives | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1fb.png?v8" loading="lazy" /> |
-| male_detective | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f575-2642.png?v8" loading="lazy" />| male_sign | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2642.png?v8" loading="lazy" /> |
-| mali | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f1.png?v8" loading="lazy" />| malta | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f9.png?v8" loading="lazy" /> |
-| mammoth | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a3.png?v8" loading="lazy" />| man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468.png?v8" loading="lazy" /> |
-| man_artist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f3a8.png?v8" loading="lazy" />| man_astronaut | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f680.png?v8" loading="lazy" /> |
-| man_beard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d4-2642.png?v8" loading="lazy" />| man_cartwheeling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f938-2642.png?v8" loading="lazy" /> |
-| man_cook | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f373.png?v8" loading="lazy" />| man_dancing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f57a.png?v8" loading="lazy" /> |
-| man_facepalming | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f926-2642.png?v8" loading="lazy" />| man_factory_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f3ed.png?v8" loading="lazy" /> |
-| man_farmer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f33e.png?v8" loading="lazy" />| man_feeding_baby | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f37c.png?v8" loading="lazy" /> |
-| man_firefighter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f692.png?v8" loading="lazy" />| man_health_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-2695.png?v8" loading="lazy" /> |
-| man_in_manual_wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f9bd.png?v8" loading="lazy" />| man_in_motorized_wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f9bc.png?v8" loading="lazy" /> |
-| man_in_tuxedo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f935-2642.png?v8" loading="lazy" />| man_judge | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-2696.png?v8" loading="lazy" /> |
-| man_juggling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f939-2642.png?v8" loading="lazy" />| man_mechanic | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f527.png?v8" loading="lazy" /> |
-| man_office_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f4bc.png?v8" loading="lazy" />| man_pilot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-2708.png?v8" loading="lazy" /> |
-| man_playing_handball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93e-2642.png?v8" loading="lazy" />| man_playing_water_polo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93d-2642.png?v8" loading="lazy" /> |
-| man_scientist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f52c.png?v8" loading="lazy" />| man_shrugging | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f937-2642.png?v8" loading="lazy" /> |
-| man_singer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f3a4.png?v8" loading="lazy" />| man_student | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f393.png?v8" loading="lazy" /> |
-| man_teacher | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f3eb.png?v8" loading="lazy" />| man_technologist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f4bb.png?v8" loading="lazy" /> |
-| man_with_gua_pi_mao | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f472.png?v8" loading="lazy" />| man_with_probing_cane | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f9af.png?v8" loading="lazy" /> |
-| man_with_turban | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f473-2642.png?v8" loading="lazy" />| man_with_veil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f470-2642.png?v8" loading="lazy" /> |
-| mandarin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34a.png?v8" loading="lazy" />| mango | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f96d.png?v8" loading="lazy" /> |
-| mans_shoe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f45e.png?v8" loading="lazy" />| mantelpiece_clock | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f570.png?v8" loading="lazy" /> |
-| manual_wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9bd.png?v8" loading="lazy" />| maple_leaf | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f341.png?v8" loading="lazy" /> |
-| marshall_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1ed.png?v8" loading="lazy" />| martial_arts_uniform | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f94b.png?v8" loading="lazy" /> |
-| martinique | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f6.png?v8" loading="lazy" />| mask | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f637.png?v8" loading="lazy" /> |
-| massage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f486.png?v8" loading="lazy" />| massage_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f486-2642.png?v8" loading="lazy" /> |
-| massage_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f486-2640.png?v8" loading="lazy" />| mate | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c9.png?v8" loading="lazy" /> |
-| mauritania | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f7.png?v8" loading="lazy" />| mauritius | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1fa.png?v8" loading="lazy" /> |
-| mayotte | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fe-1f1f9.png?v8" loading="lazy" />| meat_on_bone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f356.png?v8" loading="lazy" /> |
-| mechanic | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f527.png?v8" loading="lazy" />| mechanical_arm | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9be.png?v8" loading="lazy" /> |
-| mechanical_leg | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9bf.png?v8" loading="lazy" />| medal_military | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f396.png?v8" loading="lazy" /> |
-| medal_sports | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c5.png?v8" loading="lazy" />| medical_symbol | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2695.png?v8" loading="lazy" /> |
-| mega | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e3.png?v8" loading="lazy" />| melon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f348.png?v8" loading="lazy" /> |
-| memo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8" loading="lazy" />| men_wrestling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93c-2642.png?v8" loading="lazy" /> |
-| mending_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764-1fa79.png?v8" loading="lazy" />| menorah | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f54e.png?v8" loading="lazy" /> |
-| mens | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b9.png?v8" loading="lazy" />| mermaid | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9dc-2640.png?v8" loading="lazy" /> |
-| merman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9dc-2642.png?v8" loading="lazy" />| merperson | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9dc.png?v8" loading="lazy" /> |
-| metal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f918.png?v8" loading="lazy" />| metro | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f687.png?v8" loading="lazy" /> |
-| mexico | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1fd.png?v8" loading="lazy" />| microbe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a0.png?v8" loading="lazy" /> |
-| micronesia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1eb-1f1f2.png?v8" loading="lazy" />| microphone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a4.png?v8" loading="lazy" /> |
-| microscope | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f52c.png?v8" loading="lazy" />| middle_finger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f595.png?v8" loading="lazy" /> |
-| military_helmet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa96.png?v8" loading="lazy" />| milk_glass | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95b.png?v8" loading="lazy" /> |
-| milky_way | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f30c.png?v8" loading="lazy" />| minibus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f690.png?v8" loading="lazy" /> |
-| minidisc | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bd.png?v8" loading="lazy" />| mirror | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa9e.png?v8" loading="lazy" /> |
-| mobile_phone_off | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f4.png?v8" loading="lazy" />| moldova | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1e9.png?v8" loading="lazy" /> |
-| monaco | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1e8.png?v8" loading="lazy" />| money_mouth_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f911.png?v8" loading="lazy" /> |
-| money_with_wings | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b8.png?v8" loading="lazy" />| moneybag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b0.png?v8" loading="lazy" /> |
-| mongolia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f3.png?v8" loading="lazy" />| monkey | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f412.png?v8" loading="lazy" /> |
-| monkey_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f435.png?v8" loading="lazy" />| monocle_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d0.png?v8" loading="lazy" /> |
-| monorail | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69d.png?v8" loading="lazy" />| montenegro | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1ea.png?v8" loading="lazy" /> |
-| montserrat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f8.png?v8" loading="lazy" />| moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f314.png?v8" loading="lazy" /> |
-| moon_cake | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f96e.png?v8" loading="lazy" />| morocco | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1e6.png?v8" loading="lazy" /> |
-| mortar_board | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f393.png?v8" loading="lazy" />| mosque | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f54c.png?v8" loading="lazy" /> |
-| mosquito | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f99f.png?v8" loading="lazy" />| motor_boat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e5.png?v8" loading="lazy" /> |
-| motor_scooter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6f5.png?v8" loading="lazy" />| motorcycle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3cd.png?v8" loading="lazy" /> |
-| motorized_wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9bc.png?v8" loading="lazy" />| motorway | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e3.png?v8" loading="lazy" /> |
-| mount_fuji | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5fb.png?v8" loading="lazy" />| mountain | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f0.png?v8" loading="lazy" /> |
-| mountain_bicyclist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b5.png?v8" loading="lazy" />| mountain_biking_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b5-2642.png?v8" loading="lazy" /> |
-| mountain_biking_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b5-2640.png?v8" loading="lazy" />| mountain_cableway | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a0.png?v8" loading="lazy" /> |
-| mountain_railway | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69e.png?v8" loading="lazy" />| mountain_snow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d4.png?v8" loading="lazy" /> |
-| mouse | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f42d.png?v8" loading="lazy" />| mouse2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f401.png?v8" loading="lazy" /> |
-| mouse_trap | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa4.png?v8" loading="lazy" />| movie_camera | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a5.png?v8" loading="lazy" /> |
-| moyai | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5ff.png?v8" loading="lazy" />| mozambique | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1ff.png?v8" loading="lazy" /> |
-| mrs_claus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f936.png?v8" loading="lazy" />| muscle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4aa.png?v8" loading="lazy" /> |
-| mushroom | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f344.png?v8" loading="lazy" />| musical_keyboard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b9.png?v8" loading="lazy" /> |
-| musical_note | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b5.png?v8" loading="lazy" />| musical_score | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3bc.png?v8" loading="lazy" /> |
-| mute | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f507.png?v8" loading="lazy" />| mx_claus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f384.png?v8" loading="lazy" /> |
-| myanmar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f2.png?v8" loading="lazy" />| nail_care | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f485.png?v8" loading="lazy" /> |
-| name_badge | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4db.png?v8" loading="lazy" />| namibia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1e6.png?v8" loading="lazy" /> |
-| national_park | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3de.png?v8" loading="lazy" />| nauru | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1f7.png?v8" loading="lazy" /> |
-| nauseated_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f922.png?v8" loading="lazy" />| nazar_amulet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ff.png?v8" loading="lazy" /> |
-| neckbeard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/neckbeard.png?v8" loading="lazy" />| necktie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f454.png?v8" loading="lazy" /> |
-| negative_squared_cross_mark | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274e.png?v8" loading="lazy" />| nepal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1f5.png?v8" loading="lazy" /> |
-| nerd_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f913.png?v8" loading="lazy" />| nesting_dolls | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa86.png?v8" loading="lazy" /> |
-| netherlands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1f1.png?v8" loading="lazy" />| neutral_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f610.png?v8" loading="lazy" /> |
-| new | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f195.png?v8" loading="lazy" />| new_caledonia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1e8.png?v8" loading="lazy" /> |
-| new_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f311.png?v8" loading="lazy" />| new_moon_with_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f31a.png?v8" loading="lazy" /> |
-| new_zealand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1ff.png?v8" loading="lazy" />| newspaper | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f0.png?v8" loading="lazy" /> |
-| newspaper_roll | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5de.png?v8" loading="lazy" />| next_track_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23ed.png?v8" loading="lazy" /> |
-| ng | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f196.png?v8" loading="lazy" />| ng_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f645-2642.png?v8" loading="lazy" /> |
-| ng_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f645-2640.png?v8" loading="lazy" />| nicaragua | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1ee.png?v8" loading="lazy" /> |
-| niger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1ea.png?v8" loading="lazy" />| nigeria | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1ec.png?v8" loading="lazy" /> |
-| night_with_stars | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f303.png?v8" loading="lazy" />| nine | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0039-20e3.png?v8" loading="lazy" /> |
-| ninja | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f977.png?v8" loading="lazy" />| niue | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1fa.png?v8" loading="lazy" /> |
-| no_bell | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f515.png?v8" loading="lazy" />| no_bicycles | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b3.png?v8" loading="lazy" /> |
-| no_entry | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26d4.png?v8" loading="lazy" />| no_entry_sign | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ab.png?v8" loading="lazy" /> |
-| no_good | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f645.png?v8" loading="lazy" />| no_good_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f645-2642.png?v8" loading="lazy" /> |
-| no_good_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f645-2640.png?v8" loading="lazy" />| no_mobile_phones | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f5.png?v8" loading="lazy" /> |
-| no_mouth | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f636.png?v8" loading="lazy" />| no_pedestrians | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b7.png?v8" loading="lazy" /> |
-| no_smoking | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ad.png?v8" loading="lazy" />| non-potable_water | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b1.png?v8" loading="lazy" /> |
-| norfolk_island | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1eb.png?v8" loading="lazy" />| north_korea | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1f5.png?v8" loading="lazy" /> |
-| northern_mariana_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1f5.png?v8" loading="lazy" />| norway | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f3-1f1f4.png?v8" loading="lazy" /> |
-| nose | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f443.png?v8" loading="lazy" />| notebook | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d3.png?v8" loading="lazy" /> |
-| notebook_with_decorative_cover | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d4.png?v8" loading="lazy" />| notes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b6.png?v8" loading="lazy" /> |
-| nut_and_bolt | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f529.png?v8" loading="lazy" />| o | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2b55.png?v8" loading="lazy" /> |
-| o2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f17e.png?v8" loading="lazy" />| ocean | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f30a.png?v8" loading="lazy" /> |
-| octocat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/octocat.png?v8" loading="lazy" />| octopus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f419.png?v8" loading="lazy" /> |
-| oden | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f362.png?v8" loading="lazy" />| office | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e2.png?v8" loading="lazy" /> |
-| office_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f4bc.png?v8" loading="lazy" />| oil_drum | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e2.png?v8" loading="lazy" /> |
-| ok | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f197.png?v8" loading="lazy" />| ok_hand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44c.png?v8" loading="lazy" /> |
-| ok_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f646-2642.png?v8" loading="lazy" />| ok_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f646.png?v8" loading="lazy" /> |
-| ok_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f646-2640.png?v8" loading="lazy" />| old_key | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5dd.png?v8" loading="lazy" /> |
-| older_adult | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d3.png?v8" loading="lazy" />| older_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f474.png?v8" loading="lazy" /> |
-| older_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f475.png?v8" loading="lazy" />| olive | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fad2.png?v8" loading="lazy" /> |
-| om | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f549.png?v8" loading="lazy" />| oman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f4-1f1f2.png?v8" loading="lazy" /> |
-| on | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f51b.png?v8" loading="lazy" />| oncoming_automobile | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f698.png?v8" loading="lazy" /> |
-| oncoming_bus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f68d.png?v8" loading="lazy" />| oncoming_police_car | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f694.png?v8" loading="lazy" /> |
-| oncoming_taxi | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f696.png?v8" loading="lazy" />| one | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0031-20e3.png?v8" loading="lazy" /> |
-| one_piece_swimsuit | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa71.png?v8" loading="lazy" />| onion | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c5.png?v8" loading="lazy" /> |
-| open_book | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png?v8" loading="lazy" />| open_file_folder | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c2.png?v8" loading="lazy" /> |
-| open_hands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f450.png?v8" loading="lazy" />| open_mouth | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f62e.png?v8" loading="lazy" /> |
-| open_umbrella | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2602.png?v8" loading="lazy" />| ophiuchus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26ce.png?v8" loading="lazy" /> |
-| orange | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34a.png?v8" loading="lazy" />| orange_book | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d9.png?v8" loading="lazy" /> |
-| orange_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e0.png?v8" loading="lazy" />| orange_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e1.png?v8" loading="lazy" /> |
-| orange_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e7.png?v8" loading="lazy" />| orangutan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a7.png?v8" loading="lazy" /> |
-| orthodox_cross | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2626.png?v8" loading="lazy" />| otter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a6.png?v8" loading="lazy" /> |
-| outbox_tray | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e4.png?v8" loading="lazy" />| owl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f989.png?v8" loading="lazy" /> |
-| ox | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f402.png?v8" loading="lazy" />| oyster | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9aa.png?v8" loading="lazy" /> |
-| package | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e6.png?v8" loading="lazy" />| page_facing_up | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c4.png?v8" loading="lazy" /> |
-| page_with_curl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c3.png?v8" loading="lazy" />| pager | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4df.png?v8" loading="lazy" /> |
-| paintbrush | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f58c.png?v8" loading="lazy" />| pakistan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1f0.png?v8" loading="lazy" /> |
-| palau | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1fc.png?v8" loading="lazy" />| palestinian_territories | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1f8.png?v8" loading="lazy" /> |
-| palm_tree | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png?v8" loading="lazy" />| palms_up_together | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f932.png?v8" loading="lazy" /> |
-| panama | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1e6.png?v8" loading="lazy" />| pancakes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95e.png?v8" loading="lazy" /> |
-| panda_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f43c.png?v8" loading="lazy" />| paperclip | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ce.png?v8" loading="lazy" /> |
-| paperclips | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f587.png?v8" loading="lazy" />| papua_new_guinea | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1ec.png?v8" loading="lazy" /> |
-| parachute | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa82.png?v8" loading="lazy" />| paraguay | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1fe.png?v8" loading="lazy" /> |
-| parasol_on_ground | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f1.png?v8" loading="lazy" />| parking | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f17f.png?v8" loading="lazy" /> |
-| parrot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f99c.png?v8" loading="lazy" />| part_alternation_mark | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/303d.png?v8" loading="lazy" /> |
-| partly_sunny | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26c5.png?v8" loading="lazy" />| partying_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f973.png?v8" loading="lazy" /> |
-| passenger_ship | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6f3.png?v8" loading="lazy" />| passport_control | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6c2.png?v8" loading="lazy" /> |
-| pause_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23f8.png?v8" loading="lazy" />| paw_prints | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f43e.png?v8" loading="lazy" /> |
-| peace_symbol | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/262e.png?v8" loading="lazy" />| peach | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f351.png?v8" loading="lazy" /> |
-| peacock | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f99a.png?v8" loading="lazy" />| peanuts | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f95c.png?v8" loading="lazy" /> |
-| pear | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f350.png?v8" loading="lazy" />| pen | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f58a.png?v8" loading="lazy" /> |
-| pencil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8" loading="lazy" />| pencil2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/270f.png?v8" loading="lazy" /> |
-| penguin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f427.png?v8" loading="lazy" />| pensive | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f614.png?v8" loading="lazy" /> |
-| people_holding_hands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f91d-1f9d1.png?v8" loading="lazy" />| people_hugging | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fac2.png?v8" loading="lazy" /> |
-| performing_arts | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ad.png?v8" loading="lazy" />| persevere | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f623.png?v8" loading="lazy" /> |
-| person_bald | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f9b2.png?v8" loading="lazy" />| person_curly_hair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f9b1.png?v8" loading="lazy" /> |
-| person_feeding_baby | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f37c.png?v8" loading="lazy" />| person_fencing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93a.png?v8" loading="lazy" /> |
-| person_in_manual_wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f9bd.png?v8" loading="lazy" />| person_in_motorized_wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f9bc.png?v8" loading="lazy" /> |
-| person_in_tuxedo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f935.png?v8" loading="lazy" />| person_red_hair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f9b0.png?v8" loading="lazy" /> |
-| person_white_hair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f9b3.png?v8" loading="lazy" />| person_with_probing_cane | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f9af.png?v8" loading="lazy" /> |
-| person_with_turban | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f473.png?v8" loading="lazy" />| person_with_veil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f470.png?v8" loading="lazy" /> |
-| peru | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1ea.png?v8" loading="lazy" />| petri_dish | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9eb.png?v8" loading="lazy" /> |
-| philippines | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1ed.png?v8" loading="lazy" />| phone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/260e.png?v8" loading="lazy" /> |
-| pick | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26cf.png?v8" loading="lazy" />| pickup_truck | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6fb.png?v8" loading="lazy" /> |
-| pie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f967.png?v8" loading="lazy" />| pig | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f437.png?v8" loading="lazy" /> |
-| pig2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f416.png?v8" loading="lazy" />| pig_nose | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f43d.png?v8" loading="lazy" /> |
-| pill | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f48a.png?v8" loading="lazy" />| pilot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-2708.png?v8" loading="lazy" /> |
-| pinata | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa85.png?v8" loading="lazy" />| pinched_fingers | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f90c.png?v8" loading="lazy" /> |
-| pinching_hand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f90f.png?v8" loading="lazy" />| pineapple | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34d.png?v8" loading="lazy" /> |
-| ping_pong | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d3.png?v8" loading="lazy" />| pirate_flag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f4-2620.png?v8" loading="lazy" /> |
-| pisces | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2653.png?v8" loading="lazy" />| pitcairn_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1f3.png?v8" loading="lazy" /> |
-| pizza | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f355.png?v8" loading="lazy" />| placard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa7.png?v8" loading="lazy" /> |
-| place_of_worship | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6d0.png?v8" loading="lazy" />| plate_with_cutlery | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f37d.png?v8" loading="lazy" /> |
-| play_or_pause_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23ef.png?v8" loading="lazy" />| pleading_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f97a.png?v8" loading="lazy" /> |
-| plunger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa0.png?v8" loading="lazy" />| point_down | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f447.png?v8" loading="lazy" /> |
-| point_left | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f448.png?v8" loading="lazy" />| point_right | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f449.png?v8" loading="lazy" /> |
-| point_up | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/261d.png?v8" loading="lazy" />| point_up_2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f446.png?v8" loading="lazy" /> |
-| poland | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1f1.png?v8" loading="lazy" />| polar_bear | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f43b-2744.png?v8" loading="lazy" /> |
-| police_car | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f693.png?v8" loading="lazy" />| police_officer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46e.png?v8" loading="lazy" /> |
-| policeman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46e-2642.png?v8" loading="lazy" />| policewoman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46e-2640.png?v8" loading="lazy" /> |
-| poodle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f429.png?v8" loading="lazy" />| poop | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a9.png?v8" loading="lazy" /> |
-| popcorn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f37f.png?v8" loading="lazy" />| portugal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1f9.png?v8" loading="lazy" /> |
-| post_office | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e3.png?v8" loading="lazy" />| postal_horn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ef.png?v8" loading="lazy" /> |
-| postbox | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ee.png?v8" loading="lazy" />| potable_water | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b0.png?v8" loading="lazy" /> |
-| potato | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f954.png?v8" loading="lazy" />| potted_plant | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fab4.png?v8" loading="lazy" /> |
-| pouch | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f45d.png?v8" loading="lazy" />| poultry_leg | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f357.png?v8" loading="lazy" /> |
-| pound | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b7.png?v8" loading="lazy" />| pout | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f621.png?v8" loading="lazy" /> |
-| pouting_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f63e.png?v8" loading="lazy" />| pouting_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64e.png?v8" loading="lazy" /> |
-| pouting_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64e-2642.png?v8" loading="lazy" />| pouting_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64e-2640.png?v8" loading="lazy" /> |
-| pray | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64f.png?v8" loading="lazy" />| prayer_beads | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ff.png?v8" loading="lazy" /> |
-| pregnant_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f930.png?v8" loading="lazy" />| pretzel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f968.png?v8" loading="lazy" /> |
-| previous_track_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23ee.png?v8" loading="lazy" />| prince | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f934.png?v8" loading="lazy" /> |
-| princess | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f478.png?v8" loading="lazy" />| printer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5a8.png?v8" loading="lazy" /> |
-| probing_cane | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9af.png?v8" loading="lazy" />| puerto_rico | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1f7.png?v8" loading="lazy" /> |
-| punch | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44a.png?v8" loading="lazy" />| purple_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e3.png?v8" loading="lazy" /> |
-| purple_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f49c.png?v8" loading="lazy" />| purple_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7ea.png?v8" loading="lazy" /> |
-| purse | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f45b.png?v8" loading="lazy" />| pushpin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cc.png?v8" loading="lazy" /> |
-| put_litter_in_its_place | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ae.png?v8" loading="lazy" />| qatar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f6-1f1e6.png?v8" loading="lazy" /> |
-| question | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2753.png?v8" loading="lazy" />| rabbit | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f430.png?v8" loading="lazy" /> |
-| rabbit2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f407.png?v8" loading="lazy" />| raccoon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f99d.png?v8" loading="lazy" /> |
-| racehorse | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f40e.png?v8" loading="lazy" />| racing_car | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ce.png?v8" loading="lazy" /> |
-| radio | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4fb.png?v8" loading="lazy" />| radio_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f518.png?v8" loading="lazy" /> |
-| radioactive | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2622.png?v8" loading="lazy" />| rage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f621.png?v8" loading="lazy" /> |
-| rage1 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/rage1.png?v8" loading="lazy" />| rage2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/rage2.png?v8" loading="lazy" /> |
-| rage3 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/rage3.png?v8" loading="lazy" />| rage4 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/rage4.png?v8" loading="lazy" /> |
-| railway_car | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f683.png?v8" loading="lazy" />| railway_track | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e4.png?v8" loading="lazy" /> |
-| rainbow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f308.png?v8" loading="lazy" />| rainbow_flag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f3-1f308.png?v8" loading="lazy" /> |
-| raised_back_of_hand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f91a.png?v8" loading="lazy" />| raised_eyebrow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f928.png?v8" loading="lazy" /> |
-| raised_hand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/270b.png?v8" loading="lazy" />| raised_hand_with_fingers_splayed | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f590.png?v8" loading="lazy" /> |
-| raised_hands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64c.png?v8" loading="lazy" />| raising_hand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png?v8" loading="lazy" /> |
-| raising_hand_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b-2642.png?v8" loading="lazy" />| raising_hand_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b-2640.png?v8" loading="lazy" /> |
-| ram | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f40f.png?v8" loading="lazy" />| ramen | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35c.png?v8" loading="lazy" /> |
-| rat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f400.png?v8" loading="lazy" />| razor | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa92.png?v8" loading="lazy" /> |
-| receipt | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9fe.png?v8" loading="lazy" />| record_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23fa.png?v8" loading="lazy" /> |
-| recycle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/267b.png?v8" loading="lazy" />| red_car | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f697.png?v8" loading="lazy" /> |
-| red_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f534.png?v8" loading="lazy" />| red_envelope | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e7.png?v8" loading="lazy" /> |
-| red_haired_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f9b0.png?v8" loading="lazy" />| red_haired_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f9b0.png?v8" loading="lazy" /> |
-| red_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e5.png?v8" loading="lazy" />| registered | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/00ae.png?v8" loading="lazy" /> |
-| relaxed | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/263a.png?v8" loading="lazy" />| relieved | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60c.png?v8" loading="lazy" /> |
-| reminder_ribbon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f397.png?v8" loading="lazy" />| repeat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f501.png?v8" loading="lazy" /> |
-| repeat_one | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f502.png?v8" loading="lazy" />| rescue_worker_helmet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26d1.png?v8" loading="lazy" /> |
-| restroom | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6bb.png?v8" loading="lazy" />| reunion | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f7-1f1ea.png?v8" loading="lazy" /> |
-| revolving_hearts | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f49e.png?v8" loading="lazy" />| rewind | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23ea.png?v8" loading="lazy" /> |
-| rhinoceros | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f98f.png?v8" loading="lazy" />| ribbon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f380.png?v8" loading="lazy" /> |
-| rice | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35a.png?v8" loading="lazy" />| rice_ball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f359.png?v8" loading="lazy" /> |
-| rice_cracker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f358.png?v8" loading="lazy" />| rice_scene | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f391.png?v8" loading="lazy" /> |
-| right_anger_bubble | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5ef.png?v8" loading="lazy" />| ring | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f48d.png?v8" loading="lazy" /> |
-| ringed_planet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa90.png?v8" loading="lazy" />| robot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png?v8" loading="lazy" /> |
-| rock | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa8.png?v8" loading="lazy" />| rocket | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png?v8" loading="lazy" /> |
-| rofl | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f923.png?v8" loading="lazy" />| roll_eyes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f644.png?v8" loading="lazy" /> |
-| roll_of_paper | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9fb.png?v8" loading="lazy" />| roller_coaster | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a2.png?v8" loading="lazy" /> |
-| roller_skate | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6fc.png?v8" loading="lazy" />| romania | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f7-1f1f4.png?v8" loading="lazy" /> |
-| rooster | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f413.png?v8" loading="lazy" />| rose | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f339.png?v8" loading="lazy" /> |
-| rosette | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f5.png?v8" loading="lazy" />| rotating_light | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a8.png?v8" loading="lazy" /> |
-| round_pushpin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cd.png?v8" loading="lazy" />| rowboat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a3.png?v8" loading="lazy" /> |
-| rowing_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a3-2642.png?v8" loading="lazy" />| rowing_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a3-2640.png?v8" loading="lazy" /> |
-| ru | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f7-1f1fa.png?v8" loading="lazy" />| rugby_football | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c9.png?v8" loading="lazy" /> |
-| runner | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" loading="lazy" />| running | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png?v8" loading="lazy" /> |
-| running_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3-2642.png?v8" loading="lazy" />| running_shirt_with_sash | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3bd.png?v8" loading="lazy" /> |
-| running_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3-2640.png?v8" loading="lazy" />| rwanda | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f7-1f1fc.png?v8" loading="lazy" /> |
-| sa | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f202.png?v8" loading="lazy" />| safety_pin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f7.png?v8" loading="lazy" /> |
-| safety_vest | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ba.png?v8" loading="lazy" />| sagittarius | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2650.png?v8" loading="lazy" /> |
-| sailboat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f5.png?v8" loading="lazy" />| sake | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f376.png?v8" loading="lazy" /> |
-| salt | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c2.png?v8" loading="lazy" />| samoa | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fc-1f1f8.png?v8" loading="lazy" /> |
-| san_marino | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1f2.png?v8" loading="lazy" />| sandal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f461.png?v8" loading="lazy" /> |
-| sandwich | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f96a.png?v8" loading="lazy" />| santa | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f385.png?v8" loading="lazy" /> |
-| sao_tome_principe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1f9.png?v8" loading="lazy" />| sari | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f97b.png?v8" loading="lazy" /> |
-| sassy_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f481-2642.png?v8" loading="lazy" />| sassy_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f481-2640.png?v8" loading="lazy" /> |
-| satellite | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e1.png?v8" loading="lazy" />| satisfied | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png?v8" loading="lazy" /> |
-| saudi_arabia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1e6.png?v8" loading="lazy" />| sauna_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d6-2642.png?v8" loading="lazy" /> |
-| sauna_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d6.png?v8" loading="lazy" />| sauna_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d6-2640.png?v8" loading="lazy" /> |
-| sauropod | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f995.png?v8" loading="lazy" />| saxophone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b7.png?v8" loading="lazy" /> |
-| scarf | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e3.png?v8" loading="lazy" />| school | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3eb.png?v8" loading="lazy" /> |
-| school_satchel | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f392.png?v8" loading="lazy" />| scientist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f52c.png?v8" loading="lazy" /> |
-| scissors | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2702.png?v8" loading="lazy" />| scorpion | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f982.png?v8" loading="lazy" /> |
-| scorpius | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/264f.png?v8" loading="lazy" />| scotland | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f4-e0067-e0062-e0073-e0063-e0074-e007f.png?v8" loading="lazy" /> |
-| scream | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f631.png?v8" loading="lazy" />| scream_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f640.png?v8" loading="lazy" /> |
-| screwdriver | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa9b.png?v8" loading="lazy" />| scroll | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png?v8" loading="lazy" /> |
-| seal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ad.png?v8" loading="lazy" />| seat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ba.png?v8" loading="lazy" /> |
-| secret | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/3299.png?v8" loading="lazy" />| see_no_evil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f648.png?v8" loading="lazy" /> |
-| seedling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f331.png?v8" loading="lazy" />| selfie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f933.png?v8" loading="lazy" /> |
-| senegal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1f3.png?v8" loading="lazy" />| serbia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f7-1f1f8.png?v8" loading="lazy" /> |
-| service_dog | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f415-1f9ba.png?v8" loading="lazy" />| seven | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0037-20e3.png?v8" loading="lazy" /> |
-| sewing_needle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa1.png?v8" loading="lazy" />| seychelles | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1e8.png?v8" loading="lazy" /> |
-| shallow_pan_of_food | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f958.png?v8" loading="lazy" />| shamrock | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2618.png?v8" loading="lazy" /> |
-| shark | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f988.png?v8" loading="lazy" />| shaved_ice | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f367.png?v8" loading="lazy" /> |
-| sheep | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f411.png?v8" loading="lazy" />| shell | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f41a.png?v8" loading="lazy" /> |
-| shield | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e1.png?v8" loading="lazy" />| shinto_shrine | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26e9.png?v8" loading="lazy" /> |
-| ship | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a2.png?v8" loading="lazy" />| shipit | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/shipit.png?v8" loading="lazy" /> |
-| shirt | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f455.png?v8" loading="lazy" />| shit | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a9.png?v8" loading="lazy" /> |
-| shoe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f45e.png?v8" loading="lazy" />| shopping | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6cd.png?v8" loading="lazy" /> |
-| shopping_cart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6d2.png?v8" loading="lazy" />| shorts | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa73.png?v8" loading="lazy" /> |
-| shower | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6bf.png?v8" loading="lazy" />| shrimp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f990.png?v8" loading="lazy" /> |
-| shrug | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f937.png?v8" loading="lazy" />| shushing_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f92b.png?v8" loading="lazy" /> |
-| sierra_leone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1f1.png?v8" loading="lazy" />| signal_strength | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f6.png?v8" loading="lazy" /> |
-| singapore | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1ec.png?v8" loading="lazy" />| singer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f3a4.png?v8" loading="lazy" /> |
-| sint_maarten | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1fd.png?v8" loading="lazy" />| six | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0036-20e3.png?v8" loading="lazy" /> |
-| six_pointed_star | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f52f.png?v8" loading="lazy" />| skateboard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6f9.png?v8" loading="lazy" /> |
-| ski | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3bf.png?v8" loading="lazy" />| skier | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26f7.png?v8" loading="lazy" /> |
-| skull | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f480.png?v8" loading="lazy" />| skull_and_crossbones | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2620.png?v8" loading="lazy" /> |
-| skunk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a8.png?v8" loading="lazy" />| sled | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6f7.png?v8" loading="lazy" /> |
-| sleeping | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f634.png?v8" loading="lazy" />| sleeping_bed | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6cc.png?v8" loading="lazy" /> |
-| sleepy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f62a.png?v8" loading="lazy" />| slightly_frowning_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f641.png?v8" loading="lazy" /> |
-| slightly_smiling_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f642.png?v8" loading="lazy" />| slot_machine | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b0.png?v8" loading="lazy" /> |
-| sloth | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a5.png?v8" loading="lazy" />| slovakia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1f0.png?v8" loading="lazy" /> |
-| slovenia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1ee.png?v8" loading="lazy" />| small_airplane | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6e9.png?v8" loading="lazy" /> |
-| small_blue_diamond | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f539.png?v8" loading="lazy" />| small_orange_diamond | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f538.png?v8" loading="lazy" /> |
-| small_red_triangle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f53a.png?v8" loading="lazy" />| small_red_triangle_down | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f53b.png?v8" loading="lazy" /> |
-| smile | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" loading="lazy" />| smile_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f638.png?v8" loading="lazy" /> |
-| smiley | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f603.png?v8" loading="lazy" />| smiley_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f63a.png?v8" loading="lazy" /> |
-| smiling_face_with_tear | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f972.png?v8" loading="lazy" />| smiling_face_with_three_hearts | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f970.png?v8" loading="lazy" /> |
-| smiling_imp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f608.png?v8" loading="lazy" />| smirk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8" loading="lazy" /> |
-| smirk_cat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f63c.png?v8" loading="lazy" />| smoking | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ac.png?v8" loading="lazy" /> |
-| snail | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f40c.png?v8" loading="lazy" />| snake | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f40d.png?v8" loading="lazy" /> |
-| sneezing_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f927.png?v8" loading="lazy" />| snowboarder | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c2.png?v8" loading="lazy" /> |
-| snowflake | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2744.png?v8" loading="lazy" />| snowman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26c4.png?v8" loading="lazy" /> |
-| snowman_with_snow | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2603.png?v8" loading="lazy" />| soap | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9fc.png?v8" loading="lazy" /> |
-| sob | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png?v8" loading="lazy" />| soccer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26bd.png?v8" loading="lazy" /> |
-| socks | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9e6.png?v8" loading="lazy" />| softball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f94e.png?v8" loading="lazy" /> |
-| solomon_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1e7.png?v8" loading="lazy" />| somalia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1f4.png?v8" loading="lazy" /> |
-| soon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f51c.png?v8" loading="lazy" />| sos | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f198.png?v8" loading="lazy" /> |
-| sound | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f509.png?v8" loading="lazy" />| south_africa | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ff-1f1e6.png?v8" loading="lazy" /> |
-| south_georgia_south_sandwich_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1f8.png?v8" loading="lazy" />| south_sudan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1f8.png?v8" loading="lazy" /> |
-| space_invader | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f47e.png?v8" loading="lazy" />| spades | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2660.png?v8" loading="lazy" /> |
-| spaghetti | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f35d.png?v8" loading="lazy" />| sparkle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2747.png?v8" loading="lazy" /> |
-| sparkler | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f387.png?v8" loading="lazy" />| sparkles | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" loading="lazy" /> |
-| sparkling_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f496.png?v8" loading="lazy" />| speak_no_evil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64a.png?v8" loading="lazy" /> |
-| speaker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f508.png?v8" loading="lazy" />| speaking_head | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5e3.png?v8" loading="lazy" /> |
-| speech_balloon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png?v8" loading="lazy" />| speedboat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a4.png?v8" loading="lazy" /> |
-| spider | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f577.png?v8" loading="lazy" />| spider_web | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f578.png?v8" loading="lazy" /> |
-| spiral_calendar | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5d3.png?v8" loading="lazy" />| spiral_notepad | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5d2.png?v8" loading="lazy" /> |
-| sponge | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9fd.png?v8" loading="lazy" />| spoon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f944.png?v8" loading="lazy" /> |
-| squid | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f991.png?v8" loading="lazy" />| sri_lanka | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1f0.png?v8" loading="lazy" /> |
-| st_barthelemy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1f1.png?v8" loading="lazy" />| st_helena | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1ed.png?v8" loading="lazy" /> |
-| st_kitts_nevis | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f0-1f1f3.png?v8" loading="lazy" />| st_lucia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f1-1f1e8.png?v8" loading="lazy" /> |
-| st_martin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f2-1f1eb.png?v8" loading="lazy" />| st_pierre_miquelon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f5-1f1f2.png?v8" loading="lazy" /> |
-| st_vincent_grenadines | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fb-1f1e8.png?v8" loading="lazy" />| stadium | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3df.png?v8" loading="lazy" /> |
-| standing_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9cd-2642.png?v8" loading="lazy" />| standing_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9cd.png?v8" loading="lazy" /> |
-| standing_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9cd-2640.png?v8" loading="lazy" />| star | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" loading="lazy" /> |
-| star2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f31f.png?v8" loading="lazy" />| star_and_crescent | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/262a.png?v8" loading="lazy" /> |
-| star_of_david | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2721.png?v8" loading="lazy" />| star_struck | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f929.png?v8" loading="lazy" /> |
-| stars | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f320.png?v8" loading="lazy" />| station | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f689.png?v8" loading="lazy" /> |
-| statue_of_liberty | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5fd.png?v8" loading="lazy" />| steam_locomotive | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f682.png?v8" loading="lazy" /> |
-| stethoscope | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa7a.png?v8" loading="lazy" />| stew | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f372.png?v8" loading="lazy" /> |
-| stop_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23f9.png?v8" loading="lazy" />| stop_sign | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6d1.png?v8" loading="lazy" /> |
-| stopwatch | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23f1.png?v8" loading="lazy" />| straight_ruler | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4cf.png?v8" loading="lazy" /> |
-| strawberry | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f353.png?v8" loading="lazy" />| stuck_out_tongue | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61b.png?v8" loading="lazy" /> |
-| stuck_out_tongue_closed_eyes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8" loading="lazy" />| stuck_out_tongue_winking_eye | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61c.png?v8" loading="lazy" /> |
-| student | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f393.png?v8" loading="lazy" />| studio_microphone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f399.png?v8" loading="lazy" /> |
-| stuffed_flatbread | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f959.png?v8" loading="lazy" />| sudan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1e9.png?v8" loading="lazy" /> |
-| sun_behind_large_cloud | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f325.png?v8" loading="lazy" />| sun_behind_rain_cloud | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f326.png?v8" loading="lazy" /> |
-| sun_behind_small_cloud | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f324.png?v8" loading="lazy" />| sun_with_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f31e.png?v8" loading="lazy" /> |
-| sunflower | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f33b.png?v8" loading="lazy" />| sunglasses | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60e.png?v8" loading="lazy" /> |
-| sunny | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2600.png?v8" loading="lazy" />| sunrise | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f305.png?v8" loading="lazy" /> |
-| sunrise_over_mountains | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f304.png?v8" loading="lazy" />| superhero | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b8.png?v8" loading="lazy" /> |
-| superhero_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b8-2642.png?v8" loading="lazy" />| superhero_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b8-2640.png?v8" loading="lazy" /> |
-| supervillain | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b9.png?v8" loading="lazy" />| supervillain_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b9-2642.png?v8" loading="lazy" /> |
-| supervillain_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b9-2640.png?v8" loading="lazy" />| surfer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c4.png?v8" loading="lazy" /> |
-| surfing_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c4-2642.png?v8" loading="lazy" />| surfing_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c4-2640.png?v8" loading="lazy" /> |
-| suriname | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1f7.png?v8" loading="lazy" />| sushi | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f363.png?v8" loading="lazy" /> |
-| suspect | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/suspect.png?v8" loading="lazy" />| suspension_railway | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69f.png?v8" loading="lazy" /> |
-| svalbard_jan_mayen | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1ef.png?v8" loading="lazy" />| swan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9a2.png?v8" loading="lazy" /> |
-| swaziland | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1ff.png?v8" loading="lazy" />| sweat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f613.png?v8" loading="lazy" /> |
-| sweat_drops | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a6.png?v8" loading="lazy" />| sweat_smile | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f605.png?v8" loading="lazy" /> |
-| sweden | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1ea.png?v8" loading="lazy" />| sweet_potato | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f360.png?v8" loading="lazy" /> |
-| swim_brief | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa72.png?v8" loading="lazy" />| swimmer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ca.png?v8" loading="lazy" /> |
-| swimming_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ca-2642.png?v8" loading="lazy" />| swimming_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ca-2640.png?v8" loading="lazy" /> |
-| switzerland | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e8-1f1ed.png?v8" loading="lazy" />| symbols | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f523.png?v8" loading="lazy" /> |
-| synagogue | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f54d.png?v8" loading="lazy" />| syria | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f8-1f1fe.png?v8" loading="lazy" /> |
-| syringe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f489.png?v8" loading="lazy" />| t-rex | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f996.png?v8" loading="lazy" /> |
-| taco | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f32e.png?v8" loading="lazy" />| tada | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" loading="lazy" /> |
-| taiwan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1fc.png?v8" loading="lazy" />| tajikistan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1ef.png?v8" loading="lazy" /> |
-| takeout_box | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f961.png?v8" loading="lazy" />| tamale | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fad4.png?v8" loading="lazy" /> |
-| tanabata_tree | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f38b.png?v8" loading="lazy" />| tangerine | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f34a.png?v8" loading="lazy" /> |
-| tanzania | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1ff.png?v8" loading="lazy" />| taurus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2649.png?v8" loading="lazy" /> |
-| taxi | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f695.png?v8" loading="lazy" />| tea | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f375.png?v8" loading="lazy" /> |
-| teacher | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f3eb.png?v8" loading="lazy" />| teapot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fad6.png?v8" loading="lazy" /> |
-| technologist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1-1f4bb.png?v8" loading="lazy" />| teddy_bear | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f8.png?v8" loading="lazy" /> |
-| telephone | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/260e.png?v8" loading="lazy" />| telephone_receiver | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4de.png?v8" loading="lazy" /> |
-| telescope | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f52d.png?v8" loading="lazy" />| tennis | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3be.png?v8" loading="lazy" /> |
-| tent | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26fa.png?v8" loading="lazy" />| test_tube | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9ea.png?v8" loading="lazy" /> |
-| thailand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1ed.png?v8" loading="lazy" />| thermometer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f321.png?v8" loading="lazy" /> |
-| thinking | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png?v8" loading="lazy" />| thong_sandal | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa74.png?v8" loading="lazy" /> |
-| thought_balloon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png?v8" loading="lazy" />| thread | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f5.png?v8" loading="lazy" /> |
-| three | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0033-20e3.png?v8" loading="lazy" />| thumbsdown | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44e.png?v8" loading="lazy" /> |
-| thumbsup | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8" loading="lazy" />| ticket | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ab.png?v8" loading="lazy" /> |
-| tickets | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f39f.png?v8" loading="lazy" />| tiger | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f42f.png?v8" loading="lazy" /> |
-| tiger2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f405.png?v8" loading="lazy" />| timer_clock | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/23f2.png?v8" loading="lazy" /> |
-| timor_leste | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1f1.png?v8" loading="lazy" />| tipping_hand_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f481-2642.png?v8" loading="lazy" /> |
-| tipping_hand_person | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f481.png?v8" loading="lazy" />| tipping_hand_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f481-2640.png?v8" loading="lazy" /> |
-| tired_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f62b.png?v8" loading="lazy" />| tm | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2122.png?v8" loading="lazy" /> |
-| togo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1ec.png?v8" loading="lazy" />| toilet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6bd.png?v8" loading="lazy" /> |
-| tokelau | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1f0.png?v8" loading="lazy" />| tokyo_tower | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5fc.png?v8" loading="lazy" /> |
-| tomato | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f345.png?v8" loading="lazy" />| tonga | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1f4.png?v8" loading="lazy" /> |
-| tongue | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f445.png?v8" loading="lazy" />| toolbox | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f0.png?v8" loading="lazy" /> |
-| tooth | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9b7.png?v8" loading="lazy" />| toothbrush | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1faa5.png?v8" loading="lazy" /> |
-| top | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f51d.png?v8" loading="lazy" />| tophat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a9.png?v8" loading="lazy" /> |
-| tornado | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f32a.png?v8" loading="lazy" />| tr | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1f7.png?v8" loading="lazy" /> |
-| trackball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5b2.png?v8" loading="lazy" />| tractor | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69c.png?v8" loading="lazy" /> |
-| traffic_light | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a5.png?v8" loading="lazy" />| train | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f68b.png?v8" loading="lazy" /> |
-| train2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f686.png?v8" loading="lazy" />| tram | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f68a.png?v8" loading="lazy" /> |
-| transgender_flag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f3-26a7.png?v8" loading="lazy" />| transgender_symbol | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26a7.png?v8" loading="lazy" /> |
-| triangular_flag_on_post | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a9.png?v8" loading="lazy" />| triangular_ruler | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d0.png?v8" loading="lazy" /> |
-| trident | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f531.png?v8" loading="lazy" />| trinidad_tobago | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1f9.png?v8" loading="lazy" /> |
-| tristan_da_cunha | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1e6.png?v8" loading="lazy" />| triumph | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f624.png?v8" loading="lazy" /> |
-| trolleybus | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f68e.png?v8" loading="lazy" />| trollface | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/trollface.png?v8" loading="lazy" /> |
-| trophy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png?v8" loading="lazy" />| tropical_drink | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f379.png?v8" loading="lazy" /> |
-| tropical_fish | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f420.png?v8" loading="lazy" />| truck | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f69a.png?v8" loading="lazy" /> |
-| trumpet | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ba.png?v8" loading="lazy" />| tshirt | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f455.png?v8" loading="lazy" /> |
-| tulip | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f337.png?v8" loading="lazy" />| tumbler_glass | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f943.png?v8" loading="lazy" /> |
-| tunisia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1f3.png?v8" loading="lazy" />| turkey | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f983.png?v8" loading="lazy" /> |
-| turkmenistan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1f2.png?v8" loading="lazy" />| turks_caicos_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1e8.png?v8" loading="lazy" /> |
-| turtle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f422.png?v8" loading="lazy" />| tuvalu | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1f9-1f1fb.png?v8" loading="lazy" /> |
-| tv | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4fa.png?v8" loading="lazy" />| twisted_rightwards_arrows | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f500.png?v8" loading="lazy" /> |
-| two | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0032-20e3.png?v8" loading="lazy" />| two_hearts | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f495.png?v8" loading="lazy" /> |
-| two_men_holding_hands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46c.png?v8" loading="lazy" />| two_women_holding_hands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f46d.png?v8" loading="lazy" /> |
-| u5272 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f239.png?v8" loading="lazy" />| u5408 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f234.png?v8" loading="lazy" /> |
-| u55b6 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f23a.png?v8" loading="lazy" />| u6307 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f22f.png?v8" loading="lazy" /> |
-| u6708 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f237.png?v8" loading="lazy" />| u6709 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f236.png?v8" loading="lazy" /> |
-| u6e80 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f235.png?v8" loading="lazy" />| u7121 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f21a.png?v8" loading="lazy" /> |
-| u7533 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f238.png?v8" loading="lazy" />| u7981 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f232.png?v8" loading="lazy" /> |
-| u7a7a | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f233.png?v8" loading="lazy" />| uganda | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fa-1f1ec.png?v8" loading="lazy" /> |
-| uk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1e7.png?v8" loading="lazy" />| ukraine | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fa-1f1e6.png?v8" loading="lazy" /> |
-| umbrella | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2614.png?v8" loading="lazy" />| unamused | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f612.png?v8" loading="lazy" /> |
-| underage | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f51e.png?v8" loading="lazy" />| unicorn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f984.png?v8" loading="lazy" /> |
-| united_arab_emirates | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e6-1f1ea.png?v8" loading="lazy" />| united_nations | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fa-1f1f3.png?v8" loading="lazy" /> |
-| unlock | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f513.png?v8" loading="lazy" />| up | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f199.png?v8" loading="lazy" /> |
-| upside_down_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f643.png?v8" loading="lazy" />| uruguay | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fa-1f1fe.png?v8" loading="lazy" /> |
-| us | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fa-1f1f8.png?v8" loading="lazy" />| us_outlying_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fa-1f1f2.png?v8" loading="lazy" /> |
-| us_virgin_islands | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fb-1f1ee.png?v8" loading="lazy" />| uzbekistan | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fa-1f1ff.png?v8" loading="lazy" /> |
-| v | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/270c.png?v8" loading="lazy" />| vampire | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9db.png?v8" loading="lazy" /> |
-| vampire_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9db-2642.png?v8" loading="lazy" />| vampire_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9db-2640.png?v8" loading="lazy" /> |
-| vanuatu | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fb-1f1fa.png?v8" loading="lazy" />| vatican_city | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fb-1f1e6.png?v8" loading="lazy" /> |
-| venezuela | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fb-1f1ea.png?v8" loading="lazy" />| vertical_traffic_light | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6a6.png?v8" loading="lazy" /> |
-| vhs | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4fc.png?v8" loading="lazy" />| vibration_mode | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f3.png?v8" loading="lazy" /> |
-| video_camera | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f9.png?v8" loading="lazy" />| video_game | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ae.png?v8" loading="lazy" /> |
-| vietnam | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fb-1f1f3.png?v8" loading="lazy" />| violin | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3bb.png?v8" loading="lazy" /> |
-| virgo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/264d.png?v8" loading="lazy" />| volcano | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f30b.png?v8" loading="lazy" /> |
-| volleyball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3d0.png?v8" loading="lazy" />| vomiting_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f92e.png?v8" loading="lazy" /> |
-| vs | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f19a.png?v8" loading="lazy" />| vulcan_salute | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f596.png?v8" loading="lazy" /> |
-| waffle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9c7.png?v8" loading="lazy" />| wales | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f4-e0067-e0062-e0077-e006c-e0073-e007f.png?v8" loading="lazy" /> |
-| walking | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b6.png?v8" loading="lazy" />| walking_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b6-2642.png?v8" loading="lazy" /> |
-| walking_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6b6-2640.png?v8" loading="lazy" />| wallis_futuna | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fc-1f1eb.png?v8" loading="lazy" /> |
-| waning_crescent_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f318.png?v8" loading="lazy" />| waning_gibbous_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f316.png?v8" loading="lazy" /> |
-| warning | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png?v8" loading="lazy" />| wastebasket | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5d1.png?v8" loading="lazy" /> |
-| watch | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/231a.png?v8" loading="lazy" />| water_buffalo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f403.png?v8" loading="lazy" /> |
-| water_polo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93d.png?v8" loading="lazy" />| watermelon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f349.png?v8" loading="lazy" /> |
-| wave | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f44b.png?v8" loading="lazy" />| wavy_dash | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/3030.png?v8" loading="lazy" /> |
-| waxing_crescent_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f312.png?v8" loading="lazy" />| waxing_gibbous_moon | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f314.png?v8" loading="lazy" /> |
-| wc | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6be.png?v8" loading="lazy" />| weary | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f629.png?v8" loading="lazy" /> |
-| wedding | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f492.png?v8" loading="lazy" />| weight_lifting | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3cb.png?v8" loading="lazy" /> |
-| weight_lifting_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3cb-2642.png?v8" loading="lazy" />| weight_lifting_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3cb-2640.png?v8" loading="lazy" /> |
-| western_sahara | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ea-1f1ed.png?v8" loading="lazy" />| whale | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f433.png?v8" loading="lazy" /> |
-| whale2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f40b.png?v8" loading="lazy" />| wheel_of_dharma | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2638.png?v8" loading="lazy" /> |
-| wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/267f.png?v8" loading="lazy" />| white_check_mark | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" loading="lazy" /> |
-| white_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26aa.png?v8" loading="lazy" />| white_flag | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f3.png?v8" loading="lazy" /> |
-| white_flower | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ae.png?v8" loading="lazy" />| white_haired_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f468-1f9b3.png?v8" loading="lazy" /> |
-| white_haired_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f9b3.png?v8" loading="lazy" />| white_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f90d.png?v8" loading="lazy" /> |
-| white_large_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2b1c.png?v8" loading="lazy" />| white_medium_small_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/25fd.png?v8" loading="lazy" /> |
-| white_medium_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/25fb.png?v8" loading="lazy" />| white_small_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/25ab.png?v8" loading="lazy" /> |
-| white_square_button | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f533.png?v8" loading="lazy" />| wilted_flower | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f940.png?v8" loading="lazy" /> |
-| wind_chime | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f390.png?v8" loading="lazy" />| wind_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f32c.png?v8" loading="lazy" /> |
-| window | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa9f.png?v8" loading="lazy" />| wine_glass | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f377.png?v8" loading="lazy" /> |
-| wink | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png?v8" loading="lazy" />| wolf | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f43a.png?v8" loading="lazy" /> |
-| woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469.png?v8" loading="lazy" />| woman_artist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f3a8.png?v8" loading="lazy" /> |
-| woman_astronaut | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f680.png?v8" loading="lazy" />| woman_beard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d4-2640.png?v8" loading="lazy" /> |
-| woman_cartwheeling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f938-2640.png?v8" loading="lazy" />| woman_cook | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f373.png?v8" loading="lazy" /> |
-| woman_dancing | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f483.png?v8" loading="lazy" />| woman_facepalming | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f926-2640.png?v8" loading="lazy" /> |
-| woman_factory_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f3ed.png?v8" loading="lazy" />| woman_farmer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f33e.png?v8" loading="lazy" /> |
-| woman_feeding_baby | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f37c.png?v8" loading="lazy" />| woman_firefighter | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f692.png?v8" loading="lazy" /> |
-| woman_health_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-2695.png?v8" loading="lazy" />| woman_in_manual_wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f9bd.png?v8" loading="lazy" /> |
-| woman_in_motorized_wheelchair | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f9bc.png?v8" loading="lazy" />| woman_in_tuxedo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f935-2640.png?v8" loading="lazy" /> |
-| woman_judge | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-2696.png?v8" loading="lazy" />| woman_juggling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f939-2640.png?v8" loading="lazy" /> |
-| woman_mechanic | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f527.png?v8" loading="lazy" />| woman_office_worker | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f4bc.png?v8" loading="lazy" /> |
-| woman_pilot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-2708.png?v8" loading="lazy" />| woman_playing_handball | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93e-2640.png?v8" loading="lazy" /> |
-| woman_playing_water_polo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93d-2640.png?v8" loading="lazy" />| woman_scientist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f52c.png?v8" loading="lazy" /> |
-| woman_shrugging | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f937-2640.png?v8" loading="lazy" />| woman_singer | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f3a4.png?v8" loading="lazy" /> |
-| woman_student | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f393.png?v8" loading="lazy" />| woman_teacher | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f3eb.png?v8" loading="lazy" /> |
-| woman_technologist | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f4bb.png?v8" loading="lazy" />| woman_with_headscarf | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d5.png?v8" loading="lazy" /> |
-| woman_with_probing_cane | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f469-1f9af.png?v8" loading="lazy" />| woman_with_turban | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f473-2640.png?v8" loading="lazy" /> |
-| woman_with_veil | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f470-2640.png?v8" loading="lazy" />| womans_clothes | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f45a.png?v8" loading="lazy" /> |
-| womans_hat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f452.png?v8" loading="lazy" />| women_wrestling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93c-2640.png?v8" loading="lazy" /> |
-| womens | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f6ba.png?v8" loading="lazy" />| wood | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fab5.png?v8" loading="lazy" /> |
-| woozy_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f974.png?v8" loading="lazy" />| world_map | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f5fa.png?v8" loading="lazy" /> |
-| worm | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fab1.png?v8" loading="lazy" />| worried | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f61f.png?v8" loading="lazy" /> |
-| wrench | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png?v8" loading="lazy" />| wrestling | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f93c.png?v8" loading="lazy" /> |
-| writing_hand | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png?v8" loading="lazy" />| x | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png?v8" loading="lazy" /> |
-| yarn | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9f6.png?v8" loading="lazy" />| yawning_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f971.png?v8" loading="lazy" /> |
-| yellow_circle | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e1.png?v8" loading="lazy" />| yellow_heart | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f49b.png?v8" loading="lazy" /> |
-| yellow_square | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e8.png?v8" loading="lazy" />| yemen | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1fe-1f1ea.png?v8" loading="lazy" /> |
-| yen | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4b4.png?v8" loading="lazy" />| yin_yang | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/262f.png?v8" loading="lazy" /> |
-| yo_yo | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa80.png?v8" loading="lazy" />| yum | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f60b.png?v8" loading="lazy" /> |
-| zambia | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ff-1f1f2.png?v8" loading="lazy" />| zany_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f92a.png?v8" loading="lazy" /> |
-| zap | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png?v8" loading="lazy" />| zebra | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f993.png?v8" loading="lazy" /> |
-| zero | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/0030-20e3.png?v8" loading="lazy" />| zimbabwe | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ff-1f1fc.png?v8" loading="lazy" /> |
-| zipper_mouth_face | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f910.png?v8" loading="lazy" />| zombie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9df.png?v8" loading="lazy" /> |
-| zombie_man | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9df-2642.png?v8" loading="lazy" />| zombie_woman | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f9df-2640.png?v8" loading="lazy" /> |
-| zzz | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a4.png?v8" loading="lazy" />|  |  |
+| 100 | 🤷‍♂️ | 1234 | 🤷‍♂️ |
+| +1 | 🤷‍♂️ | -1 | 🤷‍♂️ |
+| 1st_place_medal | 🤷‍♂️ | 2nd_place_medal | 🤷‍♂️ |
+| 3rd_place_medal | 🤷‍♂️ | 8ball | 🤷‍♂️ |
+| a | 🤷‍♂️ | ab | 🤷‍♂️ |
+| abacus | 🤷‍♂️ | abc | 🤷‍♂️ |
+| abcd | 🤷‍♂️ | accept | 🤷‍♂️ |
+| accessibility | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/accessibility.png?v8" loading="lazy" /> | accordion | 🤷‍♂️ |
+| adhesive_bandage | 🤷‍♂️ | adult | 🤷‍♂️ |
+| aerial_tramway | 🤷‍♂️ | afghanistan | 🤷‍♂️ |
+| airplane | 🤷‍♂️ | aland_islands | 🤷‍♂️ |
+| alarm_clock | 🤷‍♂️ | albania | 🤷‍♂️ |
+| alembic | 🤷‍♂️ | algeria | 🤷‍♂️ |
+| alien | 🤷‍♂️ | ambulance | 🤷‍♂️ |
+| american_samoa | 🤷‍♂️ | amphora | 🤷‍♂️ |
+| anatomical_heart | 🤷‍♂️ | anchor | 🤷‍♂️ |
+| andorra | 🤷‍♂️ | angel | 🤷‍♂️ |
+| anger | 🤷‍♂️ | angola | 🤷‍♂️ |
+| angry | 🤷‍♂️ | anguilla | 🤷‍♂️ |
+| anguished | 🤷‍♂️ | ant | 🤷‍♂️ |
+| antarctica | 🤷‍♂️ | antigua_barbuda | 🤷‍♂️ |
+| apple | 🤷‍♂️ | aquarius | 🤷‍♂️ |
+| argentina | 🤷‍♂️ | aries | 🤷‍♂️ |
+| armenia | 🤷‍♂️ | arrow_backward | 🤷‍♂️ |
+| arrow_double_down | 🤷‍♂️ | arrow_double_up | 🤷‍♂️ |
+| arrow_down | 🤷‍♂️ | arrow_down_small | 🤷‍♂️ |
+| arrow_forward | 🤷‍♂️ | arrow_heading_down | 🤷‍♂️ |
+| arrow_heading_up | 🤷‍♂️ | arrow_left | 🤷‍♂️ |
+| arrow_lower_left | 🤷‍♂️ | arrow_lower_right | 🤷‍♂️ |
+| arrow_right | 🤷‍♂️ | arrow_right_hook | 🤷‍♂️ |
+| arrow_up | 🤷‍♂️ | arrow_up_down | 🤷‍♂️ |
+| arrow_up_small | 🤷‍♂️ | arrow_upper_left | 🤷‍♂️ |
+| arrow_upper_right | 🤷‍♂️ | arrows_clockwise | 🤷‍♂️ |
+| arrows_counterclockwise | 🤷‍♂️ | art | 🤷‍♂️ |
+| articulated_lorry | 🤷‍♂️ | artificial_satellite | 🤷‍♂️ |
+| artist | 🤷‍♂️ | aruba | 🤷‍♂️ |
+| ascension_island | 🤷‍♂️ | asterisk | 🤷‍♂️ |
+| astonished | 🤷‍♂️ | astronaut | 🤷‍♂️ |
+| athletic_shoe | 🤷‍♂️ | atm | 🤷‍♂️ |
+| atom | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/atom.png?v8" loading="lazy" /> | atom_symbol | 🤷‍♂️ |
+| australia | 🤷‍♂️ | austria | 🤷‍♂️ |
+| auto_rickshaw | 🤷‍♂️ | avocado | 🤷‍♂️ |
+| axe | 🤷‍♂️ | azerbaijan | 🤷‍♂️ |
+| b | 🤷‍♂️ | baby | 🤷‍♂️ |
+| baby_bottle | 🤷‍♂️ | baby_chick | 🤷‍♂️ |
+| baby_symbol | 🤷‍♂️ | back | 🤷‍♂️ |
+| bacon | 🤷‍♂️ | badger | 🤷‍♂️ |
+| badminton | 🤷‍♂️ | bagel | 🤷‍♂️ |
+| baggage_claim | 🤷‍♂️ | baguette_bread | 🤷‍♂️ |
+| bahamas | 🤷‍♂️ | bahrain | 🤷‍♂️ |
+| balance_scale | 🤷‍♂️ | bald_man | 🤷‍♂️ |
+| bald_woman | 🤷‍♂️ | ballet_shoes | 🤷‍♂️ |
+| balloon | 🤷‍♂️ | ballot_box | 🤷‍♂️ |
+| ballot_box_with_check | 🤷‍♂️ | bamboo | 🤷‍♂️ |
+| banana | 🤷‍♂️ | bangbang | 🤷‍♂️ |
+| bangladesh | 🤷‍♂️ | banjo | 🤷‍♂️ |
+| bank | 🤷‍♂️ | bar_chart | 🤷‍♂️ |
+| barbados | 🤷‍♂️ | barber | 🤷‍♂️ |
+| baseball | 🤷‍♂️ | basecamp | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/basecamp.png?v8" loading="lazy" /> |
+| basecampy | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/basecampy.png?v8" loading="lazy" /> | basket | 🤷‍♂️ |
+| basketball | 🤷‍♂️ | basketball_man | 🤷‍♂️ |
+| basketball_woman | 🤷‍♂️ | bat | 🤷‍♂️ |
+| bath | 🤷‍♂️ | bathtub | 🤷‍♂️ |
+| battery | 🤷‍♂️ | beach_umbrella | 🤷‍♂️ |
+| bear | 🤷‍♂️ | bearded_person | 🤷‍♂️ |
+| beaver | 🤷‍♂️ | bed | 🤷‍♂️ |
+| bee | 🤷‍♂️ | beer | 🤷‍♂️ |
+| beers | 🤷‍♂️ | beetle | 🤷‍♂️ |
+| beginner | 🤷‍♂️ | belarus | 🤷‍♂️ |
+| belgium | 🤷‍♂️ | belize | 🤷‍♂️ |
+| bell | 🤷‍♂️ | bell_pepper | 🤷‍♂️ |
+| bellhop_bell | 🤷‍♂️ | benin | 🤷‍♂️ |
+| bento | 🤷‍♂️ | bermuda | 🤷‍♂️ |
+| beverage_box | 🤷‍♂️ | bhutan | 🤷‍♂️ |
+| bicyclist | 🤷‍♂️ | bike | 🤷‍♂️ |
+| biking_man | 🤷‍♂️ | biking_woman | 🤷‍♂️ |
+| bikini | 🤷‍♂️ | billed_cap | 🤷‍♂️ |
+| biohazard | 🤷‍♂️ | bird | 🤷‍♂️ |
+| birthday | 🤷‍♂️ | bison | 🤷‍♂️ |
+| black_cat | 🤷‍♂️ | black_circle | 🤷‍♂️ |
+| black_flag | 🤷‍♂️ | black_heart | 🤷‍♂️ |
+| black_joker | 🤷‍♂️ | black_large_square | 🤷‍♂️ |
+| black_medium_small_square | 🤷‍♂️ | black_medium_square | 🤷‍♂️ |
+| black_nib | 🤷‍♂️ | black_small_square | 🤷‍♂️ |
+| black_square_button | 🤷‍♂️ | blond_haired_man | 🤷‍♂️ |
+| blond_haired_person | 🤷‍♂️ | blond_haired_woman | 🤷‍♂️ |
+| blonde_woman | 🤷‍♂️ | blossom | 🤷‍♂️ |
+| blowfish | 🤷‍♂️ | blue_book | 🤷‍♂️ |
+| blue_car | 🤷‍♂️ | blue_heart | 🤷‍♂️ |
+| blue_square | 🤷‍♂️ | blueberries | 🤷‍♂️ |
+| blush | 🤷‍♂️ | boar | 🤷‍♂️ |
+| boat | 🤷‍♂️ | bolivia | 🤷‍♂️ |
+| bomb | 🤷‍♂️ | bone | 🤷‍♂️ |
+| book | 🤷‍♂️ | bookmark | 🤷‍♂️ |
+| bookmark_tabs | 🤷‍♂️ | books | 🤷‍♂️ |
+| boom | 🤷‍♂️ | boomerang | 🤷‍♂️ |
+| boot | 🤷‍♂️ | bosnia_herzegovina | 🤷‍♂️ |
+| botswana | 🤷‍♂️ | bouncing_ball_man | 🤷‍♂️ |
+| bouncing_ball_person | 🤷‍♂️ | bouncing_ball_woman | 🤷‍♂️ |
+| bouquet | 🤷‍♂️ | bouvet_island | 🤷‍♂️ |
+| bow | 🤷‍♂️ | bow_and_arrow | 🤷‍♂️ |
+| bowing_man | 🤷‍♂️ | bowing_woman | 🤷‍♂️ |
+| bowl_with_spoon | 🤷‍♂️ | bowling | 🤷‍♂️ |
+| bowtie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/bowtie.png?v8" loading="lazy" /> | boxing_glove | 🤷‍♂️ |
+| boy | 🤷‍♂️ | brain | 🤷‍♂️ |
+| brazil | 🤷‍♂️ | bread | 🤷‍♂️ |
+| breast_feeding | 🤷‍♂️ | bricks | 🤷‍♂️ |
+| bride_with_veil | 🤷‍♂️ | bridge_at_night | 🤷‍♂️ |
+| briefcase | 🤷‍♂️ | british_indian_ocean_territory | 🤷‍♂️ |
+| british_virgin_islands | 🤷‍♂️ | broccoli | 🤷‍♂️ |
+| broken_heart | 🤷‍♂️ | broom | 🤷‍♂️ |
+| brown_circle | 🤷‍♂️ | brown_heart | 🤷‍♂️ |
+| brown_square | 🤷‍♂️ | brunei | 🤷‍♂️ |
+| bubble_tea | 🤷‍♂️ | bucket | 🤷‍♂️ |
+| bug | 🤷‍♂️ | building_construction | 🤷‍♂️ |
+| bulb | 🤷‍♂️ | bulgaria | 🤷‍♂️ |
+| bullettrain_front | 🤷‍♂️ | bullettrain_side | 🤷‍♂️ |
+| burkina_faso | 🤷‍♂️ | burrito | 🤷‍♂️ |
+| burundi | 🤷‍♂️ | bus | 🤷‍♂️ |
+| business_suit_levitating | 🤷‍♂️ | busstop | 🤷‍♂️ |
+| bust_in_silhouette | 🤷‍♂️ | busts_in_silhouette | 🤷‍♂️ |
+| butter | 🤷‍♂️ | butterfly | 🤷‍♂️ |
+| cactus | 🤷‍♂️ | cake | 🤷‍♂️ |
+| calendar | 🤷‍♂️ | call_me_hand | 🤷‍♂️ |
+| calling | 🤷‍♂️ | cambodia | 🤷‍♂️ |
+| camel | 🤷‍♂️ | camera | 🤷‍♂️ |
+| camera_flash | 🤷‍♂️ | cameroon | 🤷‍♂️ |
+| camping | 🤷‍♂️ | canada | 🤷‍♂️ |
+| canary_islands | 🤷‍♂️ | cancer | 🤷‍♂️ |
+| candle | 🤷‍♂️ | candy | 🤷‍♂️ |
+| canned_food | 🤷‍♂️ | canoe | 🤷‍♂️ |
+| cape_verde | 🤷‍♂️ | capital_abcd | 🤷‍♂️ |
+| capricorn | 🤷‍♂️ | car | 🤷‍♂️ |
+| card_file_box | 🤷‍♂️ | card_index | 🤷‍♂️ |
+| card_index_dividers | 🤷‍♂️ | caribbean_netherlands | 🤷‍♂️ |
+| carousel_horse | 🤷‍♂️ | carpentry_saw | 🤷‍♂️ |
+| carrot | 🤷‍♂️ | cartwheeling | 🤷‍♂️ |
+| cat | 🤷‍♂️ | cat2 | 🤷‍♂️ |
+| cayman_islands | 🤷‍♂️ | cd | 🤷‍♂️ |
+| central_african_republic | 🤷‍♂️ | ceuta_melilla | 🤷‍♂️ |
+| chad | 🤷‍♂️ | chains | 🤷‍♂️ |
+| chair | 🤷‍♂️ | champagne | 🤷‍♂️ |
+| chart | 🤷‍♂️ | chart_with_downwards_trend | 🤷‍♂️ |
+| chart_with_upwards_trend | 🤷‍♂️ | checkered_flag | 🤷‍♂️ |
+| cheese | 🤷‍♂️ | cherries | 🤷‍♂️ |
+| cherry_blossom | 🤷‍♂️ | chess_pawn | 🤷‍♂️ |
+| chestnut | 🤷‍♂️ | chicken | 🤷‍♂️ |
+| child | 🤷‍♂️ | children_crossing | 🤷‍♂️ |
+| chile | 🤷‍♂️ | chipmunk | 🤷‍♂️ |
+| chocolate_bar | 🤷‍♂️ | chopsticks | 🤷‍♂️ |
+| christmas_island | 🤷‍♂️ | christmas_tree | 🤷‍♂️ |
+| church | 🤷‍♂️ | cinema | 🤷‍♂️ |
+| circus_tent | 🤷‍♂️ | city_sunrise | 🤷‍♂️ |
+| city_sunset | 🤷‍♂️ | cityscape | 🤷‍♂️ |
+| cl | 🤷‍♂️ | clamp | 🤷‍♂️ |
+| clap | 🤷‍♂️ | clapper | 🤷‍♂️ |
+| classical_building | 🤷‍♂️ | climbing | 🤷‍♂️ |
+| climbing_man | 🤷‍♂️ | climbing_woman | 🤷‍♂️ |
+| clinking_glasses | 🤷‍♂️ | clipboard | 🤷‍♂️ |
+| clipperton_island | 🤷‍♂️ | clock1 | 🤷‍♂️ |
+| clock10 | 🤷‍♂️ | clock1030 | 🤷‍♂️ |
+| clock11 | 🤷‍♂️ | clock1130 | 🤷‍♂️ |
+| clock12 | 🤷‍♂️ | clock1230 | 🤷‍♂️ |
+| clock130 | 🤷‍♂️ | clock2 | 🤷‍♂️ |
+| clock230 | 🤷‍♂️ | clock3 | 🤷‍♂️ |
+| clock330 | 🤷‍♂️ | clock4 | 🤷‍♂️ |
+| clock430 | 🤷‍♂️ | clock5 | 🤷‍♂️ |
+| clock530 | 🤷‍♂️ | clock6 | 🤷‍♂️ |
+| clock630 | 🤷‍♂️ | clock7 | 🤷‍♂️ |
+| clock730 | 🤷‍♂️ | clock8 | 🤷‍♂️ |
+| clock830 | 🤷‍♂️ | clock9 | 🤷‍♂️ |
+| clock930 | 🤷‍♂️ | closed_book | 🤷‍♂️ |
+| closed_lock_with_key | 🤷‍♂️ | closed_umbrella | 🤷‍♂️ |
+| cloud | 🤷‍♂️ | cloud_with_lightning | 🤷‍♂️ |
+| cloud_with_lightning_and_rain | 🤷‍♂️ | cloud_with_rain | 🤷‍♂️ |
+| cloud_with_snow | 🤷‍♂️ | clown_face | 🤷‍♂️ |
+| clubs | 🤷‍♂️ | cn | 🤷‍♂️ |
+| coat | 🤷‍♂️ | cockroach | 🤷‍♂️ |
+| cocktail | 🤷‍♂️ | coconut | 🤷‍♂️ |
+| cocos_islands | 🤷‍♂️ | coffee | 🤷‍♂️ |
+| coffin | 🤷‍♂️ | coin | 🤷‍♂️ |
+| cold_face | 🤷‍♂️ | cold_sweat | 🤷‍♂️ |
+| collision | 🤷‍♂️ | colombia | 🤷‍♂️ |
+| comet | 🤷‍♂️ | comoros | 🤷‍♂️ |
+| compass | 🤷‍♂️ | computer | 🤷‍♂️ |
+| computer_mouse | 🤷‍♂️ | confetti_ball | 🤷‍♂️ |
+| confounded | 🤷‍♂️ | confused | 🤷‍♂️ |
+| congo_brazzaville | 🤷‍♂️ | congo_kinshasa | 🤷‍♂️ |
+| congratulations | 🤷‍♂️ | construction | 🤷‍♂️ |
+| construction_worker | 🤷‍♂️ | construction_worker_man | 🤷‍♂️ |
+| construction_worker_woman | 🤷‍♂️ | control_knobs | 🤷‍♂️ |
+| convenience_store | 🤷‍♂️ | cook | 🤷‍♂️ |
+| cook_islands | 🤷‍♂️ | cookie | 🤷‍♂️ |
+| cool | 🤷‍♂️ | cop | 🤷‍♂️ |
+| copyright | 🤷‍♂️ | corn | 🤷‍♂️ |
+| costa_rica | 🤷‍♂️ | cote_divoire | 🤷‍♂️ |
+| couch_and_lamp | 🤷‍♂️ | couple | 🤷‍♂️ |
+| couple_with_heart | 🤷‍♂️ | couple_with_heart_man_man | 🤷‍♂️ |
+| couple_with_heart_woman_man | 🤷‍♂️ | couple_with_heart_woman_woman | 🤷‍♂️ |
+| couplekiss | 🤷‍♂️ | couplekiss_man_man | 🤷‍♂️ |
+| couplekiss_man_woman | 🤷‍♂️ | couplekiss_woman_woman | 🤷‍♂️ |
+| cow | 🤷‍♂️ | cow2 | 🤷‍♂️ |
+| cowboy_hat_face | 🤷‍♂️ | crab | 🤷‍♂️ |
+| crayon | 🤷‍♂️ | credit_card | 🤷‍♂️ |
+| crescent_moon | 🤷‍♂️ | cricket | 🤷‍♂️ |
+| cricket_game | 🤷‍♂️ | croatia | 🤷‍♂️ |
+| crocodile | 🤷‍♂️ | croissant | 🤷‍♂️ |
+| crossed_fingers | 🤷‍♂️ | crossed_flags | 🤷‍♂️ |
+| crossed_swords | 🤷‍♂️ | crown | 🤷‍♂️ |
+| cry | 🤷‍♂️ | crying_cat_face | 🤷‍♂️ |
+| crystal_ball | 🤷‍♂️ | cuba | 🤷‍♂️ |
+| cucumber | 🤷‍♂️ | cup_with_straw | 🤷‍♂️ |
+| cupcake | 🤷‍♂️ | cupid | 🤷‍♂️ |
+| curacao | 🤷‍♂️ | curling_stone | 🤷‍♂️ |
+| curly_haired_man | 🤷‍♂️ | curly_haired_woman | 🤷‍♂️ |
+| curly_loop | 🤷‍♂️ | currency_exchange | 🤷‍♂️ |
+| curry | 🤷‍♂️ | cursing_face | 🤷‍♂️ |
+| custard | 🤷‍♂️ | customs | 🤷‍♂️ |
+| cut_of_meat | 🤷‍♂️ | cyclone | 🤷‍♂️ |
+| cyprus | 🤷‍♂️ | czech_republic | 🤷‍♂️ |
+| dagger | 🤷‍♂️ | dancer | 🤷‍♂️ |
+| dancers | 🤷‍♂️ | dancing_men | 🤷‍♂️ |
+| dancing_women | 🤷‍♂️ | dango | 🤷‍♂️ |
+| dark_sunglasses | 🤷‍♂️ | dart | 🤷‍♂️ |
+| dash | 🤷‍♂️ | date | 🤷‍♂️ |
+| de | 🤷‍♂️ | deaf_man | 🤷‍♂️ |
+| deaf_person | 🤷‍♂️ | deaf_woman | 🤷‍♂️ |
+| deciduous_tree | 🤷‍♂️ | deer | 🤷‍♂️ |
+| denmark | 🤷‍♂️ | department_store | 🤷‍♂️ |
+| dependabot | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/dependabot.png?v8" loading="lazy" /> | derelict_house | 🤷‍♂️ |
+| desert | 🤷‍♂️ | desert_island | 🤷‍♂️ |
+| desktop_computer | 🤷‍♂️ | detective | 🤷‍♂️ |
+| diamond_shape_with_a_dot_inside | 🤷‍♂️ | diamonds | 🤷‍♂️ |
+| diego_garcia | 🤷‍♂️ | disappointed | 🤷‍♂️ |
+| disappointed_relieved | 🤷‍♂️ | disguised_face | 🤷‍♂️ |
+| diving_mask | 🤷‍♂️ | diya_lamp | 🤷‍♂️ |
+| dizzy | 🤷‍♂️ | dizzy_face | 🤷‍♂️ |
+| djibouti | 🤷‍♂️ | dna | 🤷‍♂️ |
+| do_not_litter | 🤷‍♂️ | dodo | 🤷‍♂️ |
+| dog | 🤷‍♂️ | dog2 | 🤷‍♂️ |
+| dollar | 🤷‍♂️ | dolls | 🤷‍♂️ |
+| dolphin | 🤷‍♂️ | dominica | 🤷‍♂️ |
+| dominican_republic | 🤷‍♂️ | door | 🤷‍♂️ |
+| doughnut | 🤷‍♂️ | dove | 🤷‍♂️ |
+| dragon | 🤷‍♂️ | dragon_face | 🤷‍♂️ |
+| dress | 🤷‍♂️ | dromedary_camel | 🤷‍♂️ |
+| drooling_face | 🤷‍♂️ | drop_of_blood | 🤷‍♂️ |
+| droplet | 🤷‍♂️ | drum | 🤷‍♂️ |
+| duck | 🤷‍♂️ | dumpling | 🤷‍♂️ |
+| dvd | 🤷‍♂️ | e-mail | 🤷‍♂️ |
+| eagle | 🤷‍♂️ | ear | 🤷‍♂️ |
+| ear_of_rice | 🤷‍♂️ | ear_with_hearing_aid | 🤷‍♂️ |
+| earth_africa | 🤷‍♂️ | earth_americas | 🤷‍♂️ |
+| earth_asia | 🤷‍♂️ | ecuador | 🤷‍♂️ |
+| egg | 🤷‍♂️ | eggplant | 🤷‍♂️ |
+| egypt | 🤷‍♂️ | eight | 🤷‍♂️ |
+| eight_pointed_black_star | 🤷‍♂️ | eight_spoked_asterisk | 🤷‍♂️ |
+| eject_button | 🤷‍♂️ | el_salvador | 🤷‍♂️ |
+| electric_plug | 🤷‍♂️ | electron | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/electron.png?v8" loading="lazy" /> |
+| elephant | 🤷‍♂️ | elevator | 🤷‍♂️ |
+| elf | 🤷‍♂️ | elf_man | 🤷‍♂️ |
+| elf_woman | 🤷‍♂️ | email | 🤷‍♂️ |
+| end | 🤷‍♂️ | england | 🤷‍♂️ |
+| envelope | 🤷‍♂️ | envelope_with_arrow | 🤷‍♂️ |
+| equatorial_guinea | 🤷‍♂️ | eritrea | 🤷‍♂️ |
+| es | 🤷‍♂️ | estonia | 🤷‍♂️ |
+| ethiopia | 🤷‍♂️ | eu | 🤷‍♂️ |
+| euro | 🤷‍♂️ | european_castle | 🤷‍♂️ |
+| european_post_office | 🤷‍♂️ | european_union | 🤷‍♂️ |
+| evergreen_tree | 🤷‍♂️ | exclamation | 🤷‍♂️ |
+| exploding_head | 🤷‍♂️ | expressionless | 🤷‍♂️ |
+| eye | 🤷‍♂️ | eye_speech_bubble | 🤷‍♂️ |
+| eyeglasses | 🤷‍♂️ | eyes | 🤷‍♂️ |
+| face_exhaling | 🤷‍♂️ | face_in_clouds | 🤷‍♂️ |
+| face_with_head_bandage | 🤷‍♂️ | face_with_spiral_eyes | 🤷‍♂️ |
+| face_with_thermometer | 🤷‍♂️ | facepalm | 🤷‍♂️ |
+| facepunch | 🤷‍♂️ | factory | 🤷‍♂️ |
+| factory_worker | 🤷‍♂️ | fairy | 🤷‍♂️ |
+| fairy_man | 🤷‍♂️ | fairy_woman | 🤷‍♂️ |
+| falafel | 🤷‍♂️ | falkland_islands | 🤷‍♂️ |
+| fallen_leaf | 🤷‍♂️ | family | 🤷‍♂️ |
+| family_man_boy | 🤷‍♂️ | family_man_boy_boy | 🤷‍♂️ |
+| family_man_girl | 🤷‍♂️ | family_man_girl_boy | 🤷‍♂️ |
+| family_man_girl_girl | 🤷‍♂️ | family_man_man_boy | 🤷‍♂️ |
+| family_man_man_boy_boy | 🤷‍♂️ | family_man_man_girl | 🤷‍♂️ |
+| family_man_man_girl_boy | 🤷‍♂️ | family_man_man_girl_girl | 🤷‍♂️ |
+| family_man_woman_boy | 🤷‍♂️ | family_man_woman_boy_boy | 🤷‍♂️ |
+| family_man_woman_girl | 🤷‍♂️ | family_man_woman_girl_boy | 🤷‍♂️ |
+| family_man_woman_girl_girl | 🤷‍♂️ | family_woman_boy | 🤷‍♂️ |
+| family_woman_boy_boy | 🤷‍♂️ | family_woman_girl | 🤷‍♂️ |
+| family_woman_girl_boy | 🤷‍♂️ | family_woman_girl_girl | 🤷‍♂️ |
+| family_woman_woman_boy | 🤷‍♂️ | family_woman_woman_boy_boy | 🤷‍♂️ |
+| family_woman_woman_girl | 🤷‍♂️ | family_woman_woman_girl_boy | 🤷‍♂️ |
+| family_woman_woman_girl_girl | 🤷‍♂️ | farmer | 🤷‍♂️ |
+| faroe_islands | 🤷‍♂️ | fast_forward | 🤷‍♂️ |
+| fax | 🤷‍♂️ | fearful | 🤷‍♂️ |
+| feather | 🤷‍♂️ | feelsgood | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/feelsgood.png?v8" loading="lazy" /> |
+| feet | 🤷‍♂️ | female_detective | 🤷‍♂️ |
+| female_sign | 🤷‍♂️ | ferris_wheel | 🤷‍♂️ |
+| ferry | 🤷‍♂️ | field_hockey | 🤷‍♂️ |
+| fiji | 🤷‍♂️ | file_cabinet | 🤷‍♂️ |
+| file_folder | 🤷‍♂️ | film_projector | 🤷‍♂️ |
+| film_strip | 🤷‍♂️ | finland | 🤷‍♂️ |
+| finnadie | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/finnadie.png?v8" loading="lazy" /> | fire | 🤷‍♂️ |
+| fire_engine | 🤷‍♂️ | fire_extinguisher | 🤷‍♂️ |
+| firecracker | 🤷‍♂️ | firefighter | 🤷‍♂️ |
+| fireworks | 🤷‍♂️ | first_quarter_moon | 🤷‍♂️ |
+| first_quarter_moon_with_face | 🤷‍♂️ | fish | 🤷‍♂️ |
+| fish_cake | 🤷‍♂️ | fishing_pole_and_fish | 🤷‍♂️ |
+| fishsticks | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/fishsticks.png?v8" loading="lazy" /> | fist | 🤷‍♂️ |
+| fist_left | 🤷‍♂️ | fist_oncoming | 🤷‍♂️ |
+| fist_raised | 🤷‍♂️ | fist_right | 🤷‍♂️ |
+| five | 🤷‍♂️ | flags | 🤷‍♂️ |
+| flamingo | 🤷‍♂️ | flashlight | 🤷‍♂️ |
+| flat_shoe | 🤷‍♂️ | flatbread | 🤷‍♂️ |
+| fleur_de_lis | 🤷‍♂️ | flight_arrival | 🤷‍♂️ |
+| flight_departure | 🤷‍♂️ | flipper | 🤷‍♂️ |
+| floppy_disk | 🤷‍♂️ | flower_playing_cards | 🤷‍♂️ |
+| flushed | 🤷‍♂️ | fly | 🤷‍♂️ |
+| flying_disc | 🤷‍♂️ | flying_saucer | 🤷‍♂️ |
+| fog | 🤷‍♂️ | foggy | 🤷‍♂️ |
+| fondue | 🤷‍♂️ | foot | 🤷‍♂️ |
+| football | 🤷‍♂️ | footprints | 🤷‍♂️ |
+| fork_and_knife | 🤷‍♂️ | fortune_cookie | 🤷‍♂️ |
+| fountain | 🤷‍♂️ | fountain_pen | 🤷‍♂️ |
+| four | 🤷‍♂️ | four_leaf_clover | 🤷‍♂️ |
+| fox_face | 🤷‍♂️ | fr | 🤷‍♂️ |
+| framed_picture | 🤷‍♂️ | free | 🤷‍♂️ |
+| french_guiana | 🤷‍♂️ | french_polynesia | 🤷‍♂️ |
+| french_southern_territories | 🤷‍♂️ | fried_egg | 🤷‍♂️ |
+| fried_shrimp | 🤷‍♂️ | fries | 🤷‍♂️ |
+| frog | 🤷‍♂️ | frowning | 🤷‍♂️ |
+| frowning_face | 🤷‍♂️ | frowning_man | 🤷‍♂️ |
+| frowning_person | 🤷‍♂️ | frowning_woman | 🤷‍♂️ |
+| fu | 🤷‍♂️ | fuelpump | 🤷‍♂️ |
+| full_moon | 🤷‍♂️ | full_moon_with_face | 🤷‍♂️ |
+| funeral_urn | 🤷‍♂️ | gabon | 🤷‍♂️ |
+| gambia | 🤷‍♂️ | game_die | 🤷‍♂️ |
+| garlic | 🤷‍♂️ | gb | 🤷‍♂️ |
+| gear | 🤷‍♂️ | gem | 🤷‍♂️ |
+| gemini | 🤷‍♂️ | genie | 🤷‍♂️ |
+| genie_man | 🤷‍♂️ | genie_woman | 🤷‍♂️ |
+| georgia | 🤷‍♂️ | ghana | 🤷‍♂️ |
+| ghost | 🤷‍♂️ | gibraltar | 🤷‍♂️ |
+| gift | 🤷‍♂️ | gift_heart | 🤷‍♂️ |
+| giraffe | 🤷‍♂️ | girl | 🤷‍♂️ |
+| globe_with_meridians | 🤷‍♂️ | gloves | 🤷‍♂️ |
+| goal_net | 🤷‍♂️ | goat | 🤷‍♂️ |
+| goberserk | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/goberserk.png?v8" loading="lazy" /> | godmode | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/godmode.png?v8" loading="lazy" /> |
+| goggles | 🤷‍♂️ | golf | 🤷‍♂️ |
+| golfing | 🤷‍♂️ | golfing_man | 🤷‍♂️ |
+| golfing_woman | 🤷‍♂️ | gorilla | 🤷‍♂️ |
+| grapes | 🤷‍♂️ | greece | 🤷‍♂️ |
+| green_apple | 🤷‍♂️ | green_book | 🤷‍♂️ |
+| green_circle | 🤷‍♂️ | green_heart | 🤷‍♂️ |
+| green_salad | 🤷‍♂️ | green_square | 🤷‍♂️ |
+| greenland | 🤷‍♂️ | grenada | 🤷‍♂️ |
+| grey_exclamation | 🤷‍♂️ | grey_question | 🤷‍♂️ |
+| grimacing | 🤷‍♂️ | grin | 🤷‍♂️ |
+| grinning | 🤷‍♂️ | guadeloupe | 🤷‍♂️ |
+| guam | 🤷‍♂️ | guard | 🤷‍♂️ |
+| guardsman | 🤷‍♂️ | guardswoman | 🤷‍♂️ |
+| guatemala | 🤷‍♂️ | guernsey | 🤷‍♂️ |
+| guide_dog | 🤷‍♂️ | guinea | 🤷‍♂️ |
+| guinea_bissau | 🤷‍♂️ | guitar | 🤷‍♂️ |
+| gun | 🤷‍♂️ | guyana | 🤷‍♂️ |
+| haircut | 🤷‍♂️ | haircut_man | 🤷‍♂️ |
+| haircut_woman | 🤷‍♂️ | haiti | 🤷‍♂️ |
+| hamburger | 🤷‍♂️ | hammer | 🤷‍♂️ |
+| hammer_and_pick | 🤷‍♂️ | hammer_and_wrench | 🤷‍♂️ |
+| hamster | 🤷‍♂️ | hand | 🤷‍♂️ |
+| hand_over_mouth | 🤷‍♂️ | handbag | 🤷‍♂️ |
+| handball_person | 🤷‍♂️ | handshake | 🤷‍♂️ |
+| hankey | 🤷‍♂️ | hash | 🤷‍♂️ |
+| hatched_chick | 🤷‍♂️ | hatching_chick | 🤷‍♂️ |
+| headphones | 🤷‍♂️ | headstone | 🤷‍♂️ |
+| health_worker | 🤷‍♂️ | hear_no_evil | 🤷‍♂️ |
+| heard_mcdonald_islands | 🤷‍♂️ | heart | 🤷‍♂️ |
+| heart_decoration | 🤷‍♂️ | heart_eyes | 🤷‍♂️ |
+| heart_eyes_cat | 🤷‍♂️ | heart_on_fire | 🤷‍♂️ |
+| heartbeat | 🤷‍♂️ | heartpulse | 🤷‍♂️ |
+| hearts | 🤷‍♂️ | heavy_check_mark | 🤷‍♂️ |
+| heavy_division_sign | 🤷‍♂️ | heavy_dollar_sign | 🤷‍♂️ |
+| heavy_exclamation_mark | 🤷‍♂️ | heavy_heart_exclamation | 🤷‍♂️ |
+| heavy_minus_sign | 🤷‍♂️ | heavy_multiplication_x | 🤷‍♂️ |
+| heavy_plus_sign | 🤷‍♂️ | hedgehog | 🤷‍♂️ |
+| helicopter | 🤷‍♂️ | herb | 🤷‍♂️ |
+| hibiscus | 🤷‍♂️ | high_brightness | 🤷‍♂️ |
+| high_heel | 🤷‍♂️ | hiking_boot | 🤷‍♂️ |
+| hindu_temple | 🤷‍♂️ | hippopotamus | 🤷‍♂️ |
+| hocho | 🤷‍♂️ | hole | 🤷‍♂️ |
+| honduras | 🤷‍♂️ | honey_pot | 🤷‍♂️ |
+| honeybee | 🤷‍♂️ | hong_kong | 🤷‍♂️ |
+| hook | 🤷‍♂️ | horse | 🤷‍♂️ |
+| horse_racing | 🤷‍♂️ | hospital | 🤷‍♂️ |
+| hot_face | 🤷‍♂️ | hot_pepper | 🤷‍♂️ |
+| hotdog | 🤷‍♂️ | hotel | 🤷‍♂️ |
+| hotsprings | 🤷‍♂️ | hourglass | 🤷‍♂️ |
+| hourglass_flowing_sand | 🤷‍♂️ | house | 🤷‍♂️ |
+| house_with_garden | 🤷‍♂️ | houses | 🤷‍♂️ |
+| hugs | 🤷‍♂️ | hungary | 🤷‍♂️ |
+| hurtrealbad | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/hurtrealbad.png?v8" loading="lazy" /> | hushed | 🤷‍♂️ |
+| hut | 🤷‍♂️ | ice_cream | 🤷‍♂️ |
+| ice_cube | 🤷‍♂️ | ice_hockey | 🤷‍♂️ |
+| ice_skate | 🤷‍♂️ | icecream | 🤷‍♂️ |
+| iceland | 🤷‍♂️ | id | 🤷‍♂️ |
+| ideograph_advantage | 🤷‍♂️ | imp | 🤷‍♂️ |
+| inbox_tray | 🤷‍♂️ | incoming_envelope | 🤷‍♂️ |
+| india | 🤷‍♂️ | indonesia | 🤷‍♂️ |
+| infinity | 🤷‍♂️ | information_desk_person | 🤷‍♂️ |
+| information_source | 🤷‍♂️ | innocent | 🤷‍♂️ |
+| interrobang | 🤷‍♂️ | iphone | 🤷‍♂️ |
+| iran | 🤷‍♂️ | iraq | 🤷‍♂️ |
+| ireland | 🤷‍♂️ | isle_of_man | 🤷‍♂️ |
+| israel | 🤷‍♂️ | it | 🤷‍♂️ |
+| izakaya_lantern | 🤷‍♂️ | jack_o_lantern | 🤷‍♂️ |
+| jamaica | 🤷‍♂️ | japan | 🤷‍♂️ |
+| japanese_castle | 🤷‍♂️ | japanese_goblin | 🤷‍♂️ |
+| japanese_ogre | 🤷‍♂️ | jeans | 🤷‍♂️ |
+| jersey | 🤷‍♂️ | jigsaw | 🤷‍♂️ |
+| jordan | 🤷‍♂️ | joy | 🤷‍♂️ |
+| joy_cat | 🤷‍♂️ | joystick | 🤷‍♂️ |
+| jp | 🤷‍♂️ | judge | 🤷‍♂️ |
+| juggling_person | 🤷‍♂️ | kaaba | 🤷‍♂️ |
+| kangaroo | 🤷‍♂️ | kazakhstan | 🤷‍♂️ |
+| kenya | 🤷‍♂️ | key | 🤷‍♂️ |
+| keyboard | 🤷‍♂️ | keycap_ten | 🤷‍♂️ |
+| kick_scooter | 🤷‍♂️ | kimono | 🤷‍♂️ |
+| kiribati | 🤷‍♂️ | kiss | 🤷‍♂️ |
+| kissing | 🤷‍♂️ | kissing_cat | 🤷‍♂️ |
+| kissing_closed_eyes | 🤷‍♂️ | kissing_heart | 🤷‍♂️ |
+| kissing_smiling_eyes | 🤷‍♂️ | kite | 🤷‍♂️ |
+| kiwi_fruit | 🤷‍♂️ | kneeling_man | 🤷‍♂️ |
+| kneeling_person | 🤷‍♂️ | kneeling_woman | 🤷‍♂️ |
+| knife | 🤷‍♂️ | knot | 🤷‍♂️ |
+| koala | 🤷‍♂️ | koko | 🤷‍♂️ |
+| kosovo | 🤷‍♂️ | kr | 🤷‍♂️ |
+| kuwait | 🤷‍♂️ | kyrgyzstan | 🤷‍♂️ |
+| lab_coat | 🤷‍♂️ | label | 🤷‍♂️ |
+| lacrosse | 🤷‍♂️ | ladder | 🤷‍♂️ |
+| lady_beetle | 🤷‍♂️ | lantern | 🤷‍♂️ |
+| laos | 🤷‍♂️ | large_blue_circle | 🤷‍♂️ |
+| large_blue_diamond | 🤷‍♂️ | large_orange_diamond | 🤷‍♂️ |
+| last_quarter_moon | 🤷‍♂️ | last_quarter_moon_with_face | 🤷‍♂️ |
+| latin_cross | 🤷‍♂️ | latvia | 🤷‍♂️ |
+| laughing | 🤷‍♂️ | leafy_green | 🤷‍♂️ |
+| leaves | 🤷‍♂️ | lebanon | 🤷‍♂️ |
+| ledger | 🤷‍♂️ | left_luggage | 🤷‍♂️ |
+| left_right_arrow | 🤷‍♂️ | left_speech_bubble | 🤷‍♂️ |
+| leftwards_arrow_with_hook | 🤷‍♂️ | leg | 🤷‍♂️ |
+| lemon | 🤷‍♂️ | leo | 🤷‍♂️ |
+| leopard | 🤷‍♂️ | lesotho | 🤷‍♂️ |
+| level_slider | 🤷‍♂️ | liberia | 🤷‍♂️ |
+| libra | 🤷‍♂️ | libya | 🤷‍♂️ |
+| liechtenstein | 🤷‍♂️ | light_rail | 🤷‍♂️ |
+| link | 🤷‍♂️ | lion | 🤷‍♂️ |
+| lips | 🤷‍♂️ | lipstick | 🤷‍♂️ |
+| lithuania | 🤷‍♂️ | lizard | 🤷‍♂️ |
+| llama | 🤷‍♂️ | lobster | 🤷‍♂️ |
+| lock | 🤷‍♂️ | lock_with_ink_pen | 🤷‍♂️ |
+| lollipop | 🤷‍♂️ | long_drum | 🤷‍♂️ |
+| loop | 🤷‍♂️ | lotion_bottle | 🤷‍♂️ |
+| lotus_position | 🤷‍♂️ | lotus_position_man | 🤷‍♂️ |
+| lotus_position_woman | 🤷‍♂️ | loud_sound | 🤷‍♂️ |
+| loudspeaker | 🤷‍♂️ | love_hotel | 🤷‍♂️ |
+| love_letter | 🤷‍♂️ | love_you_gesture | 🤷‍♂️ |
+| low_brightness | 🤷‍♂️ | luggage | 🤷‍♂️ |
+| lungs | 🤷‍♂️ | luxembourg | 🤷‍♂️ |
+| lying_face | 🤷‍♂️ | m | 🤷‍♂️ |
+| macau | 🤷‍♂️ | macedonia | 🤷‍♂️ |
+| madagascar | 🤷‍♂️ | mag | 🤷‍♂️ |
+| mag_right | 🤷‍♂️ | mage | 🤷‍♂️ |
+| mage_man | 🤷‍♂️ | mage_woman | 🤷‍♂️ |
+| magic_wand | 🤷‍♂️ | magnet | 🤷‍♂️ |
+| mahjong | 🤷‍♂️ | mailbox | 🤷‍♂️ |
+| mailbox_closed | 🤷‍♂️ | mailbox_with_mail | 🤷‍♂️ |
+| mailbox_with_no_mail | 🤷‍♂️ | malawi | 🤷‍♂️ |
+| malaysia | 🤷‍♂️ | maldives | 🤷‍♂️ |
+| male_detective | 🤷‍♂️ | male_sign | 🤷‍♂️ |
+| mali | 🤷‍♂️ | malta | 🤷‍♂️ |
+| mammoth | 🤷‍♂️ | man | 🤷‍♂️ |
+| man_artist | 🤷‍♂️ | man_astronaut | 🤷‍♂️ |
+| man_beard | 🤷‍♂️ | man_cartwheeling | 🤷‍♂️ |
+| man_cook | 🤷‍♂️ | man_dancing | 🤷‍♂️ |
+| man_facepalming | 🤷‍♂️ | man_factory_worker | 🤷‍♂️ |
+| man_farmer | 🤷‍♂️ | man_feeding_baby | 🤷‍♂️ |
+| man_firefighter | 🤷‍♂️ | man_health_worker | 🤷‍♂️ |
+| man_in_manual_wheelchair | 🤷‍♂️ | man_in_motorized_wheelchair | 🤷‍♂️ |
+| man_in_tuxedo | 🤷‍♂️ | man_judge | 🤷‍♂️ |
+| man_juggling | 🤷‍♂️ | man_mechanic | 🤷‍♂️ |
+| man_office_worker | 🤷‍♂️ | man_pilot | 🤷‍♂️ |
+| man_playing_handball | 🤷‍♂️ | man_playing_water_polo | 🤷‍♂️ |
+| man_scientist | 🤷‍♂️ | man_shrugging | 🤷‍♂️ |
+| man_singer | 🤷‍♂️ | man_student | 🤷‍♂️ |
+| man_teacher | 🤷‍♂️ | man_technologist | 🤷‍♂️ |
+| man_with_gua_pi_mao | 🤷‍♂️ | man_with_probing_cane | 🤷‍♂️ |
+| man_with_turban | 🤷‍♂️ | man_with_veil | 🤷‍♂️ |
+| mandarin | 🤷‍♂️ | mango | 🤷‍♂️ |
+| mans_shoe | 🤷‍♂️ | mantelpiece_clock | 🤷‍♂️ |
+| manual_wheelchair | 🤷‍♂️ | maple_leaf | 🤷‍♂️ |
+| marshall_islands | 🤷‍♂️ | martial_arts_uniform | 🤷‍♂️ |
+| martinique | 🤷‍♂️ | mask | 🤷‍♂️ |
+| massage | 🤷‍♂️ | massage_man | 🤷‍♂️ |
+| massage_woman | 🤷‍♂️ | mate | 🤷‍♂️ |
+| mauritania | 🤷‍♂️ | mauritius | 🤷‍♂️ |
+| mayotte | 🤷‍♂️ | meat_on_bone | 🤷‍♂️ |
+| mechanic | 🤷‍♂️ | mechanical_arm | 🤷‍♂️ |
+| mechanical_leg | 🤷‍♂️ | medal_military | 🤷‍♂️ |
+| medal_sports | 🤷‍♂️ | medical_symbol | 🤷‍♂️ |
+| mega | 🤷‍♂️ | melon | 🤷‍♂️ |
+| memo | 🤷‍♂️ | men_wrestling | 🤷‍♂️ |
+| mending_heart | 🤷‍♂️ | menorah | 🤷‍♂️ |
+| mens | 🤷‍♂️ | mermaid | 🤷‍♂️ |
+| merman | 🤷‍♂️ | merperson | 🤷‍♂️ |
+| metal | 🤷‍♂️ | metro | 🤷‍♂️ |
+| mexico | 🤷‍♂️ | microbe | 🤷‍♂️ |
+| micronesia | 🤷‍♂️ | microphone | 🤷‍♂️ |
+| microscope | 🤷‍♂️ | middle_finger | 🤷‍♂️ |
+| military_helmet | 🤷‍♂️ | milk_glass | 🤷‍♂️ |
+| milky_way | 🤷‍♂️ | minibus | 🤷‍♂️ |
+| minidisc | 🤷‍♂️ | mirror | 🤷‍♂️ |
+| mobile_phone_off | 🤷‍♂️ | moldova | 🤷‍♂️ |
+| monaco | 🤷‍♂️ | money_mouth_face | 🤷‍♂️ |
+| money_with_wings | 🤷‍♂️ | moneybag | 🤷‍♂️ |
+| mongolia | 🤷‍♂️ | monkey | 🤷‍♂️ |
+| monkey_face | 🤷‍♂️ | monocle_face | 🤷‍♂️ |
+| monorail | 🤷‍♂️ | montenegro | 🤷‍♂️ |
+| montserrat | 🤷‍♂️ | moon | 🤷‍♂️ |
+| moon_cake | 🤷‍♂️ | morocco | 🤷‍♂️ |
+| mortar_board | 🤷‍♂️ | mosque | 🤷‍♂️ |
+| mosquito | 🤷‍♂️ | motor_boat | 🤷‍♂️ |
+| motor_scooter | 🤷‍♂️ | motorcycle | 🤷‍♂️ |
+| motorized_wheelchair | 🤷‍♂️ | motorway | 🤷‍♂️ |
+| mount_fuji | 🤷‍♂️ | mountain | 🤷‍♂️ |
+| mountain_bicyclist | 🤷‍♂️ | mountain_biking_man | 🤷‍♂️ |
+| mountain_biking_woman | 🤷‍♂️ | mountain_cableway | 🤷‍♂️ |
+| mountain_railway | 🤷‍♂️ | mountain_snow | 🤷‍♂️ |
+| mouse | 🤷‍♂️ | mouse2 | 🤷‍♂️ |
+| mouse_trap | 🤷‍♂️ | movie_camera | 🤷‍♂️ |
+| moyai | 🤷‍♂️ | mozambique | 🤷‍♂️ |
+| mrs_claus | 🤷‍♂️ | muscle | 🤷‍♂️ |
+| mushroom | 🤷‍♂️ | musical_keyboard | 🤷‍♂️ |
+| musical_note | 🤷‍♂️ | musical_score | 🤷‍♂️ |
+| mute | 🤷‍♂️ | mx_claus | 🤷‍♂️ |
+| myanmar | 🤷‍♂️ | nail_care | 🤷‍♂️ |
+| name_badge | 🤷‍♂️ | namibia | 🤷‍♂️ |
+| national_park | 🤷‍♂️ | nauru | 🤷‍♂️ |
+| nauseated_face | 🤷‍♂️ | nazar_amulet | 🤷‍♂️ |
+| neckbeard | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/neckbeard.png?v8" loading="lazy" /> | necktie | 🤷‍♂️ |
+| negative_squared_cross_mark | 🤷‍♂️ | nepal | 🤷‍♂️ |
+| nerd_face | 🤷‍♂️ | nesting_dolls | 🤷‍♂️ |
+| netherlands | 🤷‍♂️ | neutral_face | 🤷‍♂️ |
+| new | 🤷‍♂️ | new_caledonia | 🤷‍♂️ |
+| new_moon | 🤷‍♂️ | new_moon_with_face | 🤷‍♂️ |
+| new_zealand | 🤷‍♂️ | newspaper | 🤷‍♂️ |
+| newspaper_roll | 🤷‍♂️ | next_track_button | 🤷‍♂️ |
+| ng | 🤷‍♂️ | ng_man | 🤷‍♂️ |
+| ng_woman | 🤷‍♂️ | nicaragua | 🤷‍♂️ |
+| niger | 🤷‍♂️ | nigeria | 🤷‍♂️ |
+| night_with_stars | 🤷‍♂️ | nine | 🤷‍♂️ |
+| ninja | 🤷‍♂️ | niue | 🤷‍♂️ |
+| no_bell | 🤷‍♂️ | no_bicycles | 🤷‍♂️ |
+| no_entry | 🤷‍♂️ | no_entry_sign | 🤷‍♂️ |
+| no_good | 🤷‍♂️ | no_good_man | 🤷‍♂️ |
+| no_good_woman | 🤷‍♂️ | no_mobile_phones | 🤷‍♂️ |
+| no_mouth | 🤷‍♂️ | no_pedestrians | 🤷‍♂️ |
+| no_smoking | 🤷‍♂️ | non-potable_water | 🤷‍♂️ |
+| norfolk_island | 🤷‍♂️ | north_korea | 🤷‍♂️ |
+| northern_mariana_islands | 🤷‍♂️ | norway | 🤷‍♂️ |
+| nose | 🤷‍♂️ | notebook | 🤷‍♂️ |
+| notebook_with_decorative_cover | 🤷‍♂️ | notes | 🤷‍♂️ |
+| nut_and_bolt | 🤷‍♂️ | o | 🤷‍♂️ |
+| o2 | 🤷‍♂️ | ocean | 🤷‍♂️ |
+| octocat | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/octocat.png?v8" loading="lazy" /> | octopus | 🤷‍♂️ |
+| oden | 🤷‍♂️ | office | 🤷‍♂️ |
+| office_worker | 🤷‍♂️ | oil_drum | 🤷‍♂️ |
+| ok | 🤷‍♂️ | ok_hand | 🤷‍♂️ |
+| ok_man | 🤷‍♂️ | ok_person | 🤷‍♂️ |
+| ok_woman | 🤷‍♂️ | old_key | 🤷‍♂️ |
+| older_adult | 🤷‍♂️ | older_man | 🤷‍♂️ |
+| older_woman | 🤷‍♂️ | olive | 🤷‍♂️ |
+| om | 🤷‍♂️ | oman | 🤷‍♂️ |
+| on | 🤷‍♂️ | oncoming_automobile | 🤷‍♂️ |
+| oncoming_bus | 🤷‍♂️ | oncoming_police_car | 🤷‍♂️ |
+| oncoming_taxi | 🤷‍♂️ | one | 🤷‍♂️ |
+| one_piece_swimsuit | 🤷‍♂️ | onion | 🤷‍♂️ |
+| open_book | 🤷‍♂️ | open_file_folder | 🤷‍♂️ |
+| open_hands | 🤷‍♂️ | open_mouth | 🤷‍♂️ |
+| open_umbrella | 🤷‍♂️ | ophiuchus | 🤷‍♂️ |
+| orange | 🤷‍♂️ | orange_book | 🤷‍♂️ |
+| orange_circle | 🤷‍♂️ | orange_heart | 🤷‍♂️ |
+| orange_square | 🤷‍♂️ | orangutan | 🤷‍♂️ |
+| orthodox_cross | 🤷‍♂️ | otter | 🤷‍♂️ |
+| outbox_tray | 🤷‍♂️ | owl | 🤷‍♂️ |
+| ox | 🤷‍♂️ | oyster | 🤷‍♂️ |
+| package | 🤷‍♂️ | page_facing_up | 🤷‍♂️ |
+| page_with_curl | 🤷‍♂️ | pager | 🤷‍♂️ |
+| paintbrush | 🤷‍♂️ | pakistan | 🤷‍♂️ |
+| palau | 🤷‍♂️ | palestinian_territories | 🤷‍♂️ |
+| palm_tree | 🤷‍♂️ | palms_up_together | 🤷‍♂️ |
+| panama | 🤷‍♂️ | pancakes | 🤷‍♂️ |
+| panda_face | 🤷‍♂️ | paperclip | 🤷‍♂️ |
+| paperclips | 🤷‍♂️ | papua_new_guinea | 🤷‍♂️ |
+| parachute | 🤷‍♂️ | paraguay | 🤷‍♂️ |
+| parasol_on_ground | 🤷‍♂️ | parking | 🤷‍♂️ |
+| parrot | 🤷‍♂️ | part_alternation_mark | 🤷‍♂️ |
+| partly_sunny | 🤷‍♂️ | partying_face | 🤷‍♂️ |
+| passenger_ship | 🤷‍♂️ | passport_control | 🤷‍♂️ |
+| pause_button | 🤷‍♂️ | paw_prints | 🤷‍♂️ |
+| peace_symbol | 🤷‍♂️ | peach | 🤷‍♂️ |
+| peacock | 🤷‍♂️ | peanuts | 🤷‍♂️ |
+| pear | 🤷‍♂️ | pen | 🤷‍♂️ |
+| pencil | 🤷‍♂️ | pencil2 | 🤷‍♂️ |
+| penguin | 🤷‍♂️ | pensive | 🤷‍♂️ |
+| people_holding_hands | 🤷‍♂️ | people_hugging | 🤷‍♂️ |
+| performing_arts | 🤷‍♂️ | persevere | 🤷‍♂️ |
+| person_bald | 🤷‍♂️ | person_curly_hair | 🤷‍♂️ |
+| person_feeding_baby | 🤷‍♂️ | person_fencing | 🤷‍♂️ |
+| person_in_manual_wheelchair | 🤷‍♂️ | person_in_motorized_wheelchair | 🤷‍♂️ |
+| person_in_tuxedo | 🤷‍♂️ | person_red_hair | 🤷‍♂️ |
+| person_white_hair | 🤷‍♂️ | person_with_probing_cane | 🤷‍♂️ |
+| person_with_turban | 🤷‍♂️ | person_with_veil | 🤷‍♂️ |
+| peru | 🤷‍♂️ | petri_dish | 🤷‍♂️ |
+| philippines | 🤷‍♂️ | phone | 🤷‍♂️ |
+| pick | 🤷‍♂️ | pickup_truck | 🤷‍♂️ |
+| pie | 🤷‍♂️ | pig | 🤷‍♂️ |
+| pig2 | 🤷‍♂️ | pig_nose | 🤷‍♂️ |
+| pill | 🤷‍♂️ | pilot | 🤷‍♂️ |
+| pinata | 🤷‍♂️ | pinched_fingers | 🤷‍♂️ |
+| pinching_hand | 🤷‍♂️ | pineapple | 🤷‍♂️ |
+| ping_pong | 🤷‍♂️ | pirate_flag | 🤷‍♂️ |
+| pisces | 🤷‍♂️ | pitcairn_islands | 🤷‍♂️ |
+| pizza | 🤷‍♂️ | placard | 🤷‍♂️ |
+| place_of_worship | 🤷‍♂️ | plate_with_cutlery | 🤷‍♂️ |
+| play_or_pause_button | 🤷‍♂️ | pleading_face | 🤷‍♂️ |
+| plunger | 🤷‍♂️ | point_down | 🤷‍♂️ |
+| point_left | 🤷‍♂️ | point_right | 🤷‍♂️ |
+| point_up | 🤷‍♂️ | point_up_2 | 🤷‍♂️ |
+| poland | 🤷‍♂️ | polar_bear | 🤷‍♂️ |
+| police_car | 🤷‍♂️ | police_officer | 🤷‍♂️ |
+| policeman | 🤷‍♂️ | policewoman | 🤷‍♂️ |
+| poodle | 🤷‍♂️ | poop | 🤷‍♂️ |
+| popcorn | 🤷‍♂️ | portugal | 🤷‍♂️ |
+| post_office | 🤷‍♂️ | postal_horn | 🤷‍♂️ |
+| postbox | 🤷‍♂️ | potable_water | 🤷‍♂️ |
+| potato | 🤷‍♂️ | potted_plant | 🤷‍♂️ |
+| pouch | 🤷‍♂️ | poultry_leg | 🤷‍♂️ |
+| pound | 🤷‍♂️ | pout | 🤷‍♂️ |
+| pouting_cat | 🤷‍♂️ | pouting_face | 🤷‍♂️ |
+| pouting_man | 🤷‍♂️ | pouting_woman | 🤷‍♂️ |
+| pray | 🤷‍♂️ | prayer_beads | 🤷‍♂️ |
+| pregnant_woman | 🤷‍♂️ | pretzel | 🤷‍♂️ |
+| previous_track_button | 🤷‍♂️ | prince | 🤷‍♂️ |
+| princess | 🤷‍♂️ | printer | 🤷‍♂️ |
+| probing_cane | 🤷‍♂️ | puerto_rico | 🤷‍♂️ |
+| punch | 🤷‍♂️ | purple_circle | 🤷‍♂️ |
+| purple_heart | 🤷‍♂️ | purple_square | 🤷‍♂️ |
+| purse | 🤷‍♂️ | pushpin | 🤷‍♂️ |
+| put_litter_in_its_place | 🤷‍♂️ | qatar | 🤷‍♂️ |
+| question | 🤷‍♂️ | rabbit | 🤷‍♂️ |
+| rabbit2 | 🤷‍♂️ | raccoon | 🤷‍♂️ |
+| racehorse | 🤷‍♂️ | racing_car | 🤷‍♂️ |
+| radio | 🤷‍♂️ | radio_button | 🤷‍♂️ |
+| radioactive | 🤷‍♂️ | rage | 🤷‍♂️ |
+| rage1 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/rage1.png?v8" loading="lazy" /> | rage2 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/rage2.png?v8" loading="lazy" /> |
+| rage3 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/rage3.png?v8" loading="lazy" /> | rage4 | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/rage4.png?v8" loading="lazy" /> |
+| railway_car | 🤷‍♂️ | railway_track | 🤷‍♂️ |
+| rainbow | 🤷‍♂️ | rainbow_flag | 🤷‍♂️ |
+| raised_back_of_hand | 🤷‍♂️ | raised_eyebrow | 🤷‍♂️ |
+| raised_hand | 🤷‍♂️ | raised_hand_with_fingers_splayed | 🤷‍♂️ |
+| raised_hands | 🤷‍♂️ | raising_hand | 🤷‍♂️ |
+| raising_hand_man | 🤷‍♂️ | raising_hand_woman | 🤷‍♂️ |
+| ram | 🤷‍♂️ | ramen | 🤷‍♂️ |
+| rat | 🤷‍♂️ | razor | 🤷‍♂️ |
+| receipt | 🤷‍♂️ | record_button | 🤷‍♂️ |
+| recycle | 🤷‍♂️ | red_car | 🤷‍♂️ |
+| red_circle | 🤷‍♂️ | red_envelope | 🤷‍♂️ |
+| red_haired_man | 🤷‍♂️ | red_haired_woman | 🤷‍♂️ |
+| red_square | 🤷‍♂️ | registered | 🤷‍♂️ |
+| relaxed | 🤷‍♂️ | relieved | 🤷‍♂️ |
+| reminder_ribbon | 🤷‍♂️ | repeat | 🤷‍♂️ |
+| repeat_one | 🤷‍♂️ | rescue_worker_helmet | 🤷‍♂️ |
+| restroom | 🤷‍♂️ | reunion | 🤷‍♂️ |
+| revolving_hearts | 🤷‍♂️ | rewind | 🤷‍♂️ |
+| rhinoceros | 🤷‍♂️ | ribbon | 🤷‍♂️ |
+| rice | 🤷‍♂️ | rice_ball | 🤷‍♂️ |
+| rice_cracker | 🤷‍♂️ | rice_scene | 🤷‍♂️ |
+| right_anger_bubble | 🤷‍♂️ | ring | 🤷‍♂️ |
+| ringed_planet | 🤷‍♂️ | robot | 🤷‍♂️ |
+| rock | 🤷‍♂️ | rocket | 🤷‍♂️ |
+| rofl | 🤷‍♂️ | roll_eyes | 🤷‍♂️ |
+| roll_of_paper | 🤷‍♂️ | roller_coaster | 🤷‍♂️ |
+| roller_skate | 🤷‍♂️ | romania | 🤷‍♂️ |
+| rooster | 🤷‍♂️ | rose | 🤷‍♂️ |
+| rosette | 🤷‍♂️ | rotating_light | 🤷‍♂️ |
+| round_pushpin | 🤷‍♂️ | rowboat | 🤷‍♂️ |
+| rowing_man | 🤷‍♂️ | rowing_woman | 🤷‍♂️ |
+| ru | 🤷‍♂️ | rugby_football | 🤷‍♂️ |
+| runner | 🤷‍♂️ | running | 🤷‍♂️ |
+| running_man | 🤷‍♂️ | running_shirt_with_sash | 🤷‍♂️ |
+| running_woman | 🤷‍♂️ | rwanda | 🤷‍♂️ |
+| sa | 🤷‍♂️ | safety_pin | 🤷‍♂️ |
+| safety_vest | 🤷‍♂️ | sagittarius | 🤷‍♂️ |
+| sailboat | 🤷‍♂️ | sake | 🤷‍♂️ |
+| salt | 🤷‍♂️ | samoa | 🤷‍♂️ |
+| san_marino | 🤷‍♂️ | sandal | 🤷‍♂️ |
+| sandwich | 🤷‍♂️ | santa | 🤷‍♂️ |
+| sao_tome_principe | 🤷‍♂️ | sari | 🤷‍♂️ |
+| sassy_man | 🤷‍♂️ | sassy_woman | 🤷‍♂️ |
+| satellite | 🤷‍♂️ | satisfied | 🤷‍♂️ |
+| saudi_arabia | 🤷‍♂️ | sauna_man | 🤷‍♂️ |
+| sauna_person | 🤷‍♂️ | sauna_woman | 🤷‍♂️ |
+| sauropod | 🤷‍♂️ | saxophone | 🤷‍♂️ |
+| scarf | 🤷‍♂️ | school | 🤷‍♂️ |
+| school_satchel | 🤷‍♂️ | scientist | 🤷‍♂️ |
+| scissors | 🤷‍♂️ | scorpion | 🤷‍♂️ |
+| scorpius | 🤷‍♂️ | scotland | 🤷‍♂️ |
+| scream | 🤷‍♂️ | scream_cat | 🤷‍♂️ |
+| screwdriver | 🤷‍♂️ | scroll | 🤷‍♂️ |
+| seal | 🤷‍♂️ | seat | 🤷‍♂️ |
+| secret | 🤷‍♂️ | see_no_evil | 🤷‍♂️ |
+| seedling | 🤷‍♂️ | selfie | 🤷‍♂️ |
+| senegal | 🤷‍♂️ | serbia | 🤷‍♂️ |
+| service_dog | 🤷‍♂️ | seven | 🤷‍♂️ |
+| sewing_needle | 🤷‍♂️ | seychelles | 🤷‍♂️ |
+| shallow_pan_of_food | 🤷‍♂️ | shamrock | 🤷‍♂️ |
+| shark | 🤷‍♂️ | shaved_ice | 🤷‍♂️ |
+| sheep | 🤷‍♂️ | shell | 🤷‍♂️ |
+| shield | 🤷‍♂️ | shinto_shrine | 🤷‍♂️ |
+| ship | 🤷‍♂️ | shipit | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/shipit.png?v8" loading="lazy" /> |
+| shirt | 🤷‍♂️ | shit | 🤷‍♂️ |
+| shoe | 🤷‍♂️ | shopping | 🤷‍♂️ |
+| shopping_cart | 🤷‍♂️ | shorts | 🤷‍♂️ |
+| shower | 🤷‍♂️ | shrimp | 🤷‍♂️ |
+| shrug | 🤷‍♂️ | shushing_face | 🤷‍♂️ |
+| sierra_leone | 🤷‍♂️ | signal_strength | 🤷‍♂️ |
+| singapore | 🤷‍♂️ | singer | 🤷‍♂️ |
+| sint_maarten | 🤷‍♂️ | six | 🤷‍♂️ |
+| six_pointed_star | 🤷‍♂️ | skateboard | 🤷‍♂️ |
+| ski | 🤷‍♂️ | skier | 🤷‍♂️ |
+| skull | 🤷‍♂️ | skull_and_crossbones | 🤷‍♂️ |
+| skunk | 🤷‍♂️ | sled | 🤷‍♂️ |
+| sleeping | 🤷‍♂️ | sleeping_bed | 🤷‍♂️ |
+| sleepy | 🤷‍♂️ | slightly_frowning_face | 🤷‍♂️ |
+| slightly_smiling_face | 🤷‍♂️ | slot_machine | 🤷‍♂️ |
+| sloth | 🤷‍♂️ | slovakia | 🤷‍♂️ |
+| slovenia | 🤷‍♂️ | small_airplane | 🤷‍♂️ |
+| small_blue_diamond | 🤷‍♂️ | small_orange_diamond | 🤷‍♂️ |
+| small_red_triangle | 🤷‍♂️ | small_red_triangle_down | 🤷‍♂️ |
+| smile | 🤷‍♂️ | smile_cat | 🤷‍♂️ |
+| smiley | 🤷‍♂️ | smiley_cat | 🤷‍♂️ |
+| smiling_face_with_tear | 🤷‍♂️ | smiling_face_with_three_hearts | 🤷‍♂️ |
+| smiling_imp | 🤷‍♂️ | smirk | 🤷‍♂️ |
+| smirk_cat | 🤷‍♂️ | smoking | 🤷‍♂️ |
+| snail | 🤷‍♂️ | snake | 🤷‍♂️ |
+| sneezing_face | 🤷‍♂️ | snowboarder | 🤷‍♂️ |
+| snowflake | 🤷‍♂️ | snowman | 🤷‍♂️ |
+| snowman_with_snow | 🤷‍♂️ | soap | 🤷‍♂️ |
+| sob | 🤷‍♂️ | soccer | 🤷‍♂️ |
+| socks | 🤷‍♂️ | softball | 🤷‍♂️ |
+| solomon_islands | 🤷‍♂️ | somalia | 🤷‍♂️ |
+| soon | 🤷‍♂️ | sos | 🤷‍♂️ |
+| sound | 🤷‍♂️ | south_africa | 🤷‍♂️ |
+| south_georgia_south_sandwich_islands | 🤷‍♂️ | south_sudan | 🤷‍♂️ |
+| space_invader | 🤷‍♂️ | spades | 🤷‍♂️ |
+| spaghetti | 🤷‍♂️ | sparkle | 🤷‍♂️ |
+| sparkler | 🤷‍♂️ | sparkles | 🤷‍♂️ |
+| sparkling_heart | 🤷‍♂️ | speak_no_evil | 🤷‍♂️ |
+| speaker | 🤷‍♂️ | speaking_head | 🤷‍♂️ |
+| speech_balloon | 🤷‍♂️ | speedboat | 🤷‍♂️ |
+| spider | 🤷‍♂️ | spider_web | 🤷‍♂️ |
+| spiral_calendar | 🤷‍♂️ | spiral_notepad | 🤷‍♂️ |
+| sponge | 🤷‍♂️ | spoon | 🤷‍♂️ |
+| squid | 🤷‍♂️ | sri_lanka | 🤷‍♂️ |
+| st_barthelemy | 🤷‍♂️ | st_helena | 🤷‍♂️ |
+| st_kitts_nevis | 🤷‍♂️ | st_lucia | 🤷‍♂️ |
+| st_martin | 🤷‍♂️ | st_pierre_miquelon | 🤷‍♂️ |
+| st_vincent_grenadines | 🤷‍♂️ | stadium | 🤷‍♂️ |
+| standing_man | 🤷‍♂️ | standing_person | 🤷‍♂️ |
+| standing_woman | 🤷‍♂️ | star | 🤷‍♂️ |
+| star2 | 🤷‍♂️ | star_and_crescent | 🤷‍♂️ |
+| star_of_david | 🤷‍♂️ | star_struck | 🤷‍♂️ |
+| stars | 🤷‍♂️ | station | 🤷‍♂️ |
+| statue_of_liberty | 🤷‍♂️ | steam_locomotive | 🤷‍♂️ |
+| stethoscope | 🤷‍♂️ | stew | 🤷‍♂️ |
+| stop_button | 🤷‍♂️ | stop_sign | 🤷‍♂️ |
+| stopwatch | 🤷‍♂️ | straight_ruler | 🤷‍♂️ |
+| strawberry | 🤷‍♂️ | stuck_out_tongue | 🤷‍♂️ |
+| stuck_out_tongue_closed_eyes | 🤷‍♂️ | stuck_out_tongue_winking_eye | 🤷‍♂️ |
+| student | 🤷‍♂️ | studio_microphone | 🤷‍♂️ |
+| stuffed_flatbread | 🤷‍♂️ | sudan | 🤷‍♂️ |
+| sun_behind_large_cloud | 🤷‍♂️ | sun_behind_rain_cloud | 🤷‍♂️ |
+| sun_behind_small_cloud | 🤷‍♂️ | sun_with_face | 🤷‍♂️ |
+| sunflower | 🤷‍♂️ | sunglasses | 🤷‍♂️ |
+| sunny | 🤷‍♂️ | sunrise | 🤷‍♂️ |
+| sunrise_over_mountains | 🤷‍♂️ | superhero | 🤷‍♂️ |
+| superhero_man | 🤷‍♂️ | superhero_woman | 🤷‍♂️ |
+| supervillain | 🤷‍♂️ | supervillain_man | 🤷‍♂️ |
+| supervillain_woman | 🤷‍♂️ | surfer | 🤷‍♂️ |
+| surfing_man | 🤷‍♂️ | surfing_woman | 🤷‍♂️ |
+| suriname | 🤷‍♂️ | sushi | 🤷‍♂️ |
+| suspect | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/suspect.png?v8" loading="lazy" /> | suspension_railway | 🤷‍♂️ |
+| svalbard_jan_mayen | 🤷‍♂️ | swan | 🤷‍♂️ |
+| swaziland | 🤷‍♂️ | sweat | 🤷‍♂️ |
+| sweat_drops | 🤷‍♂️ | sweat_smile | 🤷‍♂️ |
+| sweden | 🤷‍♂️ | sweet_potato | 🤷‍♂️ |
+| swim_brief | 🤷‍♂️ | swimmer | 🤷‍♂️ |
+| swimming_man | 🤷‍♂️ | swimming_woman | 🤷‍♂️ |
+| switzerland | 🤷‍♂️ | symbols | 🤷‍♂️ |
+| synagogue | 🤷‍♂️ | syria | 🤷‍♂️ |
+| syringe | 🤷‍♂️ | t-rex | 🤷‍♂️ |
+| taco | 🤷‍♂️ | tada | 🤷‍♂️ |
+| taiwan | 🤷‍♂️ | tajikistan | 🤷‍♂️ |
+| takeout_box | 🤷‍♂️ | tamale | 🤷‍♂️ |
+| tanabata_tree | 🤷‍♂️ | tangerine | 🤷‍♂️ |
+| tanzania | 🤷‍♂️ | taurus | 🤷‍♂️ |
+| taxi | 🤷‍♂️ | tea | 🤷‍♂️ |
+| teacher | 🤷‍♂️ | teapot | 🤷‍♂️ |
+| technologist | 🤷‍♂️ | teddy_bear | 🤷‍♂️ |
+| telephone | 🤷‍♂️ | telephone_receiver | 🤷‍♂️ |
+| telescope | 🤷‍♂️ | tennis | 🤷‍♂️ |
+| tent | 🤷‍♂️ | test_tube | 🤷‍♂️ |
+| thailand | 🤷‍♂️ | thermometer | 🤷‍♂️ |
+| thinking | 🤷‍♂️ | thong_sandal | 🤷‍♂️ |
+| thought_balloon | 🤷‍♂️ | thread | 🤷‍♂️ |
+| three | 🤷‍♂️ | thumbsdown | 🤷‍♂️ |
+| thumbsup | 🤷‍♂️ | ticket | 🤷‍♂️ |
+| tickets | 🤷‍♂️ | tiger | 🤷‍♂️ |
+| tiger2 | 🤷‍♂️ | timer_clock | 🤷‍♂️ |
+| timor_leste | 🤷‍♂️ | tipping_hand_man | 🤷‍♂️ |
+| tipping_hand_person | 🤷‍♂️ | tipping_hand_woman | 🤷‍♂️ |
+| tired_face | 🤷‍♂️ | tm | 🤷‍♂️ |
+| togo | 🤷‍♂️ | toilet | 🤷‍♂️ |
+| tokelau | 🤷‍♂️ | tokyo_tower | 🤷‍♂️ |
+| tomato | 🤷‍♂️ | tonga | 🤷‍♂️ |
+| tongue | 🤷‍♂️ | toolbox | 🤷‍♂️ |
+| tooth | 🤷‍♂️ | toothbrush | 🤷‍♂️ |
+| top | 🤷‍♂️ | tophat | 🤷‍♂️ |
+| tornado | 🤷‍♂️ | tr | 🤷‍♂️ |
+| trackball | 🤷‍♂️ | tractor | 🤷‍♂️ |
+| traffic_light | 🤷‍♂️ | train | 🤷‍♂️ |
+| train2 | 🤷‍♂️ | tram | 🤷‍♂️ |
+| transgender_flag | 🤷‍♂️ | transgender_symbol | 🤷‍♂️ |
+| triangular_flag_on_post | 🤷‍♂️ | triangular_ruler | 🤷‍♂️ |
+| trident | 🤷‍♂️ | trinidad_tobago | 🤷‍♂️ |
+| tristan_da_cunha | 🤷‍♂️ | triumph | 🤷‍♂️ |
+| trolleybus | 🤷‍♂️ | trollface | <img width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/trollface.png?v8" loading="lazy" /> |
+| trophy | 🤷‍♂️ | tropical_drink | 🤷‍♂️ |
+| tropical_fish | 🤷‍♂️ | truck | 🤷‍♂️ |
+| trumpet | 🤷‍♂️ | tshirt | 🤷‍♂️ |
+| tulip | 🤷‍♂️ | tumbler_glass | 🤷‍♂️ |
+| tunisia | 🤷‍♂️ | turkey | 🤷‍♂️ |
+| turkmenistan | 🤷‍♂️ | turks_caicos_islands | 🤷‍♂️ |
+| turtle | 🤷‍♂️ | tuvalu | 🤷‍♂️ |
+| tv | 🤷‍♂️ | twisted_rightwards_arrows | 🤷‍♂️ |
+| two | 🤷‍♂️ | two_hearts | 🤷‍♂️ |
+| two_men_holding_hands | 🤷‍♂️ | two_women_holding_hands | 🤷‍♂️ |
+| u5272 | 🤷‍♂️ | u5408 | 🤷‍♂️ |
+| u55b6 | 🤷‍♂️ | u6307 | 🤷‍♂️ |
+| u6708 | 🤷‍♂️ | u6709 | 🤷‍♂️ |
+| u6e80 | 🤷‍♂️ | u7121 | 🤷‍♂️ |
+| u7533 | 🤷‍♂️ | u7981 | 🤷‍♂️ |
+| u7a7a | 🤷‍♂️ | uganda | 🤷‍♂️ |
+| uk | 🤷‍♂️ | ukraine | 🤷‍♂️ |
+| umbrella | 🤷‍♂️ | unamused | 🤷‍♂️ |
+| underage | 🤷‍♂️ | unicorn | 🤷‍♂️ |
+| united_arab_emirates | 🤷‍♂️ | united_nations | 🤷‍♂️ |
+| unlock | 🤷‍♂️ | up | 🤷‍♂️ |
+| upside_down_face | 🤷‍♂️ | uruguay | 🤷‍♂️ |
+| us | 🤷‍♂️ | us_outlying_islands | 🤷‍♂️ |
+| us_virgin_islands | 🤷‍♂️ | uzbekistan | 🤷‍♂️ |
+| v | 🤷‍♂️ | vampire | 🤷‍♂️ |
+| vampire_man | 🤷‍♂️ | vampire_woman | 🤷‍♂️ |
+| vanuatu | 🤷‍♂️ | vatican_city | 🤷‍♂️ |
+| venezuela | 🤷‍♂️ | vertical_traffic_light | 🤷‍♂️ |
+| vhs | 🤷‍♂️ | vibration_mode | 🤷‍♂️ |
+| video_camera | 🤷‍♂️ | video_game | 🤷‍♂️ |
+| vietnam | 🤷‍♂️ | violin | 🤷‍♂️ |
+| virgo | 🤷‍♂️ | volcano | 🤷‍♂️ |
+| volleyball | 🤷‍♂️ | vomiting_face | 🤷‍♂️ |
+| vs | 🤷‍♂️ | vulcan_salute | 🤷‍♂️ |
+| waffle | 🤷‍♂️ | wales | 🤷‍♂️ |
+| walking | 🤷‍♂️ | walking_man | 🤷‍♂️ |
+| walking_woman | 🤷‍♂️ | wallis_futuna | 🤷‍♂️ |
+| waning_crescent_moon | 🤷‍♂️ | waning_gibbous_moon | 🤷‍♂️ |
+| warning | 🤷‍♂️ | wastebasket | 🤷‍♂️ |
+| watch | 🤷‍♂️ | water_buffalo | 🤷‍♂️ |
+| water_polo | 🤷‍♂️ | watermelon | 🤷‍♂️ |
+| wave | 🤷‍♂️ | wavy_dash | 🤷‍♂️ |
+| waxing_crescent_moon | 🤷‍♂️ | waxing_gibbous_moon | 🤷‍♂️ |
+| wc | 🤷‍♂️ | weary | 🤷‍♂️ |
+| wedding | 🤷‍♂️ | weight_lifting | 🤷‍♂️ |
+| weight_lifting_man | 🤷‍♂️ | weight_lifting_woman | 🤷‍♂️ |
+| western_sahara | 🤷‍♂️ | whale | 🤷‍♂️ |
+| whale2 | 🤷‍♂️ | wheel_of_dharma | 🤷‍♂️ |
+| wheelchair | 🤷‍♂️ | white_check_mark | 🤷‍♂️ |
+| white_circle | 🤷‍♂️ | white_flag | 🤷‍♂️ |
+| white_flower | 🤷‍♂️ | white_haired_man | 🤷‍♂️ |
+| white_haired_woman | 🤷‍♂️ | white_heart | 🤷‍♂️ |
+| white_large_square | 🤷‍♂️ | white_medium_small_square | 🤷‍♂️ |
+| white_medium_square | 🤷‍♂️ | white_small_square | 🤷‍♂️ |
+| white_square_button | 🤷‍♂️ | wilted_flower | 🤷‍♂️ |
+| wind_chime | 🤷‍♂️ | wind_face | 🤷‍♂️ |
+| window | 🤷‍♂️ | wine_glass | 🤷‍♂️ |
+| wink | 🤷‍♂️ | wolf | 🤷‍♂️ |
+| woman | 🤷‍♂️ | woman_artist | 🤷‍♂️ |
+| woman_astronaut | 🤷‍♂️ | woman_beard | 🤷‍♂️ |
+| woman_cartwheeling | 🤷‍♂️ | woman_cook | 🤷‍♂️ |
+| woman_dancing | 🤷‍♂️ | woman_facepalming | 🤷‍♂️ |
+| woman_factory_worker | 🤷‍♂️ | woman_farmer | 🤷‍♂️ |
+| woman_feeding_baby | 🤷‍♂️ | woman_firefighter | 🤷‍♂️ |
+| woman_health_worker | 🤷‍♂️ | woman_in_manual_wheelchair | 🤷‍♂️ |
+| woman_in_motorized_wheelchair | 🤷‍♂️ | woman_in_tuxedo | 🤷‍♂️ |
+| woman_judge | 🤷‍♂️ | woman_juggling | 🤷‍♂️ |
+| woman_mechanic | 🤷‍♂️ | woman_office_worker | 🤷‍♂️ |
+| woman_pilot | 🤷‍♂️ | woman_playing_handball | 🤷‍♂️ |
+| woman_playing_water_polo | 🤷‍♂️ | woman_scientist | 🤷‍♂️ |
+| woman_shrugging | 🤷‍♂️ | woman_singer | 🤷‍♂️ |
+| woman_student | 🤷‍♂️ | woman_teacher | 🤷‍♂️ |
+| woman_technologist | 🤷‍♂️ | woman_with_headscarf | 🤷‍♂️ |
+| woman_with_probing_cane | 🤷‍♂️ | woman_with_turban | 🤷‍♂️ |
+| woman_with_veil | 🤷‍♂️ | womans_clothes | 🤷‍♂️ |
+| womans_hat | 🤷‍♂️ | women_wrestling | 🤷‍♂️ |
+| womens | 🤷‍♂️ | wood | 🤷‍♂️ |
+| woozy_face | 🤷‍♂️ | world_map | 🤷‍♂️ |
+| worm | 🤷‍♂️ | worried | 🤷‍♂️ |
+| wrench | 🤷‍♂️ | wrestling | 🤷‍♂️ |
+| writing_hand | 🤷‍♂️ | x | 🤷‍♂️ |
+| yarn | 🤷‍♂️ | yawning_face | 🤷‍♂️ |
+| yellow_circle | 🤷‍♂️ | yellow_heart | 🤷‍♂️ |
+| yellow_square | 🤷‍♂️ | yemen | 🤷‍♂️ |
+| yen | 🤷‍♂️ | yin_yang | 🤷‍♂️ |
+| yo_yo | 🤷‍♂️ | yum | 🤷‍♂️ |
+| zambia | 🤷‍♂️ | zany_face | 🤷‍♂️ |
+| zap | 🤷‍♂️ | zebra | 🤷‍♂️ |
+| zero | 🤷‍♂️ | zimbabwe | 🤷‍♂️ |
+| zipper_mouth_face | 🤷‍♂️ | zombie | 🤷‍♂️ |
+| zombie_man | 🤷‍♂️ | zombie_woman | 🤷‍♂️ |
+| zzz | 🤷‍♂️ |  |  |
 <!-- table end -->
 </details>
-
 
 ## 💻 Development
 

@@ -1,7 +1,7 @@
 // THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
-// RUN `npm run update:list` TO UPDATE.
+// RUN `npm run update:emojis` TO UPDATE.
 
-export type Emoji =
+export type EmojiKey =
   | "100"
   | "1234"
   | "+1"
@@ -1880,3 +1880,12 @@ export type Emoji =
   | "zombie_woman"
   | "zzz"
   | (string & {});
+
+export type EmojiCategory = string & {};
+
+export interface Emoji {
+  name: string
+  emoji: string
+  url: string
+  category: EmojiCategory
+}

@@ -2,9 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "lib": [
-      "ES2022"
-    ],
+    "lib": ["ES2022"],
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "strict": true,
@@ -15,11 +13,10 @@
     "skipLibCheck": true,
     "verbatimModuleSyntax": true,
     "noUncheckedIndexedAccess": true,
-    "types": ["bun-types"]
+    "types": ["bun-types"],
+    "paths": {
+      "github-schema/*": ["./src/*.ts"]
+    }
   },
-  "exclude": [
-    "**/node_modules/**",
-    "**/dist/**",
-    "www"
-  ]
+  "exclude": ["**/node_modules/**", "**/dist/**", "www"]
 }

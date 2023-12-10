@@ -33,7 +33,18 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "import": "./dist/utils.mjs",
+      "require": "./dist/utils.cjs"
+    },
+    "./categories": {
+      "types": "./dist/categories.d.ts",
+      "import": "./dist/categories.mjs",
+      "require": "./dist/categories.cjs"
+    },
     "./emojis": "./emojis.json",
+    "./emoji-urls": "./emoji-urls.json",
     "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
@@ -41,11 +52,15 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
+    "emoji-urls.json",
     "emojis.json"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "unbuild",
-    "update:list": "bun run ./scripts/update-list.ts",
+    "update:emojis": "bun run ./scripts/update-emojis.ts",
     "dev": "vitest",
     "test": "vitest --run",
     "lint": "eslint .",

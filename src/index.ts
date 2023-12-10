@@ -1,20 +1,27 @@
-import emojiJson from "../emojis.json";
-import type { Emoji } from "./types";
+import emojiUrls from "../emoji-urls.json";
+import type { EmojiCategory, EmojiKey } from "./types";
+import { isUnicodeEmoji, isUnicodeUrl } from "./utils";
+import {} from "./categories";
 
-export type {
-  Emoji,
-};
+import { EMOJI_KEYS } from "./constants";
 
-export const emojis = emojiJson satisfies Record<Emoji, string> as Record<Emoji, string>;
+export { EMOJI_KEYS };
 
-export const EMOJI_KEYS = Object.keys(emojis) as readonly Emoji[];
+export type { EmojiKey, EmojiCategory };
 
-export function exists(emoji: Emoji): boolean {
-  return emoji in emojis;
+export { isUnicodeEmoji, isUnicodeUrl };
+
+export const urls = emojiUrls satisfies Record<EmojiKey, string> as Record<
+  EmojiKey,
+  string
+>;
+
+export function exists(emoji: EmojiKey): boolean {
+  return emoji in urls;
 }
 
-export function get(emoji: Emoji): string | undefined {
-  const url = emoji in emojis ? emojis[emoji] : undefined;
+export function get(emoji: EmojiKey): string | undefined {
+  const url = emoji in urls ? urls[emoji] : undefined;
   if (!url) return;
 
   const urlMatch = url.match(/(?<=unicode\/).*(?=\.png)/);
@@ -26,13 +33,15 @@ export function get(emoji: Emoji): string | undefined {
 
   const splittedCodepoints = urlMatch[0].split("-");
 
-  const codepoints = splittedCodepoints.map((codepoint) => Number.parseInt(codepoint, 16));
+  const codepoints = splittedCodepoints.map((codepoint) =>
+    Number.parseInt(codepoint, 16),
+  );
 
   return String.fromCodePoint(...codepoints);
 }
 
-export function getRaw(emoji: Emoji): string | undefined {
-  return emoji in emojis ? emojis[emoji] : undefined;
+export function getUrl(emoji: EmojiKey): string | undefined {
+  return emoji in emojiUrls ? urls[emoji] : undefined;
 }
 
 export function parse(str: string): string {
@@ -40,4 +49,13 @@ export function parse(str: string): string {
     const emoji = match.slice(1, -1);
     return get(emoji) || match;
   });
+}
+
+export function removeEmojis(str: string): string {
+  return str
+    .replace(/:\w+:/gm, (match) => {
+      const emoji = match.slice(1, -1);
+      return exists(emoji) ? "" : match;
+    })
+    .trim();
 }
