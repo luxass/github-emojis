@@ -57,7 +57,7 @@
     "www:preview": "nuxt preview www"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "^3.3.2",
+    "@luxass/eslint-config": "^4.0.0",
     "@types/node": "^18.16.19",
     "bun-types": "^1.0.2",
     "eslint": "^8.48.0",
