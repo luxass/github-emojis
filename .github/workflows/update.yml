@@ -8,38 +8,53 @@ on:
         required: false
         default: "false"
   schedule:
-    # run first day of every month at 1:12
-    - cron: "1 12 1 * *"
+    # https://crontab.guru/#0_0_*/7_*_*
+    - cron: "0 0 */7 * *"
 
 jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
+    permissions:
+      contents: write
+      pull-requests: write
+    if: github.repository_owner == 'luxass'
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.ROBOBUB_TOKEN }}
 
-      - uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: latest
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
 
-      - name: Run update:list script
-        run: bun run update:list
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run emojis:update script
+        run: pnpm run emojis:update
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        if: ${{ github.event.inputs.dry-run != 'false' }}
+        uses: peter-evans/create-pull-request@v6
+        if: ${{ github.event.inputs.dry-run != 'true' }}
         with:
           commit-message: "chore: updated emojis"
           title: "chore: updated github emojis"
           body: |
+            I found some new changes in GitHub's list of emojis.
+
+            I don't know which emoji they changed or added, but I'm sure it's cool.
+            If you want you can go take a look yourself.
+
+            I will be waiting for your approval 👋.
+
             This is an automated PR to update the GitHub Emoji List.
 
-            If you have any questions or suggestions, please open an issue or PR.
+            If you have any questions or suggestions, please open an issue.
           branch: update-emojis
-          author: robobub <bot@luxass.dev>
           base: main
-          assignees: luxass
-          token: ${{ secrets.ROBOBUB_TOKEN }}
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          reviewers: luxass
