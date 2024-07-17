@@ -9,7 +9,7 @@ const SKIN_TONE_VARIATION_DESC = /\sskin\stone(?:,|$)/;
 const emojiComponents: Record<string, string> = {};
 
 const GROUP_REGEX = /^#\sgroup:\s(?<name>.+)/;
-const EMOJI_REGEX = /^(?<unicode>(?:\S+\s)*(?:\S+))\s+;\s*(?<type>[\w-]+)\s*#\s*(?<emoji>\S+)\s*E(?<version>\d+\.\d)\s*(?<description>.+)/;
+const EMOJI_REGEX = /^(?<unicode>(?:\S+\s)*\S+)\s+;\s*(?<type>[\w-]+)\s*#\s*(?<emoji>\S+)\s*E(?<version>\d+\.\d)\s*(?<description>.+)/;
 
 async function run() {
   const emojiUrls: Record<string, string> = await fetch("https://api.github.com/emojis", {
@@ -98,7 +98,7 @@ function slugify(str?: string): string {
     .replace(/[\u0300-\u036F]/g, "")
     .replace(/\(.+\)/g, "")
     .trim()
-    .replace(/[\W|_]+/g, "_").toLowerCase();
+    .replace(/[\W_]+/g, "_").toLowerCase();
 }
 
 run().catch((err) => {

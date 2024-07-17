@@ -6,7 +6,6 @@ import {
   isUnicodeUrl,
   parse,
   removeEmojis,
-  urls,
 } from "./src";
 
 console.log(exists("grinning"));

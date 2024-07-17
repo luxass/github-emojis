@@ -8,7 +8,7 @@
     "email": "lucasnrgaard@gmail.com",
     "url": "https://luxass.dev"
   },
-  "packageManager": "pnpm@8.15.1",
+  "packageManager": "pnpm@9.5.0",
   "license": "MIT",
   "homepage": "https://github.com/luxass/github-emojis",
   "repository": {
@@ -23,9 +23,6 @@
     "github emojis",
     "emoji",
     "emojis"
-  ],
-  "workspaces": [
-    "www"
   ],
   "exports": {
     ".": {
@@ -68,17 +65,17 @@
     "dev": "tsup --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
-    "lint": "eslint . --report-unused-disable-directives",
+    "lint": "eslint . && eslint ./www --config=./www/eslint.config.mjs",
     "typecheck": "tsc --noEmit",
     "update:emojis": "pnpx tsx run ./scripts/update-emojis.ts"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "^4.2.6",
+    "@luxass/eslint-config": "^4.9.0",
     "@types/node": "^18.19.3",
-    "eslint": "^8.56.0",
-    "eslint-plugin-format": "^0.1.0",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
-    "vitest": "^1.2.2"
+    "eslint": "^9.7.0",
+    "eslint-plugin-format": "^0.1.2",
+    "tsup": "^8.1.1",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.3"
   }
 }

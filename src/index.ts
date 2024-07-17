@@ -63,7 +63,7 @@ export function getUrl(emoji: Intellisense<EmojiKey>): string | undefined {
  * @returns {string} - The string with emoji keys replaced with unicode characters.
  */
 export function parse(str: string): string {
-  return str.replace(/:\w+:/gm, (match) => {
+  return str.replace(/:\w+:/g, (match) => {
     const emoji = match.slice(1, -1);
     return get(emoji) || match;
   });
@@ -76,7 +76,7 @@ export function parse(str: string): string {
  */
 export function removeEmojis(str: string): string {
   return str
-    .replace(/:\w+:/gm, (match) => {
+    .replace(/:\w+:/g, (match) => {
       const emoji = match.slice(1, -1);
       return exists(emoji) ? "" : match;
     })

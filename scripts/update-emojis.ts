@@ -1,7 +1,4 @@
 import process from "node:process";
-import {
-  isUnicodeUrl,
-} from "../src/utils";
 
 const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 // RUN \`npm run update:emojis\` TO UPDATE.
