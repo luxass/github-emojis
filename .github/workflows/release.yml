@@ -7,30 +7,33 @@ on:
 
 jobs:
   release:
-    permissions: 
+    permissions:
       id-token: write
       contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          fetch-depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
-        with:
-          run_install: true
 
-      - name: Create release
-        run: npx changelogen gh release
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          registry-url: "https://registry.npmjs.org"
+          node-version: 20
+
+      - run: pnpx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Publish to NPM
-        run: pnpm publish --access public
+        run: npm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
-

@@ -1,7 +1,23 @@
 import { defineConfig } from "astro/config";
-import qwikdev from "@qwikdev/astro";
 import vercel from "@astrojs/vercel/serverless";
 import UnoCSS from "unocss/astro";
+import type { AstroIntegration } from "astro";
+import icon from "astro-icon";
+
+const astroHTMX: AstroIntegration = {
+  name: "astro-htmx",
+  hooks: {
+    "astro:config:setup": ({ injectScript }) => {
+      injectScript(
+        "page",
+        `import * as htmx from "htmx.org";
+        document.addEventListener('astro:after-swap', () => {
+          htmx.process(document.body)
+        })`,
+      );
+    },
+  },
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,9 +25,10 @@ export default defineConfig({
     UnoCSS({
       injectReset: true,
     }),
-    qwikdev(),
+    astroHTMX,
+    icon(),
   ],
   compressHTML: false,
-  output: "server",
+  output: "hybrid",
   adapter: vercel(),
 });

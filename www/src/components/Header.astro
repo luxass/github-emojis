@@ -1,8 +1,12 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
 <header>
   <nav class="flex flex-wrap items-center justify-between">
     <a href="/" class="flex items-center gap-2">
-      <span class="i-twemoji-clipboard text-2xl"></span>
-      <h1>projectrc.luxass.dev</h1>
+      <!-- <Icon name="mdi:github" /> -->
+      <h1>GitHub Emojis</h1>
     </a>
 
     <div class="flex items-center justify-between gap-2">
@@ -15,26 +19,12 @@
         </svg>
       </a>
 
-      <button id="theme-toggle" class="ml1 text-lg op-50 hover:op-75" title="Toggle Theme" aria-label="Toggle Theme">
+      <ThemeIcon />
+      <!-- <button id="theme-toggle" class="ml1 text-lg op-50 hover:op-75" title="Toggle Theme" aria-label="Toggle Theme">
         <span class="block dark:i-carbon-moon i-carbon-sun"></span>
-      </button>
+
+        <Icon name="carbon:moon" />
+      </button> -->
     </div>
   </nav>
 </header>
-
-<script>
-  const button = document.querySelector("#theme-toggle");
-  if (button) {
-    button.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.contains("dark");
-
-      if (isDark) {
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      } else {
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      }
-    });
-  }
-</script>

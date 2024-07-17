@@ -1,0 +1,31 @@
+---
+import Fuse from "fuse.js";
+import EmojiCard from "../components/EmojiCard.astro";
+import { emojis } from "../data/emojis";
+
+const fuse = new Fuse(emojis, {
+  keys: ["emojiKey"],
+});
+
+if (Astro.request.method !== "POST") {
+  return Astro.redirect(null, 404);
+}
+
+const formData = await Astro.request.formData();
+const search = formData.get("search")?.toString();
+
+let result: typeof emojis = [];
+if (!search) {
+  result = emojis;
+} else {
+  result = fuse.search(search).map((result) => result.item);
+}
+---
+
+{result.map((emoji) => (
+  <EmojiCard
+    emojiKey={emoji.emojiKey}
+    emoji={emoji.emoji!}
+    emojiUrl={emoji.emojiUrl
+  }/>
+))}

@@ -1,8 +1,9 @@
 # github-emojis
 
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+
 All GitHub's emojis in one place.
-<br/>
-<br/>
 
 ## 📦 Installation
 
@@ -39,7 +40,7 @@ import emojis from "github-emojis/emojis";
 
 ## All emojis
 
-> [!NOTE]  
+> [!NOTE]
 > You can view all on [github-emojis.luxass.dev](https://github-emojis.luxass.dev) or directly below.
 
 <details>
@@ -990,11 +991,13 @@ import emojis from "github-emojis/emojis";
 <!-- table end -->
 </details>
 
-## 💻 Development
+## 📄 License
 
-- Clone this repository
-- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
-- Install dependencies using `pnpm install`
-- Run tests using `pnpm dev`
+Published under [MIT License](./LICENSE).
 
-Published under [MIT License](./LICENCE).
+<!-- Badges -->
+
+[npm-version-src]: https://img.shields.io/npm/v/github-emojis?style=flat&colorA=18181B&colorB=4169E1
+[npm-version-href]: https://npmjs.com/package/github-emojis
+[npm-downloads-src]: https://img.shields.io/npm/dm/github-emojis?style=flat&colorA=18181B&colorB=4169E1
+[npm-downloads-href]: https://npmjs.com/package/github-emojis
