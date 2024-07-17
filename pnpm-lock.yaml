@@ -34,7 +34,7 @@ importers:
     dependencies:
       '@vercel/analytics':
         specifier: ^1.0.2
-        version: 1.0.2
+        version: 1.3.1
       '@vueuse/components':
         specifier: ^10.4.1
         version: 10.4.1(vue@3.3.4)
@@ -1214,8 +1214,16 @@ packages:
     peerDependencies:
       webpack: ^4 || ^5
 
-  '@vercel/analytics@1.0.2':
-    resolution: {integrity: sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg==}
+  '@vercel/analytics@1.3.1':
+    resolution: {integrity: sha512-xhSlYgAuJ6Q4WQGkzYTLmXwhYl39sWjoMA3nHxfkvG+WdBT25c563a7QhwwKivEOZtPJXifYHR1m2ihoisbWyA==}
+    peerDependencies:
+      next: '>= 13'
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      next:
+        optional: true
+      react:
+        optional: true
 
   '@vercel/nft@0.23.1':
     resolution: {integrity: sha512-NE0xSmGWVhgHF1OIoir71XAd0W0C1UE3nzFyhpFiMr3rVhetww7NvM1kc41trBsPG37Bh+dE5FYCTMzM/gBu0w==}
@@ -3933,6 +3941,9 @@ packages:
     resolution: {integrity: sha512-XGuRDNjXUijsUL0vl6nSD7cwURuzEgglbOaFuZM9g3kwDXOWVTck0jLzjPzGD+TazWbboZYu52/9/XPdUgne9g==}
     engines: {node: '>= 0.8.0'}
 
+  server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+
   set-blocking@2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
 
@@ -6244,7 +6255,9 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  '@vercel/analytics@1.0.2': {}
+  '@vercel/analytics@1.3.1':
+    dependencies:
+      server-only: 0.0.1
 
   '@vercel/nft@0.23.1(encoding@0.1.13)':
     dependencies:
@@ -9375,6 +9388,8 @@ snapshots:
       send: 0.18.0
     transitivePeerDependencies:
       - supports-color
+
+  server-only@0.0.1: {}
 
   set-blocking@2.0.0: {}
 
