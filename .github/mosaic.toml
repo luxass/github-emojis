@@ -11,5 +11,8 @@ version = true
 [npm]
 enabled = true
 
+[website]
+enabled = true
+
 [readme]
 enabled = true
