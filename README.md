@@ -40,7 +40,6 @@ import emojis from "github-emojis/emojis";
 
 ## All emojis
 
-<<<<<<< HEAD
 > [!NOTE]
 > You can view all on [github-emojis.luxass.dev](https://github-emojis.luxass.dev) or directly below.
 
@@ -54,9 +53,3 @@ Published under [MIT License](./LICENSE).
 [npm-version-href]: https://npmjs.com/package/github-emojis
 [npm-downloads-src]: https://img.shields.io/npm/dm/github-emojis?style=flat&colorA=18181B&colorB=4169E1
 [npm-downloads-href]: https://npmjs.com/package/github-emojis
-=======
-> [!NOTE]  
-> You can view all on [github-emojis.luxass.dev](https://github-emojis.luxass.dev)
-
-Published under [MIT License](./LICENSE).
->>>>>>> main
