@@ -1,15 +1,8 @@
 import { writeFile } from "node:fs/promises";
 import process from "node:process";
 import { z } from "zod";
+import { isUnicodeUrl } from "../src/utils";
 
-const ORDERED_EMOJI_REGEX = /.+\s;\s(?<version>[0-9.]+)\s#\s(?<emoji>\S+)\s(?<name>[^:]+)(?::\s)?(?<desc>.+)?/;
-let currentEmoji: string | null = null;
-const VARIATION_16 = String.fromCodePoint(0xFE0F);
-const SKIN_TONE_VARIATION_DESC = /\sskin\stone(?:,|$)/;
-
-const emojiComponents: Record<string, string> = {};
-
-const GROUP_REGEX = /^#\sgroup:\s(?<name>.+)/;
 const EMOJI_REGEX = /^(?<unicode>(?:\S+\s)*\S+)\s+;\s*(?<type>[\w-]+)\s*#\s*(?<emoji>\S+)\s*E(?<version>\d+\.\d)\s*(?<description>.+)/;
 
 const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
@@ -35,7 +28,7 @@ async function run() {
     export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join("\n | ")} | (string & {});
   `;
 
-  await writeFile("emoji-types.ts", typesString);
+  await writeFile("./src/types.ts", typesString);
 
   const constantsString = `${BANNER}
     import type { EmojiKey } from "./types";
@@ -45,85 +38,54 @@ async function run() {
     ] as readonly EmojiKey[];
   `;
 
-  await writeFile("emoji-constants.ts", constantsString);
+  await writeFile("./src/constants.ts", constantsString);
 
   const emojiTestList = await fetch("https://unicode.org/Public/emoji/latest/emoji-test.txt").then((res) => res.text());
 
-  let currentGroup: string | undefined;
+  const lines = emojiTestList.split("\n").filter((line) => line.includes("fully-qualified"));
+  const emojis: Record<string, string> = Object.fromEntries(Object.entries(emojiUrls).map(([key]) => [key, ""]));
 
-  const lines = emojiTestList.split("\n");
-  const emojis: Record<string, unknown> = {};
+  for (const emojiKey of Object.keys(emojis)) {
+    const githubUrlUnicodeUrl = emojiUrls[emojiKey];
 
-  for (const line of lines) {
-    const groupMatch = line.match(GROUP_REGEX);
-    if (groupMatch) {
-      currentGroup = groupMatch.groups?.name;
-    } else {
-      const emojiMatch = line.match(EMOJI_REGEX);
-      if (!emojiMatch) continue;
-      const groups = emojiMatch.groups;
-
-      if (!groups?.emoji) throw new Error("No emoji found");
-      if (groups?.type === "fully-qualified") {
-        if (line.match(SKIN_TONE_VARIATION_DESC)) continue;
-        emojis[groups.emoji] = {
-          name: null,
-          slug: null,
-          group: currentGroup,
-          emoji_version: groups?.version,
-          unicode: groups?.unicode,
-        };
-      } else if (groups?.type === "component") {
-        emojiComponents[slugify(groups?.description)] = groups?.emoji;
-      }
+    if (!isUnicodeUrl(githubUrlUnicodeUrl)) {
+      emojis[emojiKey] = githubUrlUnicodeUrl!;
+      continue;
     }
+
+    const githubUrlUnicodeString = githubUrlUnicodeUrl!.replace("https://github.githubassets.com/images/icons/emoji/unicode/", "").replace(".png?v8", "");
+
+    const githubUnicodeCodePoints = githubUrlUnicodeString.split("-");
+
+    // find the entry in emojiTestList
+    const emojiTestListEntry = lines.find((line) => {
+      const match = line.match(EMOJI_REGEX);
+      if (!match || match.groups?.unicode == null) return false;
+
+      if (match.groups.type !== "fully-qualified") return false;
+
+      // remove all zero width joiners
+      const unicode = match.groups.unicode.replace(/200D/g, "").replace(/FE0F/g, "").trim();
+      const codePoints = unicode.split(" ").filter((codePoint) => codePoint !== "");
+
+      if (codePoints.length !== githubUnicodeCodePoints.length) return false;
+      // console.log({
+      //   unicode,
+      //   codePoints,
+      //   githubUnicodeCodePoints,
+      // });
+
+      for (let i = 0; i < codePoints.length; i++) {
+        if (codePoints[i]?.toLowerCase() !== githubUnicodeCodePoints[i]?.toLowerCase()) return false;
+      }
+
+      return true;
+    });
+
+    emojis[emojiKey] = emojiTestListEntry?.match(EMOJI_REGEX)?.groups?.emoji ?? "";
   }
-
-  const ordered = await fetch("https://unicode.org/emoji/charts/emoji-ordering.txt").then((res) => res.text());
-
-  ordered.split("\n").forEach((line) => {
-    if (line.length === 0) return;
-    const match = line.match(ORDERED_EMOJI_REGEX);
-    if (!match) return;
-
-    const { groups: { version, emoji, name, desc } } = match;
-    const isSkinToneVariation = desc && !!desc.match(SKIN_TONE_VARIATION_DESC);
-    const fullName = desc && !isSkinToneVariation ? [name, desc].join(" ") : name;
-    if (isSkinToneVariation) {
-      emojis[currentEmoji!].skin_tone_support = true;
-      emojis[currentEmoji!].skin_tone_support_unicode_version = version;
-    } else {
-      const emojiWithOptionalVariation16 = emojis[emoji] ? emoji : emoji + VARIATION_16;
-      const emojiEntry = emojis[emojiWithOptionalVariation16];
-      if (!emojiEntry) {
-        if (Object.values(emojiComponents).includes(emoji)) return;
-        throw `${emoji} entry from emoji-order.txt match not found in emoji-group.txt`;
-      }
-      currentEmoji = emojiWithOptionalVariation16;
-      emojis[currentEmoji].name = fullName;
-      emojis[currentEmoji].slug = slugify(fullName);
-    }
-  });
 
   await writeFile("emojis.json", JSON.stringify(emojis, null, 2));
-}
-
-function slugify(str?: string): string {
-  if (!str) throw new Error("No string provided to slugify");
-  const SLUGIFY_REPLACEMENT: Record<string, string> = {
-    "*": "asterisk",
-    "#": "number sign",
-  };
-
-  for (const key in SLUGIFY_REPLACEMENT) {
-    str = str.replace(key, SLUGIFY_REPLACEMENT[key] || "");
-  }
-
-  return str.normalize("NFD")
-    .replace(/[\u0300-\u036F]/g, "")
-    .replace(/\(.+\)/g, "")
-    .trim()
-    .replace(/[\W_]+/g, "_").toLowerCase();
 }
 
 run().catch((err) => {
