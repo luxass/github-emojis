@@ -1,5 +1,5 @@
-import emojiUrls from "../emoji-urls.json";
-import allEmojis from "../emojis.json";
+import emojiUrls from "../emoji-urls.json" with { type: "json" };
+import allEmojis from "../emojis.json" with { type: "json" };
 import type { EmojiKey } from "./types";
 import { isUnicodeEmoji, isUnicodeUrl } from "./utils";
 

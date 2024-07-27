@@ -1,0 +1,21 @@
+{
+  "name": "@luxass/github-emojis",
+  "version": "1.0.1",
+  "exports": {
+    ".": "./src/index.ts",
+    "./utils": "./src/utils.ts"
+  },
+  "exclude": [
+    "tsup.config.ts",
+    "eslint.config.mjs",
+    "pnpm-lock.yaml",
+    ".github/**",
+    "test/**",
+    "playground.ts",
+    "scripts/**"
+  ],
+  "include": [
+    "emojis.json",
+    "emoji-urls.json"
+  ]
+}
