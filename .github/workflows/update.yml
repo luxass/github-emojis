@@ -45,8 +45,12 @@ jobs:
           diff_output=$(jq -s '
             def diff(a; b):
               reduce (a | keys_unsorted[]) as $key
-                ({}; . + { ($key): (if a[$key] == b[$key] then null elif (a[$key] | type) == "object" and (b[$key] | type) == "object" then diff(a[$key]; b[$key]) else { old: a[$key], new: b[$key] } end) });
+                ({}; . + { ($key): (if a[$key] == b[$key] then null
+                                    elif (a[$key] | type) == "object" and (b[$key] | type) == "object" then diff(a[$key]; b[$key])
+                                    else { old: a[$key], new: b[$key] } end) });
             diff(input[0]; input[1])' "/tmp/old-emoji-urls.json" "emoji-urls.json")
+
+          echo "cleaning up diff output"
 
           cleaned_output=$(echo "$diff_output" | jq 'walk(if type == "object" then with_entries(select(.value != null)) else . end)')
 
