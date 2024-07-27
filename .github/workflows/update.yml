@@ -57,10 +57,11 @@ jobs:
             }, {});
 
             let changesTable = '';
-            for (let i = 0; i < Object.keys(changes).length; i += 2) {
+            for (let i = 0; i < Object.keys(changes).length; i += 3) {
               const key1 = Object.keys(changes)[i];
               const key2 = Object.keys(changes)[i + 1];
-              changesTable += `| :${key1}: | ${key2 != null ? ':' + key2 + ':' : ''} |\n`;
+              const key3 = Object.keys(changes)[i + 2];
+              changesTable += `| :${key1}: | ${key2 != null ? ':' + key2 + ':' : ''} | ${key2 != null ? ':' + key2 + ':' : ''} |\n`;
             }
 
             if (Object.keys(changes).length === 0) {
@@ -91,8 +92,8 @@ jobs:
             <details>
               <summary>Changes</summary>
 
-              | Emoji | New URL |
-              | ----- | ------- |
+              | Emoji | Emoji | Emoji |
+              | ----- | ----- | ----- |
               ${{ steps.emoji_changes.outputs.changes-table }}
             </details>
           branch: update-emojis
