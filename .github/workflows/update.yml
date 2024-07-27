@@ -73,7 +73,7 @@ jobs:
 
       - name: create pull request
         uses: peter-evans/create-pull-request@v6.1.0
-        if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes }}
+        if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes == 'true' }}
         with:
           commit-message: "chore: updated emojis"
           title: "chore: updated github emojis"
@@ -104,7 +104,7 @@ jobs:
 
       - name: upload new emojis as artifact
         uses: actions/upload-artifact@v4.3.4
-        if: steps.emoji_changes.outputs.changes
+        if: steps.emoji_changes.outputs.changes == 'true'
         with:
           name: new-github-emojis
           path: emoji-urls.json
