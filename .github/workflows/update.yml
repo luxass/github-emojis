@@ -60,7 +60,7 @@ jobs:
             for (let i = 0; i < Object.keys(changes).length; i += 2) {
               const key1 = Object.keys(changes)[i];
               const key2 = Object.keys(changes)[i + 1];
-              changesTable += `| ${key1} | ${key2} |\n`;
+              changesTable += `| :${key1}: | ${key2 != null ':' + key2 + ':' : ''} |\n`;
             }
 
             if (Object.keys(changes).length === 0) {
