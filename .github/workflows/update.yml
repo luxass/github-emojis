@@ -36,15 +36,29 @@ jobs:
       - name: Save initial state of emoji URLs
         run: cp emoji-urls.json /tmp/emoji_before.json
 
-      - name: Run update:emojis script
+      - name: run update:emojis script
         run: pnpm run update:emojis
 
       - name: process emoji changes
         id: emoji_changes
         run: |
-          changes=$(jq -r 'to_entries | map(select(.key as $key |
-            $key | IN(input | to_entries | map(select(.value != $ARGS.positional[0][.key].value) | .key)[])))[]
-            | "- :" + .key + ": " + .value' /tmp/emoji_before.json emoji-urls.json)
+          echo "content of /tmp/emoji_before.json:"
+          cat /tmp/emoji_before.json
+          echo "content of emoji-urls.json:"
+          cat emoji-urls.json
+
+          changes=$(jq -r --argfile old /tmp/emoji_before.json '
+            to_entries as $new |
+            $old | to_entries as $old |
+            ($new | map(.key) - ($old | map(.key))) as $added |
+            ($old | map(.key) - ($new | map(.key))) as $removed |
+            $new | map(select(.key as $key |
+              $key | IN($old | map(select(.value != $new[].value | select(.key == $key).value) | .key)[])
+              or $key | IN($added)
+            )) |
+            map("- :" + .key + ": " + .value) |
+            .[]
+          ' emoji-urls.json || echo "jq command failed")
 
           if [ -n "$changes" ]; then
             echo "Changes detected in emoji URLs:"
@@ -53,7 +67,7 @@ jobs:
             echo "$changes" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
           else
-            echo "No changes detected in emoji URLs."
+            echo "No changes detected in emoji URLs or an error occurred."
           fi
 
       - name: create pull request
