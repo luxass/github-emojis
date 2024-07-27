@@ -47,58 +47,50 @@ jobs:
           echo "content of emoji-urls.json:"
           cat emoji-urls.json
 
-          changes=$(jq -r --argfile old /tmp/emoji_before.json '
-            to_entries as $new |
-            $old | to_entries as $old |
-            ($new | map(.key) - ($old | map(.key))) as $added |
-            ($old | map(.key) - ($new | map(.key))) as $removed |
-            $new | map(select(.key as $key |
-              $key | IN($old | map(select(.value != $new[].value | select(.key == $key).value) | .key)[])
-              or $key | IN($added)
-            )) |
-            map("- :" + .key + ": " + .value) |
-            .[]
-          ' emoji-urls.json || echo "jq command failed")
+          old=$(<"/tmp/emoji_before.json")
+          new=$(<"emoji-urls.json")
 
-          if [ -n "$changes" ]; then
-            echo "Changes detected in emoji URLs:"
-            echo "$changes"
-            echo "changes<<EOF" >> $GITHUB_OUTPUT
-            echo "$changes" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-          else
-            echo "No changes detected in emoji URLs or an error occurred."
-          fi
+          diff_output=$(jq -n --argjson a "$old" --argjson b "$new" '
+            def diff(a; b):
+              reduce (a | keys_unsorted[]) as $key
+                ({}; . + { ($key): (if a[$key] == b[$key] then null elif (a[$key] | type) == "object" and (b[$key] | type) == "object" then diff(a[$key]; b[$key]) else { old: a[$key], new: b[$key] } end) });
+            diff($a; $b)')
 
-      - name: create pull request
-        uses: peter-evans/create-pull-request@v6.1.0
-        if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes }}
-        with:
-          commit-message: "chore: updated emojis"
-          title: "chore: updated github emojis"
-          body: |
-            I found some new changes in GitHub's list of emojis.
+          echo "diff_output: $diff_output"
 
-            Here's a summary of the changes:
-            ${{ steps.emoji_changes.outputs.changes }}
+          cleaned_output=$(echo "$diff_output" | jq 'walk(if type == "object" then with_entries(select(.value != null)) else . end)')
 
-            I don't know which emoji they changed or added, but I'm sure it's cool.
-            If you want you can go take a look yourself.
+          echo "cleaned_output: $cleaned_output"
 
-            I will be waiting for your approval 👋.
+      # - name: create pull request
+      #   uses: peter-evans/create-pull-request@v6.1.0
+      #   if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes }}
+      #   with:
+      #     commit-message: "chore: updated emojis"
+      #     title: "chore: updated github emojis"
+      #     body: |
+      #       I found some new changes in GitHub's list of emojis.
 
-            This is an automated PR to update the GitHub Emoji List.
+      #       Here's a summary of the changes:
+      #       ${{ steps.emoji_changes.outputs.changes }}
 
-            If you have any questions or suggestions, please open an issue.
-          branch: update-emojis
-          base: main
-          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          reviewers: luxass
+      #       I don't know which emoji they changed or added, but I'm sure it's cool.
+      #       If you want you can go take a look yourself.
 
-      - name: Upload changes as artifact
-        uses: actions/upload-artifact@v4.3.4
-        if: steps.emoji_changes.outputs.changes
-        with:
-          name: emoji-changes
-          path: ${{ steps.emoji_changes.outputs.changes }}
+      #       I will be waiting for your approval 👋.
+
+      #       This is an automated PR to update the GitHub Emoji List.
+
+      #       If you have any questions or suggestions, please open an issue.
+      #     branch: update-emojis
+      #     base: main
+      #     committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+      #     author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+      #     reviewers: luxass
+
+      # - name: Upload changes as artifact
+      #   uses: actions/upload-artifact@v4.3.4
+      #   if: steps.emoji_changes.outputs.changes
+      #   with:
+      #     name: emoji-changes
+      #     path: ${{ steps.emoji_changes.outputs.changes }}
