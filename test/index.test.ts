@@ -1,4 +1,4 @@
-import { expect, expectTypeOf, it } from "vitest";
+import { describe, expect, expectTypeOf, it } from "vitest";
 import type { EmojiKey } from "../src";
 import { EMOJI_KEYS, exists, get, getUrl, isUnicodeEmoji, isUnicodeUrl, parse, removeEmojis, urls } from "../src";
 
@@ -84,4 +84,60 @@ it("check if str is a unicode emoji url", () => {
   expect(isUnicodeUrl("https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1ea.png?v8")).toBe(true);
   expect(isUnicodeEmoji("not-an-emoji")).toBe(false);
   expect(isUnicodeUrl(getUrl("atom"))).toBe(false);
+});
+
+describe("exists", () => {
+  it("should return true when the emoji exists", () => {
+    expect(exists("grinning")).toBe(true);
+  });
+
+  it("should return false when the emoji does not exist", () => {
+    expect(exists("non-existing-emoji")).toBe(false);
+  });
+
+  it("should return false when the input is an empty string", () => {
+    expect(exists("")).toBe(false);
+  });
+
+  it("should return false when the emoji is a unicode character that does not exist", () => {
+    expect(exists("non-existing-unicode")).toBe(false);
+  });
+});
+
+describe("parse", () => {
+  it("should replace emoji keys with unicode characters", () => {
+    expect(parse(":grinning:")).toBe("😀");
+    expect(parse(":heart_eyes:")).toBe("😍");
+    expect(parse(":sunglasses:")).toBe("😎");
+  });
+
+  it("should leave non-existing emoji codes unchanged", () => {
+    expect(parse(":non-existing-emoji:")).toBe(":non-existing-emoji:");
+  });
+
+  it("should replace multiple emoji codes in a string", () => {
+    expect(parse(":grinning: is my favorite emoji! :heart_eyes:")).toBe("😀 is my favorite emoji! 😍");
+  });
+
+  it("should ignore double colons in the middle of a word", () => {
+    expect(parse("::grinning:")).toBe(":😀");
+    expect(parse(":grinning::")).toBe("😀:");
+    expect(parse(":grinning:::")).toBe("😀::");
+    expect(parse("::grinning::")).toBe(":😀:");
+    expect(parse("::")).toBe("::");
+  });
+
+  it("should return the original string if emoji key does not exist", () => {
+    expect(parse(":non-existing-emoji:")).toBe(":non-existing-emoji:");
+  });
+
+  it("should return the original string if emoji key exists but cannot be replaced", () => {
+    expect(parse(":accessibility:")).toBe(":accessibility:");
+  });
+
+  it("should replace emoji keys with unicode characters if emoji key exists", () => {
+    expect(parse(":grinning:")).toBe("😀");
+    expect(parse(":heart_eyes:")).toBe("😍");
+    expect(parse(":sunglasses:")).toBe("😎");
+  });
 });

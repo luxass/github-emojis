@@ -37,8 +37,6 @@ export function get(emoji: Intellisense<EmojiKey>): string | undefined {
     return undefined;
   }
 
-  console.warn(emoji);
-
   const splittedCodepoints = urlMatch[0].split("-");
 
   const codepoints = splittedCodepoints.map((codepoint) =>
