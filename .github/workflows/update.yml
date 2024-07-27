@@ -80,6 +80,14 @@ jobs:
           body: |
             I found some new changes in GitHub's list of emojis.
 
+            <details>
+              <summary>Here you can see a list of the new emojis</summary>
+
+              | Emoji | Emoji | Emoji |
+              | ----- | ----- | ----- |
+              ${{ steps.emoji_changes.outputs.changes-table }}
+            </details>
+
             I don't know which emoji they changed or added, but I'm sure it's cool.
             If you want you can go take a look yourself.
 
@@ -88,14 +96,6 @@ jobs:
             This is an automated PR to update the GitHub Emoji List.
 
             If you have any questions or suggestions, please open an issue.
-
-            <details>
-              <summary>Changes</summary>
-
-              | Emoji | Emoji | Emoji |
-              | ----- | ----- | ----- |
-              ${{ steps.emoji_changes.outputs.changes-table }}
-            </details>
           branch: update-emojis
           base: main
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
