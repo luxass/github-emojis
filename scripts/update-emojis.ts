@@ -1,11 +1,25 @@
+import { writeFile } from "node:fs/promises";
 import process from "node:process";
+import { z } from "zod";
+
+const ORDERED_EMOJI_REGEX = /.+\s;\s(?<version>[0-9.]+)\s#\s(?<emoji>\S+)\s(?<name>[^:]+)(?::\s)?(?<desc>.+)?/;
+const currentEmoji: string | null = null;
+const VARIATION_16 = String.fromCodePoint(0xFE0F);
+const SKIN_TONE_VARIATION_DESC = /\sskin\stone(?:,|$)/;
+
+const emojiComponents: Record<string, string> = {};
+
+const GROUP_REGEX = /^#\sgroup:\s(?<name>.+)/;
+const EMOJI_REGEX = /^(?<unicode>(?:\S+\s)*\S+)\s+;\s*(?<type>[\w-]+)\s*#\s*(?<emoji>\S+)\s*E(?<version>\d+\.\d)\s*(?<description>.+)/;
 
 const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 // RUN \`npm run update:emojis\` TO UPDATE.
 `;
 
+const EMOJI_URLS_SCHEMA = z.record(z.string());
+
 async function run() {
-  const emojiUrls: Record<string, string> = await fetch("https://api.github.com/emojis", {
+  const emojiUrlsRaw = await fetch("https://api.github.com/emojis", {
     headers: {
       "Accept": "application/vnd.github.v3+json",
       "X-GitHub-Api-Version": "2022-11-28",
@@ -13,83 +27,106 @@ async function run() {
     },
   }).then((res) => res.json());
 
-  // const categories = getCategories(fullEmojiList);
-  // console.log(categories);
+  const emojiUrls = EMOJI_URLS_SCHEMA.parse(emojiUrlsRaw);
 
-  // const emojiUrlEntries = Object.entries(emojiUrls);
+  await writeFile("emoji-urls.json", JSON.stringify(emojiUrls, null, 2));
 
-  // await Bun.write("./emoji-urls.json", `${JSON.stringify(emojiUrls, null, 2)}\n`);
+  const typesString = `${BANNER}
+    export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join("\n | ")} | (string & {});
+  `;
 
-  // const typesString = `${BANNER}
-  //   export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join("\n | ")} | (string & {});
+  await writeFile("emoji-types.ts", typesString);
 
-  //   export type EmojiCategory = ${categories.map((category) => `"${category}"`).join("\n | ")} | (string & {});
+  const constantsString = `${BANNER}
+    import type { EmojiKey } from "./types";
 
-  //   export interface Emoji {
-  //     name: string
-  //     emoji: string
-  //     url: string
-  //     category: EmojiCategory
-  //   }
-  // `;
+    export const EMOJI_KEYS = [
+      ${Object.entries(emojiUrls).map(([name]) => `"${name}"`).join(",\n      ")}
+    ] as readonly EmojiKey[];
+  `;
 
-  // await Bun.write("./src/types.ts", typesString);
+  await writeFile("emoji-constants.ts", constantsString);
 
-  // const constantsString = `${BANNER}
-  //   import type { EmojiKey } from "./types";
+  const emojiTestList = await fetch("https://unicode.org/Public/emoji/latest/emoji-test.txt").then((res) => res.text());
 
-  //   export const EMOJI_KEYS = [
-  //     ${emojiUrlEntries.map(([name]) => `"${name}"`).join(",\n      ")}
-  //   ] as readonly EmojiKey[];
-  // `;
+  let currentGroup: string | undefined;
 
-  // await Bun.write("./src/constants.ts", constantsString);
+  const lines = emojiTestList.split("\n");
+  const emojis: Record<string, unknown> = {};
 
-  // const readmeFile = Bun.file("./README.md");
-  // const readme = await readmeFile.text();
+  for (const line of lines) {
+    const groupMatch = line.match(GROUP_REGEX);
+    if (groupMatch) {
+      currentGroup = groupMatch.groups?.name;
+    } else {
+      const emojiMatch = line.match(EMOJI_REGEX);
+      if (!emojiMatch) continue;
+      const groups = emojiMatch.groups;
 
-  // const tableStart = readme.indexOf("<!-- table start -->");
+      if (!groups?.emoji) throw new Error("No emoji found");
+      if (groups?.type === "fully-qualified") {
+        if (line.match(SKIN_TONE_VARIATION_DESC)) continue;
+        emojis[groups.emoji] = {
+          name: null,
+          slug: null,
+          group: currentGroup,
+          emoji_version: groups?.version,
+          unicode: groups?.unicode,
+        };
+      } else if (groups?.type === "component") {
+        emojiComponents[slugify(groups?.description)] = groups?.emoji;
+      }
+    }
+  }
 
-  // const tableEnd = readme.indexOf("<!-- table end -->");
+  const ordered = await fetch("https://unicode.org/emoji/charts/emoji-ordering.txt").then((res) => res.text());
 
-  // const table = readme.slice(tableStart, tableEnd + "<!-- table end -->".length);
+  ordered.split("\n").forEach((line) => {
+    if (line.length === 0) return;
+    const match = line.match(ORDERED_EMOJI_REGEX);
+    if (!match) return;
 
-  // let newTable = `${`<!-- table start -->
-  // | Name | Emoji | Name | Emoji |
-  // |------|-------|------|-------|
-  // `.split("\n").map((line) => line.trim()).join("\n")}`;
+    const { groups: { version, emoji, name, desc } } = match;
+    const isSkinToneVariation = desc && !!desc.match(SKIN_TONE_VARIATION_DESC);
+    const fullName = desc && !isSkinToneVariation ? [name, desc].join(" ") : name;
+    if (isSkinToneVariation) {
+      emojis[currentEmoji!].skin_tone_support = true;
+      emojis[currentEmoji!].skin_tone_support_unicode_version = version;
+    } else {
+      const emojiWithOptionalVariation16 = emojis[emoji] ? emoji : emoji + VARIATION_16;
+      const emojiEntry = emojis[emojiWithOptionalVariation16];
+      if (!emojiEntry) {
+        if (Object.values(emojiComponents).includes(emoji)) return;
+        throw `${emoji} entry from emoji-order.txt match not found in emoji-group.txt`;
+      }
+      currentEmoji = emojiWithOptionalVariation16;
+      emojis[currentEmoji].name = fullName;
+      emojis[currentEmoji].slug = slugify(fullName);
+    }
+  });
 
-  // const emojis = emojiUrlEntries;
+  await writeFile("emojis.json", JSON.stringify(emojis, null, 2));
+}
 
-  // for (let i = 0; i < emojis.length; i += 2) {
-  //   const firstEmoji = emojis[i];
-  //   const secondEmoji = emojis[i + 1];
+function slugify(str?: string): string {
+  if (!str) throw new Error("No string provided to slugify");
+  const SLUGIFY_REPLACEMENT: Record<string, string> = {
+    "*": "asterisk",
+    "#": "number sign",
+  };
 
-  //   newTable += `| ${firstEmoji ? firstEmoji[0] : ""} | ${firstEmoji ? !isUnicodeUrl(firstEmoji[1]) ? `<img width="20" height="20" src="${firstEmoji[1]}" loading="lazy" />` : getEmojiFromUnicodeUrl(firstEmoji[1]) : ""} `;
-  //   newTable += `| ${secondEmoji ? secondEmoji[0] : ""} | ${secondEmoji ? !isUnicodeUrl(secondEmoji[1]) ? `<img width="20" height="20" src="${secondEmoji[1]}" loading="lazy" />` : getEmojiFromUnicodeUrl(secondEmoji[1]) : ""} |\n`;
-  // }
+  for (const key in SLUGIFY_REPLACEMENT) {
+    str = str.replace(key, SLUGIFY_REPLACEMENT[key] || "");
+  }
 
-  // newTable += "<!-- table end -->";
-
-  // await Bun.write("./README.md", readme.replace(table, newTable));
-
-  // Bun.spawn(["npx", "prettier", "./src", "-w"], {
-  //   onExit(_, __, ___, error) {
-  //     if (error) {
-  //       console.error(error);
-  //       process.exit(1);
-  //     }
-  //     Bun.spawn(["npx", "eslint", "--fix", "./src"]);
-  //   },
-  // });
+  return str.normalize("NFD")
+    .replace(/[\u0300-\u036F]/g, "")
+    .replace(/\(.+\)/g, "")
+    .trim()
+    .replace(/[\W_]+/g, "_").toLowerCase();
 }
 
 run().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
-function getEmojiFromUnicodeUrl(arg0: string) {
-  console.log(arg0);
-  return "🤷‍♂️";
-}

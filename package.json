@@ -65,17 +65,18 @@
     "dev": "tsup --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
-    "lint": "eslint . && eslint ./www --config=./www/eslint.config.mjs",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "update:emojis": "pnpx tsx run ./scripts/update-emojis.ts"
+    "update:emojis": "pnpx tsx ./scripts/update-emojis.ts"
   },
   "devDependencies": {
     "@luxass/eslint-config": "^4.9.0",
     "@types/node": "^18.19.3",
     "eslint": "^9.7.0",
     "eslint-plugin-format": "^0.1.2",
-    "tsup": "^8.1.1",
+    "tsup": "^8.1.2",
     "typescript": "^5.5.3",
-    "vitest": "^2.0.3"
+    "vitest": "^2.0.3",
+    "zod": "^3.23.8"
   }
 }

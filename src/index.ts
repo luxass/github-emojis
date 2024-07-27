@@ -1,5 +1,5 @@
 import emojiUrls from "../emoji-urls.json";
-import type { EmojiCategory, EmojiKey } from "./types";
+import type { EmojiKey } from "./types";
 import { isUnicodeEmoji, isUnicodeUrl } from "./utils";
 
 import { EMOJI_KEYS } from "./constants";
@@ -8,7 +8,7 @@ export { EMOJI_KEYS };
 
 type Intellisense<T> = T | (string & {});
 
-export type { EmojiKey, EmojiCategory };
+export type { EmojiKey };
 
 export { isUnicodeEmoji, isUnicodeUrl };
 
