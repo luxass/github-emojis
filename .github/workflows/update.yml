@@ -56,37 +56,35 @@ jobs:
                 ({}; . + { ($key): (if a[$key] == b[$key] then null elif (a[$key] | type) == "object" and (b[$key] | type) == "object" then diff(a[$key]; b[$key]) else { old: a[$key], new: b[$key] } end) });
             diff($a; $b)')
 
-          echo "diff_output: $diff_output"
-
           cleaned_output=$(echo "$diff_output" | jq 'walk(if type == "object" then with_entries(select(.value != null)) else . end)')
 
-          echo "cleaned_output: $cleaned_output"
+          echo "changes='$cleaned_output'" >> $GITHUB_OUTPUT
 
-      # - name: create pull request
-      #   uses: peter-evans/create-pull-request@v6.1.0
-      #   if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes }}
-      #   with:
-      #     commit-message: "chore: updated emojis"
-      #     title: "chore: updated github emojis"
-      #     body: |
-      #       I found some new changes in GitHub's list of emojis.
+      - name: create pull request
+        uses: peter-evans/create-pull-request@v6.1.0
+        if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes }}
+        with:
+          commit-message: "chore: updated emojis"
+          title: "chore: updated github emojis"
+          body: |
+            I found some new changes in GitHub's list of emojis.
 
-      #       Here's a summary of the changes:
-      #       ${{ steps.emoji_changes.outputs.changes }}
+            Here's a summary of the changes:
+            ${{ steps.emoji_changes.outputs.changes }}
 
-      #       I don't know which emoji they changed or added, but I'm sure it's cool.
-      #       If you want you can go take a look yourself.
+            I don't know which emoji they changed or added, but I'm sure it's cool.
+            If you want you can go take a look yourself.
 
-      #       I will be waiting for your approval 👋.
+            I will be waiting for your approval 👋.
 
-      #       This is an automated PR to update the GitHub Emoji List.
+            This is an automated PR to update the GitHub Emoji List.
 
-      #       If you have any questions or suggestions, please open an issue.
-      #     branch: update-emojis
-      #     base: main
-      #     committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-      #     author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-      #     reviewers: luxass
+            If you have any questions or suggestions, please open an issue.
+          branch: update-emojis
+          base: main
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          reviewers: luxass
 
       # - name: Upload changes as artifact
       #   uses: actions/upload-artifact@v4.3.4
