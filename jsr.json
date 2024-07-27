@@ -9,7 +9,10 @@
     "tsup.config.ts",
     "eslint.config.mjs",
     "pnpm-lock.yaml",
-    ".github/**"
+    ".github/**",
+    "test/**",
+    "playground.ts",
+    "scripts/**"
   ],
   "include": [
     "emojis.json",
