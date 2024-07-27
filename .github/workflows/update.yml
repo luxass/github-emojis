@@ -56,10 +56,15 @@ jobs:
               return acc;
             }, {});
 
+            const changesTable = Object.keys(changes).map(key => {
+              return `| ${key} | ${newEmojiUrls[key]} |`;
+            }).join('\n');
+
             if (Object.keys(changes).length === 0) {
-              core.setOutput('changes', '');
+              core.setOutput('changes', 'true');
+              core.setOutput('changes-table', changesTable)
             } else {
-              core.setOutput('changes', JSON.stringify(changes, null, 2));
+              core.setOutput('changes', 'false');
             }
 
       - name: create pull request
@@ -71,9 +76,6 @@ jobs:
           body: |
             I found some new changes in GitHub's list of emojis.
 
-            Here's a summary of the changes:
-            ${{ steps.emoji_changes.outputs.changes }}
-
             I don't know which emoji they changed or added, but I'm sure it's cool.
             If you want you can go take a look yourself.
 
@@ -82,6 +84,14 @@ jobs:
             This is an automated PR to update the GitHub Emoji List.
 
             If you have any questions or suggestions, please open an issue.
+
+            <details>
+              <summary>Changes</summary>
+
+              | Emoji | New URL |
+              | ----- | ------- |
+              ${steps.emoji_changes.outputs.changes-table}
+            </details>
           branch: update-emojis
           base: main
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
