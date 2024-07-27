@@ -102,9 +102,9 @@ jobs:
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           reviewers: luxass
 
-      # - name: Upload changes as artifact
-      #   uses: actions/upload-artifact@v4.3.4
-      #   if: steps.emoji_changes.outputs.changes
-      #   with:
-      #     name: emoji-changes
-      #     path: ${{ steps.emoji_changes.outputs.changes }}
+      - name: upload new emojis as artifact
+        uses: actions/upload-artifact@v4.3.4
+        if: steps.emoji_changes.outputs.changes
+        with:
+          name: new-github-emojis
+          path: emoji-urls.json
