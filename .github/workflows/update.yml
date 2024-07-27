@@ -33,8 +33,8 @@ jobs:
       - name: install dependencies
         run: pnpm install
 
-      - name: Save initial state of emoji URLs
-        run: cp emoji-urls.json /tmp/emoji_before.json
+      - name: save old emoji-urls file
+        run: cp emoji-urls.json /tmp/old-emoji-urls.json
 
       - name: run update:emojis script
         run: pnpm run update:emojis
@@ -46,7 +46,7 @@ jobs:
             def diff(a; b):
               reduce (a | keys_unsorted[]) as $key
                 ({}; . + { ($key): (if a[$key] == b[$key] then null elif (a[$key] | type) == "object" and (b[$key] | type) == "object" then diff(a[$key]; b[$key]) else { old: a[$key], new: b[$key] } end) });
-            diff(input[0]; input[1])' "/tmp/emoji-before.json" "emoji-urls.json")
+            diff(input[0]; input[1])' "/tmp/old-emoji-urls.json" "emoji-urls.json")
 
           cleaned_output=$(echo "$diff_output" | jq 'walk(if type == "object" then with_entries(select(.value != null)) else . end)')
 
