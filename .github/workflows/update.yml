@@ -33,8 +33,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run emojis:update script
-        run: pnpm run emojis:update
+      - name: run update:emojis script
+        run: pnpm run update:emojis
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6.1.0
