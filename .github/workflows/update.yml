@@ -42,14 +42,11 @@ jobs:
       - name: process emoji changes
         id: emoji_changes
         run: |
-          old=$(<"/tmp/emoji_before.json")
-          new=$(<"emoji-urls.json")
-
-          diff_output=$(jq -n --argjson a "$old" --argjson b "$new" '
+          diff_output=$(jq -s '
             def diff(a; b):
               reduce (a | keys_unsorted[]) as $key
                 ({}; . + { ($key): (if a[$key] == b[$key] then null elif (a[$key] | type) == "object" and (b[$key] | type) == "object" then diff(a[$key]; b[$key]) else { old: a[$key], new: b[$key] } end) });
-            diff($a; $b)')
+            diff(input[0]; input[1])' "/tmp/emoji-before.json" "emoji-urls.json")
 
           cleaned_output=$(echo "$diff_output" | jq 'walk(if type == "object" then with_entries(select(.value != null)) else . end)')
 
