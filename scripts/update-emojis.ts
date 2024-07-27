@@ -3,7 +3,7 @@ import process from "node:process";
 import { z } from "zod";
 
 const ORDERED_EMOJI_REGEX = /.+\s;\s(?<version>[0-9.]+)\s#\s(?<emoji>\S+)\s(?<name>[^:]+)(?::\s)?(?<desc>.+)?/;
-const currentEmoji: string | null = null;
+let currentEmoji: string | null = null;
 const VARIATION_16 = String.fromCodePoint(0xFE0F);
 const SKIN_TONE_VARIATION_DESC = /\sskin\stone(?:,|$)/;
 
