@@ -61,10 +61,10 @@ jobs:
             }).join('\n');
 
             if (Object.keys(changes).length === 0) {
+              core.setOutput('changes', 'false');
+            } else {
               core.setOutput('changes', 'true');
               core.setOutput('changes-table', changesTable)
-            } else {
-              core.setOutput('changes', 'false');
             }
 
       - name: create pull request
