@@ -41,20 +41,25 @@ jobs:
 
       - name: process emoji changes
         id: emoji_changes
-        run: |
-          diff_output=$(jq -s '
-            def diff(a; b):
-              reduce (a | keys_unsorted[]) as $key
-                ({}; . + { ($key): (if a[$key] == b[$key] then null
-                                    elif (a[$key] | type) == "object" and (b[$key] | type) == "object" then diff(a[$key]; b[$key])
-                                    else { old: a[$key], new: b[$key] } end) });
-            diff(input[0]; input[1])' "/tmp/old-emoji-urls.json" "emoji-urls.json")
+        uses: actions/github-script@v7
+        with:
+          script: |
+            import { readFileSync } from 'node:fs';
 
-          echo "cleaning up diff output"
+            const oldEmojiUrls = JSON.parse(readFileSync('/tmp/old-emoji-urls.json', 'utf8'));
+            const newEmojiUrls = JSON.parse(readFileSync('emoji-urls.json', 'utf8'));
 
-          cleaned_output=$(echo "$diff_output" | jq 'walk(if type == "object" then with_entries(select(.value != null)) else . end)')
+            const changes = Object.keys(newEmojiUrls).reduce((acc, key) => {
+              if (oldEmojiUrls[key] !== newEmojiUrls[key]) {
+                acc[key] = {
+                  old: oldEmojiUrls[key],
+                  new: newEmojiUrls[key]
+                };
+              }
+              return acc;
+            }, {});
 
-          echo "changes='$cleaned_output'" >> $GITHUB_OUTPUT
+            core.setOutput('changes', JSON.stringify(changes, null, 2));
 
       - name: create pull request
         uses: peter-evans/create-pull-request@v6.1.0
