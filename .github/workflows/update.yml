@@ -90,7 +90,7 @@ jobs:
 
               | Emoji | New URL |
               | ----- | ------- |
-              ${steps.emoji_changes.outputs.changes-table}
+              ${{ steps.emoji_changes.outputs.changes-table }}
             </details>
           branch: update-emojis
           base: main
