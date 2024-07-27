@@ -56,9 +56,12 @@ jobs:
               return acc;
             }, {});
 
-            const changesTable = Object.entries(changes).map(([key, value]) => {
-              return `| ${key} | ${value} |`;
-            }).join('\n');
+            let changesTable = '';
+            for (let i = 0; i < Object.keys(changes).length; i += 2) {
+              const key1 = Object.keys(changes)[i];
+              const key2 = Object.keys(changes)[i + 1];
+              changesTable += `| ${key1} | ${key2} |\n`;
+            }
 
             if (Object.keys(changes).length === 0) {
               core.setOutput('changes', 'false');
