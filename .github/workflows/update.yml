@@ -22,28 +22,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.7
 
-      - name: Setup pnpm
+      - name: setup pnpm
         uses: pnpm/action-setup@v4.0.0
 
-      - name: Setup node
+      - name: setup node
         uses: actions/setup-node@v4.0.3
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: install dependencies
         run: pnpm install
 
-      - name: run update:emojis script
+      - name: Save initial state of emoji URLs
+        run: cp emoji-urls.json /tmp/emoji_before.json
+
+      - name: Run update:emojis script
         run: pnpm run update:emojis
 
-      - name: Create Pull Request
+      - name: process emoji changes
+        id: emoji_changes
+        run: |
+          changes=$(jq -r 'to_entries | map(select(.key as $key |
+            $key | IN(input | to_entries | map(select(.value != $ARGS.positional[0][.key].value) | .key)[])))[]
+            | "- :" + .key + ": " + .value' /tmp/emoji_before.json emoji-urls.json)
+
+          if [ -n "$changes" ]; then
+            echo "Changes detected in emoji URLs:"
+            echo "$changes"
+            echo "changes<<EOF" >> $GITHUB_OUTPUT
+            echo "$changes" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "No changes detected in emoji URLs."
+          fi
+
+      - name: create pull request
         uses: peter-evans/create-pull-request@v6.1.0
-        if: ${{ github.event.inputs.dry-run != 'true' }}
+        if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes }}
         with:
           commit-message: "chore: updated emojis"
           title: "chore: updated github emojis"
           body: |
             I found some new changes in GitHub's list of emojis.
+
+            Here's a summary of the changes:
+            ${{ steps.emoji_changes.outputs.changes }}
 
             I don't know which emoji they changed or added, but I'm sure it's cool.
             If you want you can go take a look yourself.
@@ -58,3 +81,10 @@ jobs:
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           reviewers: luxass
+
+      - name: Upload changes as artifact
+        uses: actions/upload-artifact@v4.3.4
+        if: steps.emoji_changes.outputs.changes
+        with:
+          name: emoji-changes
+          path: ${{ steps.emoji_changes.outputs.changes }}
