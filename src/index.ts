@@ -1,4 +1,5 @@
 import emojiUrls from "../emoji-urls.json";
+import allEmojis from "../emojis.json";
 import type { EmojiKey } from "./types";
 import { isUnicodeEmoji, isUnicodeUrl } from "./utils";
 
@@ -17,38 +18,51 @@ export const urls = emojiUrls satisfies Record<EmojiKey, string> as Record<
   string
 >;
 
+export const emojis = allEmojis satisfies Record<EmojiKey, string> as Record<
+  EmojiKey,
+  string
+>;
+
 /**
  * Checks if an emoji exists in the `urls` object.
- * @param {string} emoji - The emoji key to check.
+ * @param {Intellisense<EmojiKey>} emoji - The emoji key to check.
  * @returns {boolean} Returns `true` if the emoji exists, `false` otherwise.
  */
 export function exists(emoji: Intellisense<EmojiKey>): boolean {
-  return emoji in urls;
+  return emoji in emojis;
 }
 
+/**
+ * Retrieves the corresponding emoji string for the given emoji key.
+ * @param {Intellisense<EmojiKey>} emoji - The emoji key to retrieve the emoji string for.
+ * @returns {string | undefined} The emoji string if found, otherwise undefined.
+ *
+ * NOTE:
+ * If the emoji isn't an unicode emoji, undefined is returned.
+ * You can find a list of the non unicode emojis [here](https://github-emojis.luxass.dev/non-unicode)
+ *
+ * @example
+ * ```ts
+ * import { get } from "github-emojis";
+ *
+ * get("smile"); // 😄
+ * get("accessibility"); // undefined
+ * ```
+ *
+ */
 export function get(emoji: Intellisense<EmojiKey>): string | undefined {
-  const url = emoji in urls ? urls[emoji as EmojiKey] : undefined;
-  if (!url) return;
+  const emojiOrUrl = emoji in emojis ? emojis[emoji as EmojiKey] : undefined;
 
-  const urlMatch = url.match(/(?<=unicode\/).*(?=\.png)/);
-
-  if (!urlMatch) {
-    // some emojis are not unicode, and therefor don't have a codepoint
+  if (emojiOrUrl?.startsWith("https://github.githubassets.com/images/icons/emoji/")) {
     return undefined;
   }
 
-  const splittedCodepoints = urlMatch[0].split("-");
-
-  const codepoints = splittedCodepoints.map((codepoint) =>
-    Number.parseInt(codepoint, 16),
-  );
-
-  return String.fromCodePoint(...codepoints);
+  return emojiOrUrl;
 }
 
 /**
  * Returns the URL of the specified emoji.
- * @param {string} emoji - The key of the emoji.
+ * @param {Intellisense<EmojiKey>} emoji - The key of the emoji.
  * @returns {string} The URL of the emoji.
  */
 export function getUrl(emoji: Intellisense<EmojiKey>): string | undefined {
