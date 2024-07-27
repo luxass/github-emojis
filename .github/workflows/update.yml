@@ -56,8 +56,8 @@ jobs:
               return acc;
             }, {});
 
-            const changesTable = Object.keys(changes).map(key => {
-              return `| ${key} | ${newEmojiUrls[key]} |`;
+            const changesTable = Object.entries(changes).map(([key, value]) => {
+              return `| ${key} | ${value} |`;
             }).join('\n');
 
             if (Object.keys(changes).length === 0) {
