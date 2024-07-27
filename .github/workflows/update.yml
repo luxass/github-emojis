@@ -51,15 +51,16 @@ jobs:
 
             const changes = Object.keys(newEmojiUrls).reduce((acc, key) => {
               if (oldEmojiUrls[key] !== newEmojiUrls[key]) {
-                acc[key] = {
-                  old: oldEmojiUrls[key],
-                  new: newEmojiUrls[key]
-                };
+                acc[key] = newEmojiUrls[key]
               }
               return acc;
             }, {});
 
-            core.setOutput('changes', JSON.stringify(changes, null, 2));
+            if (Object.keys(changes).length === 0) {
+              core.setOutput('changes', '');
+            } else {
+              core.setOutput('changes', JSON.stringify(changes, null, 2));
+            }
 
       - name: create pull request
         uses: peter-evans/create-pull-request@v6.1.0
