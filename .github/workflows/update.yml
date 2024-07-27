@@ -42,11 +42,6 @@ jobs:
       - name: process emoji changes
         id: emoji_changes
         run: |
-          echo "content of /tmp/emoji_before.json:"
-          cat /tmp/emoji_before.json
-          echo "content of emoji-urls.json:"
-          cat emoji-urls.json
-
           old=$(<"/tmp/emoji_before.json")
           new=$(<"emoji-urls.json")
 
