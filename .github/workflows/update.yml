@@ -44,7 +44,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            import { readFileSync } from 'node:fs';
+            const { readFileSync } = require('fs');
 
             const oldEmojiUrls = JSON.parse(readFileSync('/tmp/old-emoji-urls.json', 'utf8'));
             const newEmojiUrls = JSON.parse(readFileSync('emoji-urls.json', 'utf8'));
