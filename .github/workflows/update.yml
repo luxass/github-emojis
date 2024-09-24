@@ -72,7 +72,7 @@ jobs:
             }
 
       - name: create pull request
-        uses: peter-evans/create-pull-request@v6.1.0
+        uses: peter-evans/create-pull-request@v7.0.5
         if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes == 'true' }}
         with:
           commit-message: "chore: updated emojis"
