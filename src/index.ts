@@ -1,9 +1,9 @@
+import type { EmojiKey } from "./types";
 import emojiUrls from "../emoji-urls.json" with { type: "json" };
 import allEmojis from "../emojis.json" with { type: "json" };
-import type { EmojiKey } from "./types";
-import { isUnicodeEmoji, isUnicodeUrl } from "./utils";
-
 import { EMOJI_KEYS } from "./constants";
+
+import { isUnicodeEmoji, isUnicodeUrl } from "./utils";
 
 export { EMOJI_KEYS };
 
