@@ -1,7 +1,7 @@
 // THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 // RUN `npm run update:emojis` TO UPDATE.
 
-    export type EmojiKey = "100"
+export type EmojiKey = "100"
  | "1234"
  | "+1"
  | "-1"

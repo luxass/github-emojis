@@ -1,10 +1,10 @@
 // THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 // RUN `npm run update:emojis` TO UPDATE.
 
-    import type { EmojiKey } from "./types";
+import type { EmojiKey } from "./types";
 
-    export const EMOJI_KEYS = [
-      "100",
+export const EMOJI_KEYS = [
+  "100",
       "1234",
       "+1",
       "-1",
@@ -1940,5 +1940,5 @@
       "zombie_man",
       "zombie_woman",
       "zzz"
-    ] as readonly EmojiKey[];
+] as readonly EmojiKey[];
   
