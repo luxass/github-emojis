@@ -1937,4 +1937,3 @@ export type EmojiKey = "100"
   | "zombie_man"
   | "zombie_woman"
   | "zzz" | (string & {});
-  

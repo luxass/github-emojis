@@ -26,7 +26,7 @@ async function run() {
 
   const typesString = `${BANNER}
 export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join("\n  | ")} | (string & {});
-  `;
+`;
 
   await writeFile("./src/types.ts", typesString);
 
@@ -34,9 +34,9 @@ export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join(
 import type { EmojiKey } from "./types";
 
 export const EMOJI_KEYS = [
-  ${Object.entries(emojiUrls).map(([name]) => `"${name}"`).join(",\n  ")}
+  ${Object.entries(emojiUrls).map(([name]) => `"${name}"`).join(",\n  ")},
 ] as readonly EmojiKey[];
-  `;
+`;
 
   await writeFile("./src/constants.ts", constantsString);
 

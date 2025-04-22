@@ -1939,6 +1939,5 @@ export const EMOJI_KEYS = [
   "zombie",
   "zombie_man",
   "zombie_woman",
-  "zzz"
+  "zzz",
 ] as readonly EmojiKey[];
-  
