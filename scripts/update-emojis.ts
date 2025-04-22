@@ -25,17 +25,17 @@ async function run() {
   await writeFile("emoji-urls.json", JSON.stringify(emojiUrls, null, 2));
 
   const typesString = `${BANNER}
-    export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join("\n | ")} | (string & {});
+export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join("\n | ")} | (string & {});
   `;
 
   await writeFile("./src/types.ts", typesString);
 
   const constantsString = `${BANNER}
-    import type { EmojiKey } from "./types";
+import type { EmojiKey } from "./types";
 
-    export const EMOJI_KEYS = [
-      ${Object.entries(emojiUrls).map(([name]) => `"${name}"`).join(",\n      ")}
-    ] as readonly EmojiKey[];
+export const EMOJI_KEYS = [
+  ${Object.entries(emojiUrls).map(([name]) => `"${name}"`).join(",\n      ")}
+] as readonly EmojiKey[];
   `;
 
   await writeFile("./src/constants.ts", constantsString);
@@ -85,7 +85,7 @@ async function run() {
     emojis[emojiKey] = emojiTestListEntry?.match(EMOJI_REGEX)?.groups?.emoji ?? "";
   }
 
-  await writeFile("emojis.json", JSON.stringify(emojis, null, 2));
+  await writeFile("emojis.json", `${JSON.stringify(emojis, null, 2)}\n`);
 }
 
 run().catch((err) => {
