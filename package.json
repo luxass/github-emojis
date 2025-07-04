@@ -26,32 +26,18 @@
   ],
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./utils": {
-      "import": {
-        "types": "./dist/utils.d.ts",
-        "default": "./dist/utils.mjs"
-      },
-      "require": {
-        "types": "./dist/utils.d.cts",
-        "default": "./dist/utils.cjs"
-      }
+      "import": "./dist/utils.js",
+      "require": "./dist/utils.cjs"
     },
-    "./emojis": "./emojis.json",
-    "./emoji-urls": "./emoji-urls.json",
     "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist",
     "emoji-urls.json",
@@ -61,8 +47,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
     "lint": "eslint .",
@@ -74,7 +60,8 @@
     "@types/node": "^20.19.4",
     "eslint": "^9.30.1",
     "eslint-plugin-format": "^1.0.1",
-    "tsup": "^8.5.0",
+    "publint": "^0.3.12",
+    "tsdown": "^0.12.9",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4",
     "zod": "^3.25.72"
