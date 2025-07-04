@@ -58,7 +58,7 @@
     "emojis.json"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "build": "tsup",
@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@luxass/eslint-config": "^5.1.0",
-    "@types/node": "^18.19.3",
+    "@types/node": "^20.19.4",
     "eslint": "^9.30.1",
     "eslint-plugin-format": "^1.0.1",
     "tsup": "^8.5.0",
