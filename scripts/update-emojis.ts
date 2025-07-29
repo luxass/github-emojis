@@ -12,13 +12,19 @@ const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 const EMOJI_URLS_SCHEMA = z.record(z.string());
 
 async function run() {
-  const emojiUrlsRaw = await fetch("https://api.github.com/emojis", {
+  const res = await fetch("https://api.github.com/emojis", {
     headers: {
       "Accept": "application/vnd.github.v3+json",
       "X-GitHub-Api-Version": "2022-11-28",
       "User-Agent": "github-emojis (https://github.com/luxass/github-emojis)",
     },
-  }).then((res) => res.json());
+  });
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch emojis: ${res.status} ${res.statusText}`);
+  }
+
+  const emojiUrlsRaw = await res.json();
 
   const emojiUrls = EMOJI_URLS_SCHEMA.parse(emojiUrlsRaw);
 
