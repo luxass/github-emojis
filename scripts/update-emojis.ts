@@ -9,7 +9,7 @@ const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 // RUN \`npm run update:emojis\` TO UPDATE.
 `;
 
-const EMOJI_URLS_SCHEMA = z.record(z.string());
+const EMOJI_URLS_SCHEMA = z.record(z.string(), z.string());
 
 async function run() {
   const res = await fetch("https://api.github.com/emojis", {
