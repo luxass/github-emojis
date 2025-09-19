@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@luxass/eslint-config": "^5.3.1",
-    "@types/node": "^20.19.4",
+    "@types/node": "^20.19.9",
     "eslint": "^9.35.0",
     "eslint-plugin-format": "^1.0.1",
     "publint": "^0.3.12",
