@@ -8,7 +8,7 @@
     "email": "lucasnrgaard@gmail.com",
     "url": "https://luxass.dev"
   },
-  "packageManager": "pnpm@10.16.0",
+  "packageManager": "pnpm@10.20.0",
   "license": "MIT",
   "homepage": "https://github.com/luxass/github-emojis",
   "repository": {
@@ -56,14 +56,14 @@
     "update:emojis": "pnpx tsx ./scripts/update-emojis.ts"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "5.3.1",
+    "@luxass/eslint-config": "6.0.1",
     "@types/node": "20.19.9",
-    "eslint": "9.35.0",
-    "eslint-plugin-format": "1.0.1",
-    "publint": "0.3.12",
-    "tsdown": "0.15.1",
-    "typescript": "5.9.2",
-    "vitest": "3.2.4",
-    "zod": "4.1.8"
+    "eslint": "9.38.0",
+    "eslint-plugin-format": "1.0.2",
+    "publint": "0.3.15",
+    "tsdown": "0.15.11",
+    "typescript": "5.9.3",
+    "vitest": "4.0.4",
+    "zod": "4.1.12"
   }
 }
