@@ -75,11 +75,6 @@ export const EMOJI_KEYS = [
       const codePoints = unicode.split(" ").filter((codePoint) => codePoint !== "");
 
       if (codePoints.length !== githubUnicodeCodePoints.length) return false;
-      // console.log({
-      //   unicode,
-      //   codePoints,
-      //   githubUnicodeCodePoints,
-      // });
 
       for (let i = 0; i < codePoints.length; i++) {
         if (codePoints[i]?.toLowerCase() !== githubUnicodeCodePoints[i]?.toLowerCase()) return false;
