@@ -56,7 +56,7 @@
     "update:emojis": "pnpx tsx ./scripts/update-emojis.ts"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "6.0.1",
+    "@luxass/eslint-config": "7.0.0",
     "@types/node": "20.19.9",
     "eslint": "9.38.0",
     "eslint-plugin-format": "1.0.2",
