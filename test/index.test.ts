@@ -1,6 +1,17 @@
-import type { EmojiKey } from "../src";
 import { describe, expect, expectTypeOf, it } from "vitest";
-import { EMOJI_KEYS, exists, get, getUrl, isUnicodeEmoji, isUnicodeUrl, parse, removeEmojis, urls } from "../src";
+
+import type { EmojiKey } from "../src";
+import {
+  EMOJI_KEYS,
+  exists,
+  get,
+  getUrl,
+  isUnicodeEmoji,
+  isUnicodeUrl,
+  parse,
+  removeEmojis,
+  urls,
+} from "../src";
 
 it("should return true for existing emoji", () => {
   expect(exists("grinning")).toBe(true);
@@ -42,7 +53,9 @@ it("should return undefined for non-existing emoji", () => {
 });
 
 it("should return the correct URL for existing emoji", () => {
-  expect(getUrl("grinning")).toBe("https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8");
+  expect(getUrl("grinning")).toBe(
+    "https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8",
+  );
 });
 
 it("should replace emoji keys with unicode characters", () => {
@@ -52,8 +65,12 @@ it("should replace emoji keys with unicode characters", () => {
 });
 
 it("should remove emoji keys", () => {
-  expect(removeEmojis(":grinning: This is an emoji thats smiling!")).toBe("This is an emoji thats smiling!");
-  expect(removeEmojis(":heart_eyes: This is an emoji thats in love!")).toBe("This is an emoji thats in love!");
+  expect(removeEmojis(":grinning: This is an emoji thats smiling!")).toBe(
+    "This is an emoji thats smiling!",
+  );
+  expect(removeEmojis(":heart_eyes: This is an emoji thats in love!")).toBe(
+    "This is an emoji thats in love!",
+  );
   expect(removeEmojis(":sunglasses: This is a cool emoji!")).toBe("This is a cool emoji!");
 });
 
@@ -62,7 +79,9 @@ it("should leave non-existing emoji codes unchanged", () => {
 });
 
 it("should replace multiple emoji codes in a string", () => {
-  expect(parse(":grinning: is my favorite emoji! :heart_eyes:")).toBe("😀 is my favorite emoji! 😍");
+  expect(parse(":grinning: is my favorite emoji! :heart_eyes:")).toBe(
+    "😀 is my favorite emoji! 😍",
+  );
 });
 
 it("should ignore double colons in the middle of a word", () => {
@@ -80,8 +99,12 @@ it("check if str is a unicode emoji", () => {
 });
 
 it("check if str is a unicode emoji url", () => {
-  expect(isUnicodeUrl("https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8")).toBe(true);
-  expect(isUnicodeUrl("https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1ea.png?v8")).toBe(true);
+  expect(
+    isUnicodeUrl("https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8"),
+  ).toBe(true);
+  expect(
+    isUnicodeUrl("https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1ea.png?v8"),
+  ).toBe(true);
   expect(isUnicodeEmoji("not-an-emoji")).toBe(false);
   expect(isUnicodeUrl(getUrl("atom"))).toBe(false);
 });
@@ -116,7 +139,9 @@ describe("parse", () => {
   });
 
   it("should replace multiple emoji codes in a string", () => {
-    expect(parse(":grinning: is my favorite emoji! :heart_eyes:")).toBe("😀 is my favorite emoji! 😍");
+    expect(parse(":grinning: is my favorite emoji! :heart_eyes:")).toBe(
+      "😀 is my favorite emoji! 😍",
+    );
   });
 
   it("should ignore double colons in the middle of a word", () => {

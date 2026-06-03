@@ -1,9 +1,12 @@
 import { writeFile } from "node:fs/promises";
 import process from "node:process";
+
 import { z } from "zod";
+
 import { isUnicodeUrl } from "../src/utils.ts";
 
-const EMOJI_REGEX = /^(?<unicode>(?:\S+\s)*\S+)\s+;\s*(?<type>[\w-]+)\s*#\s*(?<emoji>\S+)\s*E(?<version>\d+\.\d)\s*(?<description>.+)/;
+const EMOJI_REGEX =
+  /^(?<unicode>(?:\S+\s)*\S+)\s+;\s*(?<type>[\w-]+)\s*#\s*(?<emoji>\S+)\s*E(?<version>\d+\.\d)\s*(?<description>.+)/;
 
 const BANNER = `// THIS FILE IS GENERATED AUTOMATICALLY. DO NOT EDIT.
 // RUN \`npm run update:emojis\` TO UPDATE.
@@ -14,7 +17,7 @@ const EMOJI_URLS_SCHEMA = z.record(z.string(), z.string());
 async function run() {
   const res = await fetch("https://api.github.com/emojis", {
     headers: {
-      "Accept": "application/vnd.github.v3+json",
+      Accept: "application/vnd.github.v3+json",
       "X-GitHub-Api-Version": "2022-11-28",
       "User-Agent": "github-emojis (https://github.com/luxass/github-emojis)",
     },
@@ -31,7 +34,9 @@ async function run() {
   await writeFile("emoji-urls.json", `${JSON.stringify(emojiUrls, null, 2)}\n`);
 
   const typesString = `${BANNER}
-export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join("\n  | ")} | (string & {});
+export type EmojiKey = ${Object.keys(emojiUrls)
+    .map((name) => `"${name}"`)
+    .join("\n  | ")} | (string & {});
 `;
 
   await writeFile("./src/types.ts", typesString);
@@ -40,16 +45,22 @@ export type EmojiKey = ${Object.keys(emojiUrls).map((name) => `"${name}"`).join(
 import type { EmojiKey } from "./types";
 
 export const EMOJI_KEYS = [
-  ${Object.entries(emojiUrls).map(([name]) => `"${name}"`).join(",\n  ")},
+  ${Object.entries(emojiUrls)
+    .map(([name]) => `"${name}"`)
+    .join(",\n  ")},
 ] as readonly EmojiKey[];
 `;
 
   await writeFile("./src/constants.ts", constantsString);
 
-  const emojiTestList = await fetch("https://unicode.org/Public/emoji/latest/emoji-test.txt").then((res) => res.text());
+  const emojiTestList = await fetch("https://unicode.org/Public/emoji/latest/emoji-test.txt").then(
+    (res) => res.text(),
+  );
 
   const lines = emojiTestList.split("\n").filter((line) => line.includes("fully-qualified"));
-  const emojis: Record<string, string> = Object.fromEntries(Object.entries(emojiUrls).map(([key]) => [key, ""]));
+  const emojis: Record<string, string> = Object.fromEntries(
+    Object.entries(emojiUrls).map(([key]) => [key, ""]),
+  );
 
   for (const emojiKey of Object.keys(emojis)) {
     const githubUrlUnicodeUrl = emojiUrls[emojiKey];
@@ -59,7 +70,9 @@ export const EMOJI_KEYS = [
       continue;
     }
 
-    const githubUrlUnicodeString = githubUrlUnicodeUrl!.replace("https://github.githubassets.com/images/icons/emoji/unicode/", "").replace(".png?v8", "");
+    const githubUrlUnicodeString = githubUrlUnicodeUrl!
+      .replace("https://github.githubassets.com/images/icons/emoji/unicode/", "")
+      .replace(".png?v8", "");
 
     const githubUnicodeCodePoints = githubUrlUnicodeString.split("-");
 
@@ -77,7 +90,8 @@ export const EMOJI_KEYS = [
       if (codePoints.length !== githubUnicodeCodePoints.length) return false;
 
       for (let i = 0; i < codePoints.length; i++) {
-        if (codePoints[i]?.toLowerCase() !== githubUnicodeCodePoints[i]?.toLowerCase()) return false;
+        if (codePoints[i]?.toLowerCase() !== githubUnicodeCodePoints[i]?.toLowerCase())
+          return false;
       }
 
       return true;

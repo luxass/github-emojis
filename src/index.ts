@@ -1,8 +1,7 @@
-import type { EmojiKey } from "./types";
 import emojiUrls from "../emoji-urls.json" with { type: "json" };
 import allEmojis from "../emojis.json" with { type: "json" };
 import { EMOJI_KEYS } from "./constants";
-
+import type { EmojiKey } from "./types";
 import { isUnicodeEmoji, isUnicodeUrl } from "./utils";
 
 export { EMOJI_KEYS };
@@ -13,15 +12,9 @@ export type { EmojiKey };
 
 export { isUnicodeEmoji, isUnicodeUrl };
 
-export const urls = emojiUrls satisfies Record<EmojiKey, string> as Record<
-  EmojiKey,
-  string
->;
+export const urls = emojiUrls satisfies Record<EmojiKey, string> as Record<EmojiKey, string>;
 
-export const emojis = allEmojis satisfies Record<EmojiKey, string> as Record<
-  EmojiKey,
-  string
->;
+export const emojis = allEmojis satisfies Record<EmojiKey, string> as Record<EmojiKey, string>;
 
 /**
  * Checks if an emoji exists in the `urls` object.

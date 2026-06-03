@@ -19,4 +19,3 @@ jobs:
     with:
       fmt: true
       fmt-script: "fmt:check"
-

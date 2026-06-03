@@ -17,9 +17,7 @@ export function isUnicodeEmoji(str?: string): boolean {
  */
 export function isUnicodeUrl(emojiUrl?: string): boolean {
   if (!emojiUrl) return false;
-  const urlMatch = emojiUrl.match(
-    /\/unicode\/[0-9a-fA-F]{4}(?:-[0-9a-fA-F]{4})?/,
-  );
+  const urlMatch = emojiUrl.match(/\/unicode\/[0-9a-fA-F]{4}(?:-[0-9a-fA-F]{4})?/);
 
   if (!urlMatch) {
     // some emojis are not unicode, and therefor don't have a codepoint
