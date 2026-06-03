@@ -1,7 +1,7 @@
 import { writeFile } from "node:fs/promises";
 import process from "node:process";
 import { z } from "zod";
-import { isUnicodeUrl } from "../src/utils";
+import { isUnicodeUrl } from "../src/utils.ts";
 
 const EMOJI_REGEX = /^(?<unicode>(?:\S+\s)*\S+)\s+;\s*(?<type>[\w-]+)\s*#\s*(?<emoji>\S+)\s*E(?<version>\d+\.\d)\s*(?<description>.+)/;
 
