@@ -9,7 +9,7 @@ catalogs:
   dev:
     publint: 0.3.25
     tsdown: 0.23.5
-    typescript: 6.0.3
+    typescript: 7.0.2
     oxfmt: 0.76.0
     oxlint: 1.91.0
     oxlint-tsgolint: 7.0.2005
