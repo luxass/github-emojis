@@ -8,7 +8,7 @@ blockExoticSubdeps: true
 catalogs:
   dev:
     publint: 0.3.25
-    tsdown: 0.22.1
+    tsdown: 0.23.5
     typescript: 6.0.3
     oxfmt: 0.76.0
     oxlint: 1.91.0
