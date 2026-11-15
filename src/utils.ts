@@ -1,4 +1,6 @@
-const EMOJI_REGEX = /\p{Emoji_Presentation}/gu;
+// No `g` flag: a global regex keeps `lastIndex` between `.test()` calls,
+// which made repeated calls with the same input alternate between true and false.
+const EMOJI_REGEX = /\p{Emoji_Presentation}/u;
 
 /**
  * Checks if the given emoji is a unicode emoji
