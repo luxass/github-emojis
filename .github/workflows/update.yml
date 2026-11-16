@@ -43,7 +43,7 @@ jobs:
 
       - name: process emoji changes
         id: emoji_changes
-        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           script: |
             const { readFileSync } = require('fs');
@@ -74,7 +74,7 @@ jobs:
             }
 
       - name: create pull request
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        uses: peter-evans/create-pull-request@15733dbdfeedb4f7fdb73d13c6f5ac83b710fab8 # v8.1.2
         if: ${{ github.event.inputs.dry-run != 'true' && steps.emoji_changes.outputs.changes == 'true' }}
         with:
           commit-message: "chore: updated emojis"
