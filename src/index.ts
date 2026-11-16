@@ -16,13 +16,17 @@ export const urls = emojiUrls satisfies Record<EmojiKey, string> as Record<Emoji
 
 export const emojis = allEmojis satisfies Record<EmojiKey, string> as Record<EmojiKey, string>;
 
+// Matches `:shortcode:`. Shortcodes can contain `+` and `-`, e.g. `:+1:`, `:t-rex:`.
+const SHORTCODE_REGEX = /:[\w+-]+:/g;
+
 /**
  * Checks if an emoji exists in the `urls` object.
  * @param {Intellisense<EmojiKey>} emoji - The emoji key to check.
  * @returns {boolean} Returns `true` if the emoji exists, `false` otherwise.
  */
 export function exists(emoji: Intellisense<EmojiKey>): boolean {
-  return emoji in emojis;
+  // `Object.hasOwn` so inherited keys like `toString` don't count as emojis.
+  return Object.hasOwn(emojis, emoji);
 }
 
 /**
@@ -44,7 +48,7 @@ export function exists(emoji: Intellisense<EmojiKey>): boolean {
  *
  */
 export function get(emoji: Intellisense<EmojiKey>): string | undefined {
-  const emojiOrUrl = emoji in emojis ? emojis[emoji as EmojiKey] : undefined;
+  const emojiOrUrl = exists(emoji) ? emojis[emoji as EmojiKey] : undefined;
 
   if (emojiOrUrl?.startsWith("https://github.githubassets.com/images/icons/emoji/")) {
     return undefined;
@@ -59,7 +63,7 @@ export function get(emoji: Intellisense<EmojiKey>): string | undefined {
  * @returns {string} The URL of the emoji.
  */
 export function getUrl(emoji: Intellisense<EmojiKey>): string | undefined {
-  return emoji in emojiUrls ? urls[emoji as EmojiKey] : undefined;
+  return Object.hasOwn(urls, emoji) ? urls[emoji as EmojiKey] : undefined;
 }
 
 /**
@@ -68,7 +72,7 @@ export function getUrl(emoji: Intellisense<EmojiKey>): string | undefined {
  * @returns {string} - The string with emoji keys replaced with unicode characters.
  */
 export function parse(str: string): string {
-  return str.replace(/:\w+:/g, (match) => {
+  return str.replace(SHORTCODE_REGEX, (match) => {
     const emoji = match.slice(1, -1);
     return get(emoji) || match;
   });
@@ -81,7 +85,7 @@ export function parse(str: string): string {
  */
 export function removeEmojis(str: string): string {
   return str
-    .replace(/:\w+:/g, (match) => {
+    .replace(SHORTCODE_REGEX, (match) => {
       const emoji = match.slice(1, -1);
       return exists(emoji) ? "" : match;
     })

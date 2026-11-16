@@ -166,3 +166,48 @@ describe("parse", () => {
     expect(parse(":sunglasses:")).toBe("😎");
   });
 });
+
+// Regression tests for https://github.com/luxass/github-emojis/issues/119
+describe("issue #119", () => {
+  const PROTOTYPE_KEYS = ["toString", "constructor", "hasOwnProperty", "valueOf", "__proto__"];
+
+  it("isUnicodeEmoji returns the same result on repeated calls", () => {
+    for (let i = 0; i < 5; i++) {
+      expect(isUnicodeEmoji("😄")).toBe(true);
+    }
+
+    expect(isUnicodeEmoji("😀")).toBe(true);
+    expect(isUnicodeEmoji("a😀")).toBe(true);
+    expect(isUnicodeEmoji("hello!")).toBe(false);
+    expect(isUnicodeEmoji("😀")).toBe(true);
+  });
+
+  it.each(PROTOTYPE_KEYS)("exists, get and getUrl ignore the inherited key %s", (key) => {
+    expect(exists(key)).toBe(false);
+    expect(get(key)).toBeUndefined();
+    expect(getUrl(key)).toBeUndefined();
+  });
+
+  it.each(PROTOTYPE_KEYS)("parse and removeEmojis leave :%s: unchanged", (key) => {
+    expect(parse(`use :${key}: here`)).toBe(`use :${key}: here`);
+    expect(removeEmojis(`keep :${key}: here`)).toBe(`keep :${key}: here`);
+  });
+
+  it.each([
+    ["+1", "👍"],
+    ["-1", "👎"],
+    ["e-mail", "📧"],
+    ["non-potable_water", "🚱"],
+    ["t-rex", "🦖"],
+  ])("parse and removeEmojis handle the shortcode :%s:", (key, emoji) => {
+    expect(exists(key)).toBe(true);
+    expect(get(key)).toBe(emoji);
+    expect(parse(`LGTM :${key}:`)).toBe(`LGTM ${emoji}`);
+    expect(removeEmojis(`LGTM :${key}:`)).toBe("LGTM");
+  });
+
+  it("parse handles shortcodes with + and - next to other shortcodes", () => {
+    expect(parse(":+1::-1:")).toBe("👍👎");
+    expect(parse(":t-rex: and :grinning:")).toBe("🦖 and 😀");
+  });
+});
