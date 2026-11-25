@@ -12,7 +12,7 @@ catalogs:
     typescript: 7.0.2
     oxfmt: 0.77.0
     oxlint: 1.92.0
-    oxlint-tsgolint: 7.0.2006
+    oxlint-tsgolint: 7.0.2007
     zod: 4.6.7
     vitest: 5.1.0
 
